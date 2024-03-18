@@ -1,4 +1,7 @@
-﻿
+﻿using System;
+using System.Collections;
+using work1;
+
 class TestClass
 {
     static void Main(string[] args)
@@ -39,9 +42,7 @@ class TestClass
         {
             names.Add(fios[i].Split(" ")[0]);
         }
-        foreach (string n in names)
-            Console.WriteLine(n);
-        Console.WriteLine();
+        PrintValues(names);
 
         // 3
         string all_subj = "";
@@ -57,9 +58,7 @@ class TestClass
         {
             chars.Add(c);
         }
-        foreach (char n in chars)
-            Console.Write(n);
-        Console.WriteLine("\n");
+        PrintValues(chars);
 
         // 5
         byte[] bytes = System.Text.Encoding.ASCII.GetBytes(tamandua_name);
@@ -72,6 +71,61 @@ class TestClass
         // 6
         Console.WriteLine((DateTime.Now - actor.Item2).Days);
         Console.WriteLine();
+
+        // 7
+        string[] b_maters = new string[] { "boards", "concrete", "bricks" };
+        Console.WriteLine("Available indexes: 1 - 3");
+        Queue<string> materials = new Queue<string>();
+        while (true)
+        {
+            int index = int.Parse(Console.ReadLine());
+            if (index < 1 || index > b_maters.Length)
+            {
+                break;
+            }
+
+            materials.Enqueue(b_maters[index - 1]);
+        }
+
+        while (materials.Count > 0)
+        {
+            Console.WriteLine(materials.Dequeue());
+        }
+        Console.WriteLine();
+
+        // 8
+        fios.Sort();
+        //DateTime date = actor.Item2;
+        //Console.WriteLine((date.Day + date.Month * date.Month + date.Year) % 39 + 1);     // return 18  "Чжоу Хуэй-ван"
+        int ind = int.Parse(Console.ReadLine());
+        fios[ind] = "Чжоу Хуэй-ван";
+        PrintValues(fios);
+
+        // 9
+        LinkedList list = new LinkedList();
+        list.Add("s1", 1);
+        list.Add("s2", 2);
+        list.Add("s3", 3);
+        list.Add("s4", -1);
+        list.insert("sn", 0);
+        printLinkedList(list);
+    }
+
+    public static void printLinkedList(LinkedList list)
+    {
+        int i = 0;
+        do
+        {
+            Console.Write(list.get(i).value + "\n");
+            i = list.get(i).next;
+        } while (i != -1);
+    }
+
+    public static void PrintValues(IEnumerable myCollection)
+    {
+        foreach (Object obj in myCollection)
+            Console.Write(obj + "  ");
+        Console.WriteLine("\n");
     }
 
     private static double averMark(Dictionary<string, int> dict)
