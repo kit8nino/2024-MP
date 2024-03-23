@@ -3,73 +3,107 @@
     internal class Node
     {
         public string value;
-        public int next;
+        public Node? next;
 
-        public Node(string _val, int _ind = 0)
+        public Node(string _val)
         {
             value = _val;
-            next = _ind;
+        }
+
+        public Node(string _val, Node _next)
+        {
+            value = _val;
+            next = _next;
         }
     }
-    
+
     internal class LinkedList
     {
-        List<Node> list;
-        
-        public LinkedList() { list = new List<Node>(); }
+        private Node head;
+        public int length = 0;
 
-        public void Add(string val, int ind)
+        public void Add(string val)
         {
-            list.Add(new Node(val, ind));
-        }
-
-        public void insert(string val, int ind)
-        {
-            ind -= 1;
-            if (ind < 0)
+            if (head == null)
             {
-                ind = 0;
+                head = new Node(val);
+                head.next = null;
             }
-
-            if (ind  == 0)
-            {
-                // TODO
-            } 
             else
             {
-                int temp = list[ind].next;
-                list[ind].next = list.Count;
-                list.Add(new Node(val, temp));
+                Node curr = head;
+                while (curr.next != null) 
+                {
+                    curr = curr.next;
+                }
+                curr.next = new Node(val);
             }
+            length += 1;
+        }
+
+        public void Insert(string val, int ind)
+        {
+            Node curr = head;
+            if (ind == 0)
+            {
+                head = new Node(val, curr);
+            }
+            else
+            {
+                if (ind >= length)
+                    ind = length;
+                if (curr != null)
+                {
+                    for (int i = 0; i < ind - 1; i++)
+                    {
+                        curr = curr.next;
+                    }
+                    Node temp = curr.next;
+                    curr.next = new Node(val, temp);
+                }
+                else
+                {
+                    Add(val);
+                }
+            }
+            length += 1;
         }
 
         public void Remove(string val)
         {
-            for (int i = 0; i < list.Count; i++)
+            Node curr = head;
+            if (curr.value == val)
             {
-                if (list[i].value == val)
+                head = curr.next;
+                length -= 1;
+                return;
+            }
+
+            for (int i = 0; i < length; i++)
+            {
+                if (curr.next.value == val)
                 {
-                    if (i == 0)
-                    {
-                        list.RemoveAt(i);
-                        for (int j = 0; j <  list.Count; j++)
-                        {
-                            if (list[j].next != -1)
-                                list[j].next -= 1;
-                        }
-                    } 
-                    else 
-                    { 
-                        list[i - 1].next = list[i].next; 
-                    }
-                    
+                    curr.next = curr.next.next;
+                    length -= 1;
+                    return;
+                } 
+                else
+                {
+                    curr = curr.next;
                 }
             }
         }
 
-        public Node get(int ind)
+        public Node Get(int ind)
         {
-            return list[ind];
+            Node curr = head;
+            for (int i = 0; i < ind; i++)
+            {
+                curr = curr.next;
+            }
+
+            return curr;
         }
+
     }
 }

@@ -29,7 +29,7 @@ class TestClass
 
         List<string> fios = generateFio();
 
-        string tamandua_name = "Curious Explorer";
+        string tamandua_name = "New Tamandua1";
 
 
         // Work with data
@@ -103,22 +103,31 @@ class TestClass
 
         // 9
         LinkedList list = new LinkedList();
-        list.Add("s1", 1);
-        list.Add("s2", 2);
-        list.Add("s3", 3);
-        list.Add("s4", -1);
-        list.insert("sn", 0);
-        printLinkedList(list);
+
+        list.Add("Большая Пысса");
+        list.Add("Большие Пупсы");
+        list.Add("Такое");
+        list.Add("Тухлянка");
+        list.Add("Баклань");
+        list.Add("Лохово");
+        list.Add("Факфак");
+        list.Add("Большое Струйкино");
+        list.Add("Дно");
+        list.Add("Трусово");
+        printList(list);
+
+        list.Remove(Console.ReadLine());
+        printList(list);
+
+        list.Insert("Конец", 1);
+        printList(list);
     }
 
-    public static void printLinkedList(LinkedList list)
+    public static void printList(LinkedList list)
     {
-        int i = 0;
-        do
-        {
-            Console.Write(list.get(i).value + "\n");
-            i = list.get(i).next;
-        } while (i != -1);
+        for (int i = 0; i < list.length; i++)
+            Console.Write(list.Get(i).value + "   ");
+        Console.WriteLine("\n");
     }
 
     public static void PrintValues(IEnumerable myCollection)
