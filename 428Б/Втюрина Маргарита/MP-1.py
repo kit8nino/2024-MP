@@ -70,3 +70,49 @@ for i in range(len(women_names)):
     person.append(random.choice(women_surnames))
     women.append(person)
 tamandua='пушистая парабола'
+
+
+#задание 1
+def task1(atestat):
+    subjects=set()
+    for i in (atestat):
+         subjects.add(i)
+    sum=0
+    for i in subjects:
+        x=atestat.get(i)
+        sum+=x
+    b=float(sum)/len(atestat)
+    print("{0:.2f}".format(b))
+
+
+#задание 2
+def task2(men,women):
+    unique_men=set(men)
+    unique_women=set(women)
+    print(unique_men, unique_women, sep='\n\n')
+
+#задание 3
+def task3(atestat):
+    count=0
+    for i in atestat.keys():
+        for j in i:
+            count+=1
+    print(count)
+
+#задание 4
+def task4(atestat):
+    unique_letters=[]
+    for i in atestat.keys():
+        i=i.lower()
+        for j in i:
+            if j not in unique_letters and j!=' ': unique_letters.append(j)
+    print(unique_letters)
+
+#задание 5
+def task5(tamandua):
+    str=''
+    for i in tamandua:
+        if i!=' ':
+            bin=(format(ord(i),'08b'))
+            str+=(bin)
+    print(str)
