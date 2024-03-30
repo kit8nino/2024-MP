@@ -121,3 +121,18 @@ def task6(actor_birthday):
     actual_date=datetime.datetime.now()
     time_difference=(actual_date-actor_birthday).days
     print(f"Marvin Lee,  a famous actor,  was born {time_difference} days ago")
+
+#задание 7
+def task7():
+    import queue
+    materials=queue.Queue()
+    print("Enter END to complete")
+    def add_material(materials):
+        item=input("Enter the material: ")
+        if item=='END': 
+            while materials.empty()==False:
+               print(materials.get())
+        else:
+            materials.put(item)
+            add_material(materials)
+    add_material(materials)
