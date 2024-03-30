@@ -116,3 +116,8 @@ def task5(tamandua):
             bin=(format(ord(i),'08b'))
             str+=(bin)
     print(str)
+#задание 6
+def task6(actor_birthday):
+    actual_date=datetime.datetime.now()
+    time_difference=(actual_date-actor_birthday).days
+    print(f"Marvin Lee,  a famous actor,  was born {time_difference} days ago")
