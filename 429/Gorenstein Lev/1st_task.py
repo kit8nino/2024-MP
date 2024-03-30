@@ -38,15 +38,15 @@ print(avg(marks))
         
 """-----------------------------------#2------------------------------------"""
 def random_fullname():
-    ans = []
+    fullname = ''
     N, S = random.randint(0, len(Names)-1), random.randint(0, len(Surnames)-1)
-    ans.append(Names[N])
-    ans.append(Surnames[S])
-    return ans
+    fullname = Names[N] + " " + Surnames[S]
+    return fullname
 
-random_name = random_fullname()
-print(random_name)
-
+Fullnames = []
+for i in range (50):
+    Fullnames.append(random_fullname())
+print(Fullnames)
 """-----------------------------------#3------------------------------------"""
 def length(x):
     S = 0
@@ -87,6 +87,7 @@ print(dt.datetime.today() - Actor[2])
 """-----------------------------------#7------------------------------------"""
 q1 = queue.Queue()
 while True:
+    #enter 0 to stop
     material = input()
     if material == '0':
         break
@@ -100,11 +101,9 @@ index = int(input())
 # year, month, day = Actor[2].year, Actor[2].month, Actor[2].day
 # number = (day + month**2 + year) % 39 + 1
 # print(number) #37 (Чжоу Шэнь Цзинь-ван)
-Names.sort()
-Surnames.sort()
-Names[index] = "Чжоу Шэнь Цзинь-ван"
-Surnames[index] = "Чжоу Шэнь Цзинь-ван"
-print(Names, Surnames)
+Fullnames.sort()
+Fullnames[index] = "Чжоу Шэнь Цзинь-ван"
+print(Fullnames)
 
 """-----------------------------------#9------------------------------------"""
 cities = ["Новиград", "Оксенфурт", "Вызима", "Боклер", "Третогор",
