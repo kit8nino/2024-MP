@@ -85,11 +85,17 @@ def task1(atestat):
     print("{0:.2f}".format(b))
 
 
+
 #задание 2
-def task2(men,women):
-    unique_men=set(men)
-    unique_women=set(women)
-    print(unique_men, unique_women, sep='\n\n')
+def task2(men):
+    unique_men=[]
+    for i in range(len(men)):
+        person=[]
+        person.append(men[i][0])
+        person.append(men[i][1])
+        if person not in unique_men:
+            unique_men.append(person)
+    return unique_men
 
 #задание 3
 def task3(atestat):
