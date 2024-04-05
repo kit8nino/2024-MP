@@ -142,3 +142,23 @@ def task7():
             materials.put(item)
             add_material(materials)
     add_material(materials)
+
+ #задание 8
+def task8(actor_birthday,men):
+
+    def get_name(person):
+        return person[0]
+           
+            
+    number = (actor_birthday.day + actor_birthday.month**2 + actor_birthday.year) % 39 + 1
+    index=int(input(f"Enter the index to change someone's name (0-{len(men)-1})"))
+    if index<0 or index>9:print(f"You can enter an integer only in range (0-{len(men)-1})")
+    uniq=task2(men)
+    uniq.sort(key=get_name)
+    print(number) #37 - Чжоу И-ван
+    uniq[index][0]='Чжоу'
+    uniq[index][1]='И-ван'
+    
+    print(uniq)
+
+
