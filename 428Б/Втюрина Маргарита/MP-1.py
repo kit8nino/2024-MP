@@ -195,11 +195,19 @@ if len(temp)==0:
         list0.append(x)
     places[list0[-1]]+=1
 else:places[temp[-1]]+=1
+places[town]=None
 
+position=int(input('Enter  the position'))
+last=len(places)
+t=''
 places.update({'Конец':position})
 for key in places.keys():
-            if places[key]==position:
-                print('у предыдущего элемента делаю ссылку на вставленный')
+            if places[key]==position and  key!='Конец': 
+                    t=key
+
+del places[t]
+places.update({t:last})
+                    
+              
     
 print(places)
-
