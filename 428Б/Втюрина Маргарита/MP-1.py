@@ -161,53 +161,57 @@ def task8(actor_birthday,men):
     
     print(uniq)
 
-
 #задание 9
-places={'Блювиничи': 1,
-        'Большое Бухалово': 2,
-        'Свиновье': 3,
-        'Синие Лепяги':4,
-        'Жабино': 5,
-        'Кончинино': 6,
-        'Раздериха': 7,
-        'Чуваки': 8,
-        'Мусорка': 9,
-        'Голодранкино': 10,
-        'Безводовка': 11,
-        'Красная Могила': 12,
-        'Кундрючья': 13,
-        'Хотелово': 14,
-        'Добрые Пчелы': 15,
-        'Синегубово': 0
-}
-places_list=['Блювиничи','Большое Бухалово','Свиновье','Синие Лепяги','Жабино','Кончинино','Раздериха','Чуваки','Мусорка','Голодранкино','Безводовка','Красная Могила','Кундрючья','Хотелово','Добрые Пчелы','Синегубово',]
-print (places)
-town=input('Enter the name, you want to delete ')
-position=input('Enter  the position')
-
-temp=[]
-for key in places.keys():
-            if key==town:break
-            temp.append(key)
-if len(temp)==0: 
-    list0=[]
-    for x in places.keys():
-        list0.append(x)
-    places[list0[-1]]+=1
-else:places[temp[-1]]+=1
-places[town]=None
-
-position=int(input('Enter  the position'))
-last=len(places)
-t=''
-places.update({'Конец':position})
-for key in places.keys():
-            if places[key]==position and  key!='Конец': 
-                    t=key
-
-del places[t]
-places.update({t:last})
-                    
-              
+def task9():
+    places={'Блювиничи': 1,
+            'Большое Бухалово': 2,
+            'Свиновье': 3,
+            'Синие Лепяги':4,
+            'Жабино': 5,
+            'Кончинино': 6,
+            'Раздериха': 7,
+            'Чуваки': 8,
+            'Мусорка': 9,
+            'Голодранкино': 10,
+            'Безводовка': 11,
+            'Красная Могила': 12,
+            'Кундрючья': 13,
+            'Хотелово': 14,
+            'Добрые Пчелы': 15,
+            'Синегубово': 0
+    }
+    places_list=['Блювиничи','Большое Бухалово','Свиновье','Синие Лепяги','Жабино','Кончинино','Раздериха','Чуваки','Мусорка','Голодранкино','Безводовка','Красная Могила','Кундрючья','Хотелово','Добрые Пчелы','Синегубово',]
+    print (places)
     
-print(places)
+    
+    def delete_place():
+        town=input('Enter the name, you want to delete ')
+        temp=[]
+        for key in places.keys():
+                    if key==town:break
+                    temp.append(key)
+        if len(temp)==0: 
+            list0=[]
+            for x in places.keys():
+                list0.append(x)
+            places[list0[-1]]+=1
+        else:places[temp[-1]]+=1
+        places[town]=None
+        print(places)
+        
+    def insert_konets(): 
+        position=int(input('Enter  the position'))
+        last=len(places)
+        t='...'
+        places.update({'Конец':position})
+        for key in places.keys():
+                    if places[key]==position and  key!='Конец': 
+                            t=key
+        
+        del places[t]
+        places.update({t:last}) 
+        sorted_tuple=sorted(places.items(),key=lambda x: x[1])
+        places_new=dict(sorted_tuple)
+        print(places_new)
+    delete_place()
+    insert_konets()
