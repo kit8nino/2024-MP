@@ -99,3 +99,126 @@ print("Задание 6")
 
 today = datetime.date.today()
 print(today - western_actor[1])
+
+#Задание 7
+print("Задание 7")
+
+fifo_queue = queue.Queue()
+flag = True
+
+print("Введите название стройматериала, для остановки и вывода введите 0")
+
+while flag:
+    queue_element = input()
+
+    if queue_element == "0":
+        print("Список стройматериалов:")
+        for i in range(fifo_queue.qsize()):
+            res = fifo_queue.get()
+            print(res)
+        break
+    else:
+        fifo_queue.put(queue_element)
+
+#Задание 8
+print("Задание 8")
+
+number = (3 + 11**2 + 1921) % 39 + 1 #18
+emperor_name = "Чжоу Хуэй-ван"
+
+print("Введите номер для замены: ")
+i = int(input())
+
+popular_names[i] = emperor_name
+
+print(popular_names)
+
+#Задание 9
+print("Задание 9")
+
+class Node:
+    def __init__(self, data=None):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            current_node = self.head
+            while current_node.next:
+                current_node = current_node.next
+            current_node.next = new_node
+
+    def remove(self, index):
+        step = 0
+        if index == 0:
+            self.head.data = "Конец"
+        else:
+            current_node = self.head
+            while step < index:
+                current_node = current_node.next
+                step += 1
+            current_node.data = "Конец"
+
+    def insert(self, index):
+        step = 0
+        if index == 0:
+            self.head.next = None
+        else:
+            current_node = self.head
+            while current_node.next:
+                if step < index:
+                    current_node = current_node.next
+                    step += 1
+                elif step == index:
+                    current_node = current_node.next
+                    current_node = current_node.next
+                    step += 1
+                else:
+                    if step != list.len() - 2:
+                        data_new = (current_node.next).data
+                        current_node.data = data_new
+                        current_node = current_node.next
+                        step += 1
+                    else:
+                        data_new = (current_node.next).data
+                        current_node.data = data_new
+                        current_node.next = None
+                        break
+
+    def len(self):
+        step = 0
+        current_node = self.head
+        while current_node.next:
+            current_node = current_node.next
+            step += 1
+        return step      
+
+    def display(self):
+        current_node = self.head
+        while current_node:
+            print(current_node.data)
+            current_node = current_node.next
+
+list = LinkedList()
+
+list.append("Большая Пысса")
+list.append("Дно")
+list.append("Манды")
+list.append("Иннах")
+list.append("Старые черви")
+list.append("Засосная")
+list.append("Чуваки")
+list.append("Красная Могила")
+list.append("Хреновое")
+list.append("Верхнее Зачатье")
+
+list.remove(0)
+list.insert(3)
+list.display()
