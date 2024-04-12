@@ -168,29 +168,26 @@ class LinkedList:
 
     def insert(self, index):
         step = 0
-        if index == 0:
-            self.head.next = None
-        else:
-            current_node = self.head
-            while current_node.next:
-                if step < index:
-                    current_node = current_node.next
-                    step += 1
-                elif step == index:
-                    current_node = current_node.next
+        current_node = self.head
+        while current_node.next:
+            if step < index:
+                current_node = current_node.next
+                step += 1
+            elif step == index:
+                current_node.data = (current_node.next).data
+                current_node = current_node.next
+                step += 1
+            else:
+                if step != list.len() - 1:
+                    data_new = (current_node.next).data
+                    current_node.data = data_new
                     current_node = current_node.next
                     step += 1
                 else:
-                    if step != list.len() - 2:
-                        data_new = (current_node.next).data
-                        current_node.data = data_new
-                        current_node = current_node.next
-                        step += 1
-                    else:
-                        data_new = (current_node.next).data
-                        current_node.data = data_new
-                        current_node.next = None
-                        break
+                    data_new = (current_node.next).data
+                    current_node.data = data_new
+                    current_node.next = None
+                    break
 
     def len(self):
         step = 0
@@ -219,6 +216,6 @@ list.append("Красная Могила")
 list.append("Хреновое")
 list.append("Верхнее Зачатье")
 
-list.remove(0)
-list.insert(3)
+list.remove(int(input("Введите номер для замены на слово Конец: ")))
+list.insert(int(input("Введите номер для удаления: ")))
 list.display()
