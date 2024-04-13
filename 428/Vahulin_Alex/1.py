@@ -1,4 +1,5 @@
 from random import randint
+import datetime
 
 subjects={
     "Algebra": 5,
@@ -32,3 +33,34 @@ for i in range(15):
     popular_combos.append(popular_surnames_Voronezh[randint(0,7)]+"а"+" "+popular_fnames_Voronezh[randint(0,9)])
     
 tamandua_name="Ушастая Булка"
+
+average_mark=0
+for i in subjects.values():
+    average_mark+=i
+print("\nСредняя оценка в аттестате:",average_mark/len(subjects))
+
+unique_names=[]
+for i in popular_combos:
+    unique_names.append(i.split()[1])
+print("\nУникальные имена:",set(unique_names))
+
+length_of_subjects=0
+for i in subjects.keys():
+    length_of_subjects+=len(i)
+print("\nОбщая длина всех названий предметов:",length_of_subjects)
+
+unique_simbols=[]
+for i in subjects.keys():
+    for j in range(len(i)):
+        unique_simbols.append(i[j])
+unique_simbols.remove(" ")
+unique_simbols.remove("-")
+unique_simbols.remove("3")
+print("\nУникальные буквы в названиях предметов:",set(unique_simbols))
+
+bin_tamandua=""
+bin_tamandua = ''.join(format(ord(x), '08b') for x in tamandua_name)
+print("\nИмя домашнего тамандуа в бинарном виде:",bin_tamandua)
+
+current_date = datetime.datetime.now()
+print(str(current_date)[:10])
