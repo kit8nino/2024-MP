@@ -1,4 +1,4 @@
-## Группа 427
+## Группа 428Б
 
 <div id="header" align="center">
   <div id="main">
