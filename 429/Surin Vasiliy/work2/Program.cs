@@ -15,6 +15,7 @@ namespace work2
             RandomExt extRand = new RandomExt(100500);
             int[] num1 = extRand.randShuffle(listGenerator(n));
 
+            n = 99999;
             double[] num2 = new double[n];
             for (int i = 0; i < n; i++)
             {
@@ -22,14 +23,36 @@ namespace work2
             }
 
             Complex[] num3 = complexListGenerator(42000);
-
             string[] words = splitFile(FILE_PATH);
 
             // ------------------
             printArr(extRand.randomlySelectedSort(), false);    // 8, 7, 2, 10
+            Console.WriteLine();
+
+            SortingAlgorithms sorts = new SortingAlgorithms();
+            printArr(sorts.QuickSort(num1, 0, num1.Length - 1), false);
+            Console.WriteLine();
+            printArr(sorts.GnomeSort(num2), false);
+            Console.WriteLine();
+            printArr(sorts.SelectionSort(num3), false);
+            Console.WriteLine();
+            printArr(sorts.BubbleSort(words), false);
         }
 
-        private static void printArr(int[] arr, bool newLine = true)
+        private static void printArr(Complex[] arr, bool newLine = true)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (newLine)
+                    Console.WriteLine(arr[i].x_ + "+j" + arr[i].y_);
+                else
+                    Console.Write(arr[i].x_ + "+j" + arr[i].y_ + "\t");
+            }
+
+            if (!newLine) Console.WriteLine();
+        }
+
+        private static void printArr<T>(T[] arr, bool newLine = true)
         {
             for (int i = 0; i < arr.Length; i++)
             {
@@ -62,13 +85,16 @@ namespace work2
             double r = birth_day / birth_month;
             RandomExt extRand = new RandomExt();
             Complex[] res = new Complex[n];
-            for (int i = 0; i < n; i++)
+
+            int i = 0;
+            while (i < n)
             {
                 double x = extRand.randRange(-r, r);
                 double y = extRand.randRange(-r, r);
                 if (x * x + y * y < r)
                 {
                     res[i] = new Complex(x, y);
+                    i += 1;
                 }
             }
 

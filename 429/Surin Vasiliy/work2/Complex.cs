@@ -2,7 +2,7 @@
 {
     internal class Complex
     {
-        private double x_, y_;
+        public double x_, y_;
         public Complex(double x, double y)
         {
             x_ = x; 

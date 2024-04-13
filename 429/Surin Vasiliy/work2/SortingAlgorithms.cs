@@ -4,7 +4,7 @@ namespace work2
 {
     internal class SortingAlgorithms
     {
-        public int[] BubbleSort(int[] arr)
+        public string[] BubbleSort(string[] arr)
         {
             bool unsorted = true;
             int r = arr.Length - 1;
@@ -13,7 +13,7 @@ namespace work2
                 unsorted = false;
                 for (int i = 0; i < r; i++)
                 {
-                    if (arr[i + 1] < arr[i])
+                    if (stringSize(arr[i + 1]) < stringSize(arr[i]))
                     {
                         (arr[i + 1], arr[i]) = (arr[i], arr[i + 1]);    // swap
                         unsorted = true;
@@ -25,7 +25,7 @@ namespace work2
             return arr;
         }
 
-        public int[] GnomeSort(int[] arr)
+        public double[] GnomeSort(double[] arr)
         {
             int n = arr.Length;
             if (n < 2) return arr;
@@ -53,7 +53,7 @@ namespace work2
             return arr;
         }
 
-        public int[] SelectionSort(int[] arr)
+        public Complex[] SelectionSort(Complex[] arr)
         {
             int n = arr.Length;
             for (int i = 0; i < n - 1; i++)
@@ -61,7 +61,7 @@ namespace work2
                 int minInd = i;
                 for (int j = i + 1; j < n; j++)
                 {
-                    if (arr[j] < arr[minInd])
+                    if (arr[j].abs() < arr[minInd].abs())
                     {
                         minInd = j;
                     }
@@ -75,32 +75,41 @@ namespace work2
 
         public int[] QuickSort(int[] arr, int left, int right)
         {
-            if (arr.Length < 2) return arr;
-
             if (left < right)
             {
-                int pivotInd = (left + right) / 2;
-                int i = left;
-                int j = right;
+                int pivot = arr[right];
+                int i = left - 1;
 
-                while (i <= j)
+                for (int j = left; j < right; j++)
                 {
-                    while (arr[i] < arr[pivotInd]) i++;
-                    while (arr[j] > arr[pivotInd]) j--;
-
-                    if (i <= j)
+                    if (arr[j] < pivot)
                     {
+                        i += 1;
                         (arr[i], arr[j]) = (arr[j], arr[i]);
-                        i++;
-                        j--;
                     }
                 }
 
-                QuickSort(arr, left, j);
-                QuickSort(arr, i, right);
+                (arr[i + 1], arr[right]) = (arr[right], arr[i + 1]);
+
+                int pivotIndex = i + 1;
+
+                QuickSort(arr, left, pivotIndex - 1);
+                QuickSort(arr, pivotIndex + 1, right);
             }
 
             return arr;
+        }
+
+        private int stringSize(string str)
+        {
+            int res = 0;
+
+            foreach (char c in str)
+            {
+                res += (int)c;
+            }
+
+            return res;
         }
     }
 }
