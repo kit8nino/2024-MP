@@ -54,4 +54,7 @@ creature = "Dirty Harry"
 #Работа
 
 #1) вывести среднюю оценку в аттестате;
-
+sumk = sum(attest.values())
+count = len(attest)
+average = round(sumk/count,1)
+print(average)
