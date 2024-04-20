@@ -10,32 +10,39 @@ list_to_visit=[]
 x,y,x_key,y_key=0,0,0,0
 
 def is_exit(x,y,maze):
-    return (x==0)and(y==3)
+    return (x==len(our_maze)-1)and(y==len(our_maze[-1])-1)
 
 def add_to_visit_list(list_of_neighbours,list_to_visit):
     return list_to_visit.extend(list_of_neighbours)
 
 def is_in_boundaries(x,y,maze):
-    return x<len(maze)-1 and x>=0 and y<len(maze)-1 and y>=0
+    return (x<len(maze)-1) and (x>=0) and (y<len(maze[x])-1) and (y>=0)
 
 def is_empty(x,y,maze):
-    return maze[x][y]==' '
+    return maze[x][y]!='#'
 
 def is_available(x,y,d,maze):
-    x_new=x+d[0]
-    y_new=y+d[1]
+    x_new=x+d[1]
+    y_new=y+d[0]
     return is_in_boundaries(x_new,y_new,maze=our_maze) and is_empty(x_new,y_new,maze=our_maze)
+
+def is_in_route(x,y,route):
+    vertex=(x,y)
+    if vertex in route: return True
+    else: return False
 
 def neighbours_list(x,y, maze=our_maze): #клетки, которые можно посетить
     directions = ((-1,0),(1,0),(0,-1),(0,1))
     neighbours=[]
     for d in directions:
         if is_available(x, y, d, maze):
-           neighbours.append((x + d[0], y + d[1]))
+            if is_in_route(x+d[1],y+d[0],maze):
+                neighbours.append((x + d[1], y + d[0]))
     return neighbours
             
 def choose_cell_to_visit(list_to_visit):
-    return list_to_visit.pop(-1)
+    
+    return list_to_visit.pop(0)
 
 def set_item(x,y,maze):
     from numpy import random
@@ -43,17 +50,41 @@ def set_item(x,y,maze):
     y=random.randint(100,len(maze))
     if is_empty(x,y,maze)==False:
         x+=1
-        y+=1
+        if is_empty(x,y,maze)==False:
+            y+=1
     return x,y
 
 def is_key(x,y,maze):
     return (x==x_key)and(y==y_key)
     
 
-set_item(x,y,our_maze)
-set_item(x_key,y_key,our_maze)
+x,y=set_item(x,y,our_maze)
+#x,y=0,2
+x_key,y_key=set_item(x_key,y_key,our_maze)
 print(x,y,x_key,y_key)
-while not is_exit(x,y,maze=our_maze):
-    add_to_visit_list(neighbours_list(x,y),list_to_visit)
-    x,y=choose_cell_to_visit(list_to_visit)
-print(list_to_visit)  
+route=[]
+while x!=x_key:
+        v=(x,y)
+        if v not in route:
+            route.append(v)
+            print('список для посещения был:')
+            print(list_to_visit)
+            print('\n')
+            add_to_visit_list(neighbours_list(x,y),list_to_visit)
+            print('с соседями:')
+            print(list_to_visit)
+            print('\n')
+            point=(x,y)
+            x,y=choose_cell_to_visit(list_to_visit)
+            print(f"текущий маршрут:{route}\n")
+            print('выбранная вершина для следующего шага: ')
+            print((x,y))
+                
+print(route)
+#поиск в ширину ( в  choose_cell_to_visit.pop  передать 0, т.е. берем первый элемент очереди, а не последний из стека)
+# алгоритм дейкстры и жадный - добавить в  choose_cell_to_visit функцию стоимости и сортировку
+
+
+#Алгоритм А*
+def choose_cell_to_visit_A(list_to_visit):
+    return 1 
