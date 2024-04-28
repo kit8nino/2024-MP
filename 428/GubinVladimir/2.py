@@ -25,7 +25,7 @@ def create_comlex_list(radius):
     return Z
 
 def create_string_list():
-    fileObj = codecs.open( "text_3.txt", "r", "utf_8_sig" )
+    fileObj = codecs.open( "text_lab_2.txt", "r", "utf_8_sig" )
     text = fileObj.read()
     text = text.replace('–', '')
     text = text.replace(',', '')
