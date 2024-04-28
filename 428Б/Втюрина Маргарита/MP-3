@@ -1,9 +1,16 @@
 our_maze=[]
 f=open("maze-for-u.txt")
-for i in f.read():
-    our_maze.append(i)
+while True:
+    string=f.readline().rstrip("\n")
+    string1=[]
+    our_maze.append(string1)
+    for i in string:
+        our_maze[-1].append(i)
+        if not i:
+            break;
+    if not string: break
 f.close()
-print(our_maze)
+print(len(our_maze),len(our_maze[0]))
 
 
 list_to_visit=[]
@@ -28,26 +35,27 @@ def is_available(x,y,d,maze):
 
 def is_in_route(x,y,route):
     vertex=(x,y)
-    if vertex in route: return True
-    else: return False
+    return vertex in route
 
-def neighbours_list(x,y, maze=our_maze): #клетки, которые можно посетить
+def neighbours_list(x,y, maze,route): #клетки, которые можно посетить
     directions = ((-1,0),(1,0),(0,-1),(0,1))
     neighbours=[]
     for d in directions:
+        x_n = x+d[1]
+        y_n= y+d[0]
         if is_available(x, y, d, maze):
-            if is_in_route(x+d[1],y+d[0],maze):
+            if  not is_in_route(x_n,y_n,route):
                 neighbours.append((x + d[1], y + d[0]))
     return neighbours
             
 def choose_cell_to_visit(list_to_visit):
     
-    return list_to_visit.pop(0)
+    return list_to_visit.pop()
 
 def set_item(x,y,maze):
     from numpy import random
-    x=random.randint(100,len(maze))
-    y=random.randint(100,len(maze))
+    x=random.randint(10,len(maze))
+    y=random.randint(10,len(maze))
     if is_empty(x,y,maze)==False:
         x+=1
         if is_empty(x,y,maze)==False:
@@ -61,30 +69,47 @@ def is_key(x,y,maze):
 x,y=set_item(x,y,our_maze)
 #x,y=0,2
 x_key,y_key=set_item(x_key,y_key,our_maze)
-print(x,y,x_key,y_key)
-route=[]
-while x!=x_key:
-        v=(x,y)
-        if v not in route:
-            route.append(v)
-            print('список для посещения был:')
-            print(list_to_visit)
-            print('\n')
-            add_to_visit_list(neighbours_list(x,y),list_to_visit)
-            print('с соседями:')
-            print(list_to_visit)
-            print('\n')
-            point=(x,y)
-            x,y=choose_cell_to_visit(list_to_visit)
-            print(f"текущий маршрут:{route}\n")
-            print('выбранная вершина для следующего шага: ')
-            print((x,y))
-                
+print(x,y,x_key,y_key,our_maze[x_key][y_key])
+def find_route_by_dfs(x,y,x_key,y_key,maze):
+    route=[]
+    while x!=x_key and y!=y_key:
+    # for i in range(0,10):
+            v=(x,y)
+            if v not in route:
+                route.append(v)
+                #print('список для посещения был:')
+                #print(list_to_visit)
+                #print('\n')
+                add_to_visit_list(neighbours_list(x,y,our_maze,route), list_to_visit)
+                #print('с соседями:')
+                #print(list_to_visit)
+                #print('\n')
+                point=(x,y)
+                x,y=choose_cell_to_visit(list_to_visit)
+                # print(f"текущий маршрут:{route}\n")
+                # print('выбранная вершина для следующего шага: ')
+                # print((x,y)
+    return route
+route=find_route_by_dfs(x, y, x_key, y_key,our_maze)
+print("Маршрут:\n")               
 print(route)
+print('\n')
+print()
 #поиск в ширину ( в  choose_cell_to_visit.pop  передать 0, т.е. берем первый элемент очереди, а не последний из стека)
 # алгоритм дейкстры и жадный - добавить в  choose_cell_to_visit функцию стоимости и сортировку
+#если посещены все клетки, то маршрута нет
 
 
 #Алгоритм А*
-def choose_cell_to_visit_A(list_to_visit):
-    return 1 
+def check_cost(cell):
+    if cell[0]%2==0: return 2
+    if cell[1]%3==0:return 3
+    else: return 0
+def find_min_cost(neighbours):
+    costs=[]
+    for i in neighbours:
+        costs.append(check_cost(i))
+    return min(costs)
+def choose_cell_to_visit_A(cost,list_to_visit):
+    min_cost=find_min_cost(neighbours)
+    return 1
