@@ -105,26 +105,27 @@ print()
 from numpy import sqrt
 def g(g_temp):
     return g_temp+10
-def h(cell,x_key,y_key):
-    return sqrt((x_key-cell[1])**2+(y_key-cell[0])**2)
+def h(x,y,x_key,y_key):
+    return sqrt((x_key-x)**2+(y_key-y)**2)
     
-def check_cost(cell,g_temp):
+def check_cost(cell,g_temp,x_key,y_key):
+    x=cell[1]
+    y=cell[0]
     for_f=[]
-    for_f(g(g_temp))
-    for_f(h(cell))
+    for_f.append(g(g_temp))
+    for_f.append(h(x,y,x_key,y_key))
     return for_f
-def find_cell_with_min_cost(x,y,neighbours):
+def find_cell_with_min_cost(cell,neighbours,x_key,y_key):
     costs=[]
     gs=[]
     g_temp=0
     for i in neighbours:
-        costs.append(sum(check_cost(i,g_temp)))
-        gs.append(check_cost(g_temp,i)[0])
-    cells_f_ranging=sorted(neighbours,key=check_cost)
+        costs.append(sum(check_cost(cell,g_temp,x_key,y_key)))
+        gs.append(check_cost(cell,g_temp,x_key,y_key)[0])
+    cells_f_ranging=sorted(neighbours,key=check_cost(neighbours,g_temp,x_key,y_key))
     return cells_f_ranging.pop(0)       
-def choose_cell_to_visit_A(parent,neighbours):
-    cell_to_visit=find_cell_with_min_cost(neighbours,parent)
-    return cell_to_visit[1],cell_to_visit[0]
+
+
 def find_route_by_A(x,y,x_key,y_key,maze):
     list_to_visit2=[]
     route=[]
@@ -135,7 +136,8 @@ def find_route_by_A(x,y,x_key,y_key,maze):
                 route.append(v)
                 
                 point=(x,y)
-                x,y=choose_cell_to_visit_A([x,y],neighbours_list(x,y,our_maze,route))
+                parent_g=0
+                [x,y]=find_cell_with_min_cost([x,y],neighbours_list(x,y,our_maze,route),x_key,y_key)
                 
     return route
 
