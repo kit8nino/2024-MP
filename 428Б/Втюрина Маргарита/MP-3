@@ -101,15 +101,43 @@ print()
 
 
 #Алгоритм А*
-def check_cost(cell):
-    if cell[0]%2==0: return 2
-    if cell[1]%3==0:return 3
-    else: return 0
-def find_min_cost(neighbours):
+
+from numpy import sqrt
+def g(cell,parent):
+    if cell==[parent[1]+1,parent[0]] or cell==[parent[1]-1,parent[0]] : return 10
+    else: return 12
+
+def h(parent,x_key,y_key):
+    return sqrt((x_key-parent[1])**2+(y_key-parent[0])**2)
+    
+def check_cost(cell,parent):
+    return g(cell,parent)+h(cell,parent)
+def find_cell_with_min_cost(neighbours,parent):
     costs=[]
     for i in neighbours:
-        costs.append(check_cost(i))
-    return min(costs)
-def choose_cell_to_visit_A(cost,list_to_visit):
-    min_cost=find_min_cost(neighbours)
-    return 1
+        costs.append(check_cost(i,parent))
+    best_cost=min(costs)
+    for i in range(len(costs)):
+        if costs[i]==best_cost: return costs[i]
+def choose_cell_to_visit_A(parent,neighbours):
+    cell_to_visit=find_cell_with_min_cost(neighbours,parent)
+    return cell_to_visit[1],cell_to_visit[0]
+def find_route_by_A(x,y,x_key,y_key,maze):
+    list_to_visit2=[]
+    route=[]
+    while x!=x_key and y!=y_key:
+
+            v=(x,y)
+            if v not in route:
+                route.append(v)
+                
+                point=(x,y)
+                x,y=choose_cell_to_visit_A([x,y],neighbours_list(x,y,our_maze,route))
+                
+    return route
+
+route2=find_route_by_A(x, y, x_key, y_key,our_maze)
+print("Маршрут:\n")               
+print(route2)
+print('\n')
+print()
