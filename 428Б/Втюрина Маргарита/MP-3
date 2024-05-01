@@ -103,9 +103,10 @@ print()
 #Алгоритм А*
 
 from numpy import sqrt
-def g(cell,parent):
-    if cell==[parent[1]+1,parent[0]] or cell==[parent[1]-1,parent[0]] : return 10
-    else: return 12
+def g(cell,parent,parent_g):
+    if cell==[parent[1]+1,parent[0]] or cell==[parent[1]-1,parent[0]] :  G=parent_g+10
+    else:  G=parent_g+12
+    return G
 
 def h(parent,x_key,y_key):
     return sqrt((x_key-parent[1])**2+(y_key-parent[0])**2)
