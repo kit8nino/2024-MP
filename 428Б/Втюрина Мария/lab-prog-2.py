@@ -5,25 +5,24 @@ import string
 #исходные данные
 A=np.empty([999999],dtype=int)
 for i in range (999999):
-    A[i]=i
-    
+    A[i]=random.randint(0,1000)
+
 B=np.empty([999999],dtype=float)
 for i in range (999999):
     B[i]=random.uniform(-1,1)
-    
+
 C=np.empty([42000],dtype=complex)
 for i in range (42000):
-    x=random.randint(0,10)
-    y=random.randint(0,10)
+    x=random.randint(0,100)
+    y=random.randint(0,100)
     z=complex(x,y)
     C[i]=z
-    
-data = []
 
+D = []
 with open("P&P for lab2.txt", encoding="utf-8") as f:
     for line in f:
-        data += line.translate(str.maketrans(dict.fromkeys(string.punctuation))).split()
-        
+        D += line.translate(str.maketrans(dict.fromkeys(string.punctuation))).split()
+
 #############################################################################
 
 #COMBSORT
@@ -60,15 +59,13 @@ def combsort(A):
         swapped=off_the_swaps(swapped)
         sort_the_gap(A,gap,swapped)
     return A
+
+print(A)
+print('--------------------------SORTED-------------------------------')
+print(combsort(A),'\n\n')
 ##############################################################################
 
 #GNOMESORT
-
-def swap(a,b):
-    t=a
-    a=b
-    b=t
-    return a,b
 
 def jump_to_savepoint(i,savepoint):
     i=savepoint
@@ -94,10 +91,18 @@ def gnomesort(A):
                 i,savepoint=gnome_optimize(i,savepoint)
     return A
 
+print(B)
+print('--------------------------SORTED-------------------------------')
+print(gnomesort(B),'\n\n')
 ##############################################################################
 
-#BUCKETSORT not working :(
+def leave_the_modules(C):
+    c=[]
+    for i in range (len(C)):
+        c.append(np.abs(C[i]))
+    return c
 
+#BUCKETSORT 
 def size_of_one_bucket(A,number_of_buckets):
     l=len(A)%number_of_buckets
     q=0
@@ -122,15 +127,11 @@ def sort_the_buckets(buckets):
 
 def index_of_the_bucket_with_min(buckets):
         min_index=0
-        print(buckets)
         for i in range(1, len(buckets)):
             if buckets[i][0] < buckets[min_index][0]:
                 min_index = i
         return min_index
     
-def delete_the_empty_bucket(buckets):
-    buckets=buckets.pop(index_of_the_bucket_with_min(buckets))
-    return buckets
 
 def bucketsort(A,number_of_buckets):
     buckets=[]
@@ -142,7 +143,61 @@ def bucketsort(A,number_of_buckets):
         result.append(bucket_with_min[0])
         bucket_with_min.pop(0)
         if len(bucket_with_min)==0:
-            buckets=delete_the_empty_bucket(buckets)
+            buckets.pop(buckets.index(bucket_with_min))
     return result
 
+print(C)
+print('------------------------TRANSFORMED----------------------------')
+print(leave_the_modules(C))
+print('--------------------------SORTED-------------------------------')
+print(C)
+print(bucketsort(C,50),'\n\n')
+
 ##############################################################################
+
+#как сранвиваются строки
+def transform_list_of_strings_to_int(text):
+    new_data=[]
+    for word in text:
+        el=0
+        for letter in word:
+            el+=ord(letter)
+        new_data.append(el)
+    return new_data
+
+#RADIX_SORT
+
+def the_biggest_length(A):
+    return max([len(str(x)) for x in A])
+
+def create_base_sized_empty_list(base):
+    return [[] for _ in range(base)]
+
+def value_of_the_current_digit(x,base,i):
+    return (x // base ** i) % base
+
+def add_element_in_temp(temp,place,x):
+    return temp[place].append(x)
+
+def save_the_significant_elements_in_the_start_array(A,temp):
+    A = [x for subarray in temp for x in subarray]
+    return A
+
+def radix_sort(A,base):
+    max_digits = the_biggest_length(A)
+    temp = create_base_sized_empty_list(base)
+    for i in range(0, max_digits):
+        for x in A:
+            digit = value_of_the_current_digit(x,base,i)
+            add_element_in_temp(temp,digit,x)
+        A = save_the_significant_elements_in_the_start_array(A,temp)
+
+        temp = create_base_sized_empty_list(base)
+
+    return A
+
+print(D)
+print('------------------------TRANSFORMED----------------------------')
+print(transform_list_of_strings_to_int(D))
+print('--------------------------SORTED-------------------------------')
+print(radix_sort(D,10))
