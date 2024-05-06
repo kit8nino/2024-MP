@@ -123,3 +123,19 @@ print("\t", end='')
 while(fifo_queue.empty() == False):
 	print(f"{fifo_queue.get()}, ", end='')
 print(f"\n</action №7>")
+
+
+
+# №8
+print("<action №8>")
+# print((9 + 2**2 + 2003) % 39 + 1) = 28 (Yuánwáng)
+for name_index in range(len(names_array)):	# output indexes and names
+	print(f"\t{name_index} = {names_array[name_index]}")
+print("\ttype name index: ", end='')
+names_array[int(input())] = "Yuánwáng"		#switch name
+for name_index in range(len(names_array)):	# output indexes and names
+	print(f"\t{name_index} = {names_array[name_index]}")
+print("</action №8>")
+
+
+
