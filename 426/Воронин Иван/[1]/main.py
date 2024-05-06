@@ -77,3 +77,15 @@ print(f"action №3 (total certificate lenght): {summ}")
 
 
 
+# №4
+alfabet = []
+for subject in certificate:
+	for letter in subject:
+		counter = 0
+		for alfabet_letter in alfabet:
+			if alfabet_letter == letter:
+				counter += 1
+		if counter == 0:
+			alfabet.append(letter)
+alfabet.remove(' ')
+print(f"action №4 (unique letters in certificate): {alfabet}")
