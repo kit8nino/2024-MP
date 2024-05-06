@@ -1,6 +1,7 @@
 # here'll be imports
 import random
 import datetime as dt
+import queue
 
 # Data structures:
 
@@ -106,3 +107,17 @@ print(f"action №5 (tamandua binary name): {tamandua_name_bin}\n")
 today = dt.datetime.now(tz=None)
 time_past = today - dt.datetime.strptime(actor[1], "%d.%m.%Y")
 print(f"action №6 (time past from actor birth date): {time_past.days}\n")
+
+
+
+# №7
+fifo_queue = queue.Queue()
+print("type material: ('q' to exit): ", end = '')
+material = input()
+while (material != "q"):
+	print("type material: ('q' to exit): ", end = '')
+	fifo_queue.put(material)
+	material = input()
+print(f"action №7 (material_fifo): ")
+while(fifo_queue.empty() == False):
+	print(fifo_queue.get() + ", ", end='')
