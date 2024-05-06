@@ -1,5 +1,6 @@
 # here'll be imports
 import random
+import datetime as dt
 
 # Data structures:
 
@@ -98,3 +99,10 @@ for letter in tamandua_name:
 	tamandua_name_bin += str(bin(ord(letter)))[2:]
 	# print(f"letter {letter} num is {ord(letter)} and bin is {str(bin(ord(letter)))}")
 print(f"action №5 (tamandua binary name): {tamandua_name_bin}\n")
+
+
+
+# №6
+today = dt.datetime.now(tz=None)
+time_past = today - dt.datetime.strptime(actor[1], "%d.%m.%Y")
+print(f"action №6 (time past from actor birth date): {time_past.days}\n")
