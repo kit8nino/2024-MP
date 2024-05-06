@@ -1,45 +1,7 @@
 import random
 import math
 
-# list of integers from 0 to 999999
-integers = []
-for i in range(100000):
-    integers.append(i)
-# random.shuffle(integers)
-
-# list of 99999 random real numbers in the range [-1, 1]
-real_numbers = []
-for i in range(10000):
-    real_numbers.append(random.uniform(-1, 1))
-
-# 42000 different points in the complex plane, lying inside a circle with radius r = birth_day / birth_month
-# (can be random or evenly distributed), sorted by the modulus of the number
-birth_day = 15
-birth_month = 6
-max_module = birth_day / birth_month
-complex_points = []
-while len(complex_points) != 42000:
-    radius = random.uniform(0, max_module)
-    angle = random.uniform(0, 2 * math.pi)
-    complex_points.append([radius * math.cos(angle),
-                           radius * math.sin(angle)])
-
-# excerpt from a book (any book of your choice) of at least 10000 words, split into a list of words
-words = []
-with open('Book.txt', encoding='utf-8') as book:
-    for line in book:
-        for word in line.split(" "):
-            if word != '\n' and len(words) < 10000:
-                words.append(str(word))
-
-
-# sorting numbers:
-# 3.comp sort, comb sort
-# 5.Shellsort, shell sort
-# 10.Quicksort, quick sort
-# 17.bitonic sort, bitonic sort
-
-# Comb sort function
+# Comb sort for a list of real numbers
 def comb_sort(arr):
     shrink_factor = 1.3
     gap = len(arr)
@@ -54,7 +16,7 @@ def comb_sort(arr):
                 swapped = True
             i += 1
 
-# Shell sort function
+# Shell sort for a list of words
 def shell_sort(arr):
     n = len(arr)
     gap = n // 2
@@ -63,12 +25,12 @@ def shell_sort(arr):
             temp = arr[i]
             j = i
             while j >= gap and arr[j - gap] > temp:
-                arr[j] = arr[j - gap]
+                arr[j] = temp
                 j -= gap
             arr[j] = temp
         gap //= 2
 
-# Quick sort function
+# Quicksort function for a list of integers
 def quick_sort(arr):
     if len(arr) <= 1:
         return arr
@@ -78,44 +40,75 @@ def quick_sort(arr):
     right = [x for x in arr if x > pivot]
     return quick_sort(left) + middle + quick_sort(right)
 
-# Bitonic sort function
-def bitonic_sort(arr):
-    def bitonic_merge(arr, up):
-        if len(arr) <= 1:
-            return arr
-        else:
-            bitonic_compare(arr, up)
-            mid = len(arr) // 2
-            return bitonic_merge(arr[:mid], up) + bitonic_merge(arr[mid:], up)
+# Counting Sort for a list of integers (assuming non-negative)
+def counting_sort(arr, max_value):
+    count = [0] * (max_value + 1)
+    for item in arr:
+        count[item] += 1
+    
+    sorted_arr = []
+    for value, freq in enumerate(count):
+        sorted_arr.extend([value] * freq)
+    
+    return sorted_arr
 
-    def bitonic_compare(arr, up):
-        dist = len(arr) // 2
-        for i in range(dist):
-            if (arr[i] > arr[i + dist]) == up:
-                arr[i], arr[i + dist] = arr[i + dist], arr[i]
+# Shaker Sort for a list of real numbers
+def shaker_sort(arr):
+    left = 0
+    right = len(arr) - 1
+    while left < right:
+        # Bubble sort from left to right
+        for i in range(left, right):
+            if arr[i] > arr[i + 1]:
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+        right -= 1
 
-    def bitonic_sort_rec(arr, up):
-        if len(arr) <= 1:
-            return arr
-        else:
-            mid = len(arr) // 2
-            return bitonic_sort_rec(bitonic_merge(arr[:mid], up), up) + bitonic_sort_rec(bitonic_merge(arr[mid:], up), not up)
+        # Bubble sort from right to left
+        for i in range(right, left, -1):
+            if arr[i - 1] > arr[i]:
+                arr[i - 1], arr[i] = arr[i], arr[i - 1]
+        left += 1
 
-    return bitonic_sort_rec(arr, True)
+# List of integers from 0 to 999999
+integers = list(range(100000))
 
-# Comb sort for the list of real numbers
-comb_sort(real_numbers)
-print("Comb sort for real numbers:", real_numbers, "\n")
+# List of 10,000 random real numbers in the range [-1, 1]
+real_numbers = [random.uniform(-1, 1) for _ in range(10000)]
 
-# Shell sort for the list of words
-shell_sort(words)
-print("Shell sort for words:", words, "\n")
+# Points in the complex plane within a circle with radius r
+birth_day = 15
+birth_month = 6
+max_radius = birth_day / birth_month
+complex_points = []
 
-# Quick sort for the list of integers
+while len(complex_points) != 42000:
+    radius = random.uniform(0, max_radius)
+    angle = random.uniform(0, 2 * math.pi)
+    complex_points.append([radius * math.cos(angle), radius * math.sin(angle)])
+
+# Excerpt from a book split into a list of words
+words = []
+with open("Book.txt", "r", encoding="utf-8") as book:
+    content = book.read()
+    words = content.split()
+    if len(words) > 10000:
+        words = words[:10000]
+
+# Apply sorting algorithms
+
+# Quick sort for integers
 integers = quick_sort(integers)
+
+# Counting sort for integers
+counting_sorted_integers = counting_sort(integers, 99999)
+
+# Shaker sort for real numbers
+shaker_sort(real_numbers)
+
+# Shell sort for words
+shell_sort(words)
+
 print("Quick sort for integers:", integers, "\n")
-
-# Bitonic sort for the list of complex numbers
-complex_points = bitonic_sort(complex_points)
-print("Bitonic sort for complex numbers:", complex_points)
-
+print("Counting sort for integers:", counting_sorted_integers, "\n")
+print("Shaker sort for real numbers:", real_numbers, "\n")
+print("Shell sort for words:", words[:10], "\n")  # Display the first 10 sorted words
