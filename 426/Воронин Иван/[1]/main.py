@@ -139,3 +139,52 @@ print("</action №8>")
 
 
 
+# №9
+locality = {0: "Великий враг",
+	"Великий враг": "Кривошляпы",
+	"Кривошляпы": "Лютые Болоты",
+	"Лютые Болоты": "Большие коты",
+	"Большие коты": "Зима",
+	"Зима": "Фершампенуаз",
+	"Фершампенуаз": "Колбаса",
+	"Колбаса": "Свиногорье",
+	"Свиногорье": "Старая тумба",
+	"Старая тумба": 0}
+index = 0
+while locality[index] != 0:
+	print(locality[index])
+	index = locality[index]
+to_delete = input("type name of element to delete: ")
+# cycle to to_delete locality
+index = 0
+while locality[index] != to_delete:
+	index = locality[index]
+# skip to_delete locality by link redestination
+locality[index] = locality[locality[index]]
+del locality[to_delete]
+
+print("after delete:")
+index = 0
+while locality[index] != 0:
+	print(locality[index])
+	index = locality[index]
+
+to_change = int(input("type index of element to change: "))
+# cycle to to_delete locality
+i = 0
+index = 0
+while i != to_change-1:
+	index = locality[index]
+	i += 1
+
+locality["Конец"] = locality[locality[index]]
+print(f"test:{locality['Конец']}")
+locality[index] = "Конец"
+
+# del locality[locality[index]]
+
+print("after change:")
+index = 0
+while locality[index] != 0:
+	print(f"locality[{index}] = {locality[index]}")
+	index = locality[index]
