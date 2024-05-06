@@ -112,12 +112,14 @@ print(f"action №6 (time past from actor birth date): {time_past.days}\n")
 
 # №7
 fifo_queue = queue.Queue()
-print("type material: ('q' to exit): ", end = '')
+print("<action №7>:\n\ttype material: ('q' to exit): ", end = '')
 material = input()
 while (material != "q"):
-	print("type material: ('q' to exit): ", end = '')
+	print("\ttype material: ('q' to exit): ", end = '')
 	fifo_queue.put(material)
 	material = input()
-print(f"action №7 (material_fifo): ")
+print(f"\taction №7 (material_fifo): ")
+print("\t", end='')
 while(fifo_queue.empty() == False):
-	print(fifo_queue.get() + ", ", end='')
+	print(f"{fifo_queue.get()}, ", end='')
+print(f"\n</action №7>")
