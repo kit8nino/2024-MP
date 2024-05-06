@@ -73,7 +73,7 @@ print(f"action №2 (unique names):\n{names_array_uniq}\n\n{counter2} names are 
 summ = 0
 for subject in certificate:
 	summ += len(subject)
-print(f"action №3 (total certificate lenght): {summ}")
+print(f"action №3 (total certificate lenght): {summ}\n")
 
 
 
@@ -88,4 +88,13 @@ for subject in certificate:
 		if counter == 0:
 			alfabet.append(letter)
 alfabet.remove(' ')
-print(f"action №4 (unique letters in certificate): {alfabet}")
+print(f"action №4 (unique letters in certificate): {alfabet}\n")
+
+
+
+# №5
+tamandua_name_bin = ""
+for letter in tamandua_name:
+	tamandua_name_bin += str(bin(ord(letter)))[2:]
+	# print(f"letter {letter} num is {ord(letter)} and bin is {str(bin(ord(letter)))}")
+print(f"action №5 (tamandua binary name): {tamandua_name_bin}\n")
