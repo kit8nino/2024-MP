@@ -60,18 +60,22 @@ def cell_selector(cells_to_visit):
 def cost_key(cell):
     return cell[2]
 
+def cost_deikstra(x, y, x_0=x_0, y_0=y_0, x_exit=x_exit, y_exit=y_exit):
+    g = abs(x - x_0) + abs(y - y_0)  # Манхеттенское расстояние
+    return g
+
 def path_drawer_deikstra(maze,path):
     for px, py in path:
         maze[px][py] = '.'
     return maze
 
-def add_to_visit_list_deikstra(list_of_neighbours, g, path, visited, cells_to_visit):
+def add_to_visit_list_deikstra(list_of_neighbours, path, visited, cells_to_visit):
     for nx, ny in list_of_neighbours:
         if (nx, ny) in visited:
             continue
 
         new_path = path + [(nx, ny)]
-        new_g = g + 1
+        new_g = cost_deikstra(nx, ny)
 
         cells_to_visit.append((nx, ny, new_g, new_path))
                 
@@ -79,25 +83,28 @@ def add_to_visit_list_deikstra(list_of_neighbours, g, path, visited, cells_to_vi
 
 
 def deikstra(x_0, y_0, maze):
-    cells_to_visit = deque([(x_0, y_0, 0, [])])  # (x, y, g, path)
+    cells_to_visit = deque([(x_0, y_0, cost_deikstra(x_0, y_0), [])])  # (x, y, g, path)
     visited = set()
     
     maze[x_0][y_0] = '+'
 
     while cells_to_visit:
-        x, y, g, path = cells_to_visit.popleft()
+        current_cell = cell_selector(cells_to_visit)
+        x, y, g, path = current_cell
 
         if is_key(x, y, maze):
             path_drawer_deikstra(maze,path)
             maze[x][y] = '*'
             print("Ключ найден!")
             return True
+        
+        cells_to_visit.remove(current_cell)
 
         visited.add((x, y))
 
         list_of_neighbours = neighbours_list(x, y, maze)
 
-        cells_to_visit = add_to_visit_list_deikstra(list_of_neighbours, g, path, visited, cells_to_visit)
+        cells_to_visit = add_to_visit_list_deikstra(list_of_neighbours, path, visited, cells_to_visit)
 
     print("Путь к ключу не найден!")
     return False
