@@ -60,31 +60,36 @@ def cell_selector(cells_to_visit):
 def cost_key(cell):
     return cell[2]
 
+def cost_greedy(x, y, x_exit=x_exit, y_exit=y_exit):
+    h = round(np.sqrt((x_exit - x) ** 2 + (y_exit - y) ** 2), 3)  # Евклидово расстояние
+    return h
+
 def path_drawer_greedy(maze,path):
     for px, py in path:
         maze[px][py] = '.'
     return maze
 
-def add_to_visit_list_greedy(list_of_neighbours, h, path, visited, cells_to_visit):
+def add_to_visit_list_greedy(list_of_neighbours, path, visited, cells_to_visit):
     for nx, ny in list_of_neighbours:
         if (nx, ny) in visited:
             continue
 
         new_path = path + [(nx, ny)]
-        new_h = h + 1
+        new_h = cost_greedy(nx, ny)
 
         cells_to_visit.append((nx, ny, new_h, new_path))
                 
     return cells_to_visit
 
 def greedy(x_0, y_0, maze):
-    cells_to_visit = deque([(x_0, y_0, 0, [])])  # (x, y, h, path)
+    cells_to_visit = deque([(x_0, y_0, cost_greedy(x_0, y_0), [])])  # (x, y, h, path)
     visited = set()
     
     maze[x_0][y_0] = '+'
 
     while cells_to_visit:
-        x, y, h, path = cells_to_visit.popleft()
+        current_cell = cell_selector(cells_to_visit)
+        x, y, h, path = current_cell
 
         if is_key(x, y, maze):
             path_drawer_greedy(maze,path)
@@ -92,11 +97,13 @@ def greedy(x_0, y_0, maze):
             print("Ключ найден!")
             return True
         
+        cells_to_visit.remove(current_cell)
+        
         visited.add((x, y))
 
         list_of_neighbours = neighbours_list(x, y, maze)
         
-        cells_to_visit = add_to_visit_list_greedy(list_of_neighbours, h, path, visited, cells_to_visit)
+        cells_to_visit = add_to_visit_list_greedy(list_of_neighbours, path, visited, cells_to_visit)
 
     print("Путь к ключу не найден!")
     return False
