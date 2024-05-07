@@ -60,12 +60,13 @@ def combsort(A):
         sort_the_gap(A,gap,swapped)
     return A
 
-print(A)
-print('--------------------------SORTED-------------------------------')
-print(combsort(A),'\n\n')
+print(A[55:70],'\n')
+print('--------------------------SORTED-------------------------------','\n')
+print(combsort(A[55:70]),'\n\n')
 ##############################################################################
 
 #GNOMESORT
+
 
 def jump_to_savepoint(i,savepoint):
     i=savepoint
@@ -91,9 +92,9 @@ def gnomesort(A):
                 i,savepoint=gnome_optimize(i,savepoint)
     return A
 
-print(B)
-print('--------------------------SORTED-------------------------------')
-print(gnomesort(B),'\n\n')
+print(B[5:17],'\n')
+print('--------------------------SORTED-------------------------------','\n')
+print(gnomesort(B[5:17]),'\n\n')
 ##############################################################################
 
 def leave_the_modules(C):
@@ -101,6 +102,18 @@ def leave_the_modules(C):
     for i in range (len(C)):
         c.append(np.abs(C[i]))
     return c
+
+def prepare_for_sorting(C):
+    dict={}
+    for el in C:
+        dict[el]=np.abs(el)
+    C1=dict.values()
+    return dict,C1
+
+def get_key(d, value):
+    for k, v in d.items():
+        if v == value:
+            return k
 
 #BUCKETSORT 
 def size_of_one_bucket(A,number_of_buckets):
@@ -146,29 +159,21 @@ def bucketsort(A,number_of_buckets):
             buckets.pop(buckets.index(bucket_with_min))
     return result
 
-print(C)
-print('------------------------TRANSFORMED----------------------------')
-print(leave_the_modules(C))
-print('--------------------------SORTED-------------------------------')
-print(C)
-print(bucketsort(C,50),'\n\n')
+print(C[6:26],'\n')
+prep_dict,modules=prepare_for_sorting(C[6:26])
+#print(list(modules))  посмотреть модули
 
+print('------------------SORTED--WITH--RESPECT--TO--MODULE-------------','\n')
+res=bucketsort(list(modules)[6:26],50)
+final=[]
+for i in range (len(res)):
+    final.append(get_key(prep_dict,res[i]))
+print(final,'\n\n')
 ##############################################################################
-
-#как сранвиваются строки
-def transform_list_of_strings_to_int(text):
-    new_data=[]
-    for word in text:
-        el=0
-        for letter in word:
-            el+=ord(letter)
-        new_data.append(el)
-    return new_data
-
 #RADIX_SORT
 
 def the_biggest_length(A):
-    return max([len(str(x)) for x in A])
+    return max([len(str(len(str(x)))) for x in A])
 
 def create_base_sized_empty_list(base):
     return [[] for _ in range(base)]
@@ -188,7 +193,7 @@ def radix_sort(A,base):
     temp = create_base_sized_empty_list(base)
     for i in range(0, max_digits):
         for x in A:
-            digit = value_of_the_current_digit(x,base,i)
+            digit = value_of_the_current_digit(len(x),base,i)
             add_element_in_temp(temp,digit,x)
         A = save_the_significant_elements_in_the_start_array(A,temp)
 
@@ -196,8 +201,6 @@ def radix_sort(A,base):
 
     return A
 
-print(D)
-print('------------------------TRANSFORMED----------------------------')
-print(transform_list_of_strings_to_int(D))
-print('--------------------------SORTED-------------------------------')
-print(radix_sort(D,10))
+print(D[5:20],'\n')
+print('----------------SORTED--WITH--RESPECT--LENTGTH------------------------','\n')
+print(radix_sort(D[5:20],10))
