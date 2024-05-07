@@ -97,12 +97,6 @@ print('--------------------------SORTED-------------------------------','\n')
 print(gnomesort(B[5:17]),'\n\n')
 ##############################################################################
 
-def leave_the_modules(C):
-    c=[]
-    for i in range (len(C)):
-        c.append(np.abs(C[i]))
-    return c
-
 def prepare_for_sorting(C):
     dict={}
     for el in C:
