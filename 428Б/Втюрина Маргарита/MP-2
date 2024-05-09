@@ -28,6 +28,20 @@ with open("book.txt", encoding="utf-8") as f:
 f.close()
 print(text) #до 35 страницы "Женщина с утюжным кулаком"
 
+#сравнение строк
+def less_str(word1,word2):
+    for c1,c2 in zip(word1,word2):
+        if ord(c1)<ord(c2): return True
+        else: return False
+def greater_str(word1,word2):
+    for c1,c2 in zip(word1,word2):
+        if ord(c1)>ord(c2): return True
+        else: return False
+def eq_str(word1,word2):
+    for c1,c2 in zip(word1,word2):
+        if ord(c1)==ord(c2): return True
+        else: return False
+
 
 #сортировка вставкой
 
