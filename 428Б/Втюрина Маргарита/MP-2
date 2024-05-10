@@ -29,19 +29,14 @@ f.close()
 print(text) #до 35 страницы "Женщина с утюжным кулаком"
 
 #сравнение строк
-def less_str(word1,word2):
-    for c1,c2 in zip(word1,word2):
-        if ord(c1)<ord(c2): return True
-        else: return False
-def greater_str(word1,word2):
-    for c1,c2 in zip(word1,word2):
-        if ord(c1)>ord(c2): return True
-        else: return False
-def eq_str(word1,word2):
-    for c1,c2 in zip(word1,word2):
-        if ord(c1)==ord(c2): return True
-        else: return False
-
+def compare_str(w1,w2):
+    i=0
+    list(w1)
+    list(w2)
+    if len(w1)<len(w2):return True
+    elif len(w1)==len(w2):
+        for c1,c2 in zip (w1,w2):
+            if ord(c1)<ord(c2): return True
 
 #сортировка вставкой
 
@@ -97,7 +92,7 @@ def merge_sort(nums):
     merge_sort(right) 
   i = j = k = 0 
   while i < len(left) and j < len(right):
-    if left[i] < right[j]:
+    if compare_str(left[i],right[j]):
       nums[k] = left[i]
       i+=1 
     else: 
@@ -113,3 +108,5 @@ def merge_sort(nums):
      nums[k] = right[j] 
      j+=1 
      k+=1
+sorted_text=merge_sort(text)
+print(sorted_text)
