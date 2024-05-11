@@ -37,6 +37,13 @@ def compare_str(w1,w2):
     elif len(w1)==len(w2):
         for c1,c2 in zip (w1,w2):
             if ord(c1)<ord(c2): return True
+#сравнение комплексных чисел
+def compare_complexes(comp1,comp2):
+    from math import atan
+    m1=np.sqrt((comp1.real)**2+(comp1.imag)**2)
+    m2=np.sqrt((comp2.real)**2+(comp2.imag)**2)
+
+    if m1<m2: return True
 
 #сортировка вставкой
 
@@ -108,5 +115,24 @@ def merge_sort(nums):
      nums[k] = right[j] 
      j+=1 
      k+=1
-sorted_text=merge_sort(text)
-print(sorted_text)
+#sorted_text=merge_sort(text)
+#print(sorted_text)
+
+#сортировка пузырьком
+def bubbles_sort(arr):
+    A=arr
+    n=len(arr)
+    for i in range(0,n-1):
+        for j in range(0,n-1-i):
+            #if A[j+1]<A[j]:
+            if compare_complexes(A[j+1],A[j]):
+                t=A[j]
+                A[j]=A[j+1]
+                A[j+1]=t
+                
+    print(A,'\n')
+    return A
+
+#print(complexes[:26])
+#sorted_complexes=bubbles_sort(complexes)
+#print(sorted_complexes)
