@@ -5,19 +5,21 @@ import random
 
 #2, 7, 12, 1
 
-n = 100
+n1 = 100000
+n2 = 99999
 
 #list1 = [i for i in range(0, n)]
-list1 = [random.randint(0, 999999) for i in range(n)]
-list2 = [random.uniform(-1, 1) for i in range (n)]
+list1 = [random.randint(0, 999999) for i in range(n1)]
+list2 = [random.uniform(-1, 1) for i in range (n2)]
 list3 = []
 
-
+"""
 r = 28/1
 for i in range(1, 4200):
     complex_score = complex(random.uniform(-r, r), random.uniform(-r, r))
     if abs(complex_score) < r**2 or abs(complex_score) == r**2:
         list3.append(complex_score)
+"""
 
 """
 Пузырьковая сортировка:
@@ -33,8 +35,8 @@ def bubble(a):
             if a[j] > a[j+1]:
                 a[j], a[j+1] = a[j+1], a[j]
     return a
-#print("Первый список: ", list1, "\n")
-#print("Сортировка 1 списка пузырьком: ", bubble(list1), "\n")
+print("Первый список: ", list1, "\n")
+print("Сортировка 1 списка пузырьком: ", bubble(list1[::100]), "\n")
 
 
 """
@@ -63,8 +65,8 @@ def dwarf(a):
     print("For Rock and Stone! \n")
     return a
 
-#print("Второй список: ", list2, "\n")     
-#print("Сортировка 2 списка гномами: ", dwarf(list2), "\n")
+print("Второй список: ", list2, "\n")     
+print("Сортировка 2 списка гномами: ", dwarf(list2[::100]), "\n")
 
 
 """
