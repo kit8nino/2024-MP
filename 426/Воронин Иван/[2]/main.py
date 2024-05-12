@@ -1,4 +1,5 @@
 import random
+import sorter_lib
 # import matplotlib.pyplot as plt
 
 # print(random.sample(range(1, 18), 4))
@@ -7,13 +8,16 @@ import random
 array_1 = []
 for i in range(10000):
 	array_1.append(random.randint(0, 999999))
+	sorter_lib.sort_bubble(array_1)
+print("sorted 1")
 
 
 
 array_2 = []
 for i in range(99999):
 	array_2.append(random.uniform(-1, 1))
-
+sorter_lib.sort_comp(array_2)
+print("sorted 2")
 
 
 array_3 = [[]]
