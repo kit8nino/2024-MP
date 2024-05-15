@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace work3
 {
@@ -48,17 +49,13 @@ namespace work3
 
             startPos = SetRandPos(width, height);
             keyPos = SetRandPos(width, height);
+            //exitPos = GetNearestExit(keyPos);
             exitPos = GetExitPos(width, height);
 
-            MazeSetChar(keyPos, '*');
-
             Dijkstra(startPos);
-            MazeOut("C:\\Users\\Surface\\Desktop\\work3\\maze-for-me.txt", maze);
-        }
+            AStar(keyPos, 5000);
 
-        static void MazeSetChar(Pos pos, char ch)
-        {
-            maze[pos.x, pos.y] = ch;
+            MazeOut("C:\\Users\\Surface\\Desktop\\work3\\maze-for-me.txt", maze);
         }
 
         static void Dijkstra(Pos start)
@@ -85,10 +82,49 @@ namespace work3
 
                 foreach (var neighbour in Neighbours(pos))
                 {
-                    if (!visited.Contains(neighbour))
+                    if (!IsVisited(visited, neighbour))
                     {
                         int dist = currentCell.dist + 1;
                         cellsToVisit.Enqueue(new Node { pos = neighbour, dist = dist, prev = currentCell }, dist);
+                    }
+                }
+            }
+        }
+
+        static double AStarDist(Node node)
+        {
+            Pos pos = node.pos;
+            double g = node.dist;
+            double f = Math.Sqrt(Math.Pow(exitPos.x - pos.x, 2) + Math.Pow(exitPos.y - pos.y, 2));
+            return g + f;
+        }
+
+        static void AStar(Pos start, int maxLen)
+        {
+            var cellsToVisit = new PriorityQueue<Node, double>();
+            var visited = new HashSet<Pos>();
+
+            Node temp = new Node { pos = start, dist = 0, prev = null };
+            cellsToVisit.Enqueue(temp, AStarDist(temp));
+            while (cellsToVisit.Count > 0)
+            {
+                var currentCell = cellsToVisit.Dequeue();
+                Pos pos = currentCell.pos;
+
+                if (IsExit(pos))
+                {
+                    DrawPath(currentCell.prev, ',');
+                    MazeSetChar(pos, 'E');
+                    return;
+                }
+
+                visited.Add(pos);
+                foreach (var neighbour in Neighbours(pos))
+                {
+                    if (currentCell.dist + 1 <= maxLen && !IsVisited(visited, neighbour))   // Cell dist ~ path length
+                    {
+                        Node t = new Node { pos = neighbour, dist = currentCell.dist + 1, prev = currentCell };
+                        cellsToVisit.Enqueue(t, AStarDist(t));
                     }
                 }
             }
@@ -120,6 +156,11 @@ namespace work3
             return neighbours;
         }
 
+        static bool IsVisited(HashSet<Pos> set, Pos pos)
+        {
+            return set.Contains(pos);
+        }
+
         static bool IsKey(Pos pos1)
         {
             return pos1 == keyPos;
@@ -130,10 +171,14 @@ namespace work3
             return pos1 == exitPos;
         }
 
+        static bool IsInBoundaries(int x, int y)
+        {
+            return (x >= 0 && x < width) && (y >= 0 && y < height);
+        }
+
         static bool IsAvailable(int x, int y)
         {
-            return (x >= 0 && x < width) && (y >= 0 && y < height) &&
-                   (maze[x, y] == ' ' || maze[x, y] == '*');
+            return IsInBoundaries(x, y) && (maze[x, y] == ' ' || maze[x, y] == '.');
         }
 
         static Pos SetRandPos(int size_x, int size_y)
@@ -152,18 +197,35 @@ namespace work3
         static Pos GetExitPos(int size_x, int size_y)
         {
             int y = size_y - 1;
-            for (int x = 0; x < size_x; x++)
+            int x = 0;
+            for (x = 0; x < size_x; x++)
             {
                 if (maze[x, y] == ' ')
-                    return new Pos { x = x - 1, y = y - 1 };
+                    break;
             }
-            return null;
+            return new Pos { x = x - 1, y = y - 1 };
+        }
+
+        static Pos GetNearestExit(Pos pos)
+        {
+            Pos pos1 = GetExitPos(width, 0);
+            Pos pos2 = GetExitPos(width, height - 1);
+            double sqrt1 = Math.Sqrt(Math.Pow(pos1.x - pos.x, 2) + Math.Pow(pos1.y - pos.y, 2));
+            double sqrt2 = Math.Sqrt(Math.Pow(pos2.x - pos.x, 2) + Math.Pow(pos2.y - pos.y, 2));
+            if (sqrt1 < sqrt2)
+                return pos1;
+            return pos2;
         }
 
         static void GetSizes(string[] lines)
         {
             width = lines.Length;
             height = lines[0].Length;
+        }
+
+        static void MazeSetChar(Pos pos, char ch)
+        {
+            maze[pos.x, pos.y] = ch;
         }
 
         static void MazeIn(string path)
