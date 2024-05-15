@@ -80,3 +80,65 @@ now = datetime.now()
 actor_date = datetime(1921, 11, 3)
 difference = now - actor_date
 print(difference)
+
+# 7. FIFO очередь с добавлением стройматериалов до команды "СТОП"
+print('\n', "Задание 7. FIFO очередь с добавлением стройматериалов до команды 'СТОП'")
+
+
+def FIFO():
+    import queue
+    materials = queue.Queue()
+    print("Введите СТОП, чтобы завершить добавление материалов")
+
+    def add_material(materials):
+        item = input("Добавьте материал: ")
+        if item == 'СТОП':
+            while materials.empty() == False:
+                print(materials.get())
+        else:
+            materials.put(item)
+            add_material(materials)
+
+    add_material(materials)
+
+
+FIFO()
+
+# 8. Император Китая
+print('\n', "Задание 8. Китайский император династии Чжоу")
+s = sorted(spisok)
+print(s)
+imperator = 'Хуэй-ван'
+
+# Вычисление номера китайского императора
+number = (3 + 11 ** 2 + 1921) % 39 + 1
+# print(number)
+# 18 | Хуэй-ван
+
+index = input("Введите индекс: ")
+
+try:
+    index = int(index)
+
+except ValueError:
+    print("Неверный индекс")
+
+if index >= 0 and index < len(s):
+    s[index] = imperator
+
+print("Сдаем только славянам с именами:", s)
+
+# 9. Список странных названий населенных пунктов
+print('\n', "Задание 9. Вам предоставляется возможность переименовать населенный пункт")
+cities = ["Дно", "Ломки", "Ширяево", "Хомяки", "Лысая Балда",
+          "Чуваки", "Свиновье", "Засосная", "Вобля"]
+
+print('\n', cities)
+cities.remove(str(input("Выберите населенный пункт, который хотите переименовать: ")))
+
+city = 'Конец'
+num_in = int(input('Введите индекс, в который хотите поместить новый населенный пункт: '))
+cities.insert(num_in, city)
+
+print('\n', "Поздравляю, Вы переименовали населенный пункт...")
+print(cities)
