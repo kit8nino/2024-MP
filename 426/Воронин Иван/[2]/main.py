@@ -20,7 +20,7 @@ sorter_lib.sort_comp(array_2)
 print("sorted 2")
 
 
-array_3 = [[]]
+array_3 = []
 r = 9/2
 x_list = []
 y_list = []
@@ -32,6 +32,10 @@ for i in range(42000):
 	# y_list.append(y)
 # plt.scatter(x_list, y_list)
 # plt.show()
+
+sorter_lib.sort_gnome(array_3)
+# for i in range(len(array_3)):
+# 	print(sorter_lib.module(array_3[i]))
 
 
 
