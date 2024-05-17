@@ -1,0 +1,17 @@
+V "GNAT Lib v7"
+P ZX
+
+RN
+
+U actor_struct%s	actor_struct.ads	ca45f272 NE OO PK IL
+
+D actor_struct.ads	20240420092405 ca45f272 actor_struct%s
+D system.ads		20170512081901 4635ec04 system%s
+X 1 actor_struct.ads
+1K9*actor_struct 7l5 7e17
+2a17*Name{string}
+3a17*Surname{string}
+4i17*Year{integer}
+5i17*Month{integer}
+6i17*Day{integer}
+
