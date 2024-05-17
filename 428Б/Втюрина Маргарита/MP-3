@@ -1,0 +1,148 @@
+our_maze=[]
+f=open("maze-for-u.txt")
+while True:
+    string=f.readline().rstrip("\n")
+    string1=[]
+    our_maze.append(string1)
+    for i in string:
+        our_maze[-1].append(i)
+        if not i:
+            break;
+    if not string: break
+f.close()
+print(len(our_maze),len(our_maze[0]))
+
+
+list_to_visit=[]
+x,y,x_key,y_key=0,0,0,0
+
+def is_exit(x,y,maze):
+    return (x==len(our_maze)-1)and(y==len(our_maze[-1])-1)
+
+def add_to_visit_list(list_of_neighbours,list_to_visit):
+    return list_to_visit.extend(list_of_neighbours)
+
+def is_in_boundaries(x,y,maze):
+    return (x<len(maze)-1) and (x>=0) and (y<len(maze[x])-1) and (y>=0)
+
+def is_empty(x,y,maze):
+    return maze[x][y]!='#'
+
+def is_available(x,y,d,maze):
+    x_new=x+d[1]
+    y_new=y+d[0]
+    return is_in_boundaries(x_new,y_new,maze=our_maze) and is_empty(x_new,y_new,maze=our_maze)
+
+def is_in_route(x,y,route):
+    vertex=(x,y)
+    return vertex in route
+
+def neighbours_list(x,y, maze,route): #клетки, которые можно посетить
+    directions = ((-1,0),(1,0),(0,-1),(0,1))
+    neighbours=[]
+    for d in directions:
+        x_n = x+d[1]
+        y_n= y+d[0]
+        if is_available(x, y, d, maze):
+            if  not is_in_route(x_n,y_n,route):
+                neighbours.append((x + d[1], y + d[0]))
+    return neighbours
+            
+def choose_cell_to_visit(list_to_visit):
+    
+    return list_to_visit.pop()
+
+def set_item(x,y,maze):
+    from numpy import random
+    x=random.randint(10,len(maze))
+    y=random.randint(10,len(maze))
+    if is_empty(x,y,maze)==False:
+        x+=1
+        if is_empty(x,y,maze)==False:
+            y+=1
+    return x,y
+
+def is_key(x,y,maze):
+    return (x==x_key)and(y==y_key)
+    
+
+x,y=set_item(x,y,our_maze)
+#x,y=0,2
+x_key,y_key=set_item(x_key,y_key,our_maze)
+print(x,y,x_key,y_key,our_maze[x_key][y_key])
+def find_route_by_dfs(x,y,x_key,y_key,maze):
+    route=[]
+    while x!=x_key and y!=y_key:
+    # for i in range(0,10):
+            v=(x,y)
+            if v not in route:
+                route.append(v)
+                #print('список для посещения был:')
+                #print(list_to_visit)
+                #print('\n')
+                add_to_visit_list(neighbours_list(x,y,our_maze,route), list_to_visit)
+                #print('с соседями:')
+                #print(list_to_visit)
+                #print('\n')
+                point=(x,y)
+                x,y=choose_cell_to_visit(list_to_visit)
+                # print(f"текущий маршрут:{route}\n")
+                # print('выбранная вершина для следующего шага: ')
+                # print((x,y)
+    return route
+route=find_route_by_dfs(x, y, x_key, y_key,our_maze)
+print("Маршрут:\n")               
+print(route)
+print('\n')
+print()
+#поиск в ширину ( в  choose_cell_to_visit.pop  передать 0, т.е. берем первый элемент очереди, а не последний из стека)
+# алгоритм дейкстры и жадный - добавить в  choose_cell_to_visit функцию стоимости и сортировку
+#если посещены все клетки, то маршрута нет
+
+
+#Алгоритм А*
+
+from numpy import sqrt
+def g(g_temp):
+    return g_temp+10
+def h(x,y,x_key,y_key):
+    return sqrt((x_key-x)**2+(y_key-y)**2)
+    
+def check_cost(cell,g_temp,x_key,y_key):
+    x=cell[1]
+    y=cell[0]
+    for_f=[]
+    for_f.append(g(g_temp))
+    for_f.append(h(x,y,x_key,y_key))
+    return for_f
+def find_cell_with_min_cost(cell,neighbours,x_key,y_key):
+    costs=[]
+    gs=[]
+    g_temp=0
+    for i in neighbours:
+        costs.append(sum(check_cost(cell,g_temp,x_key,y_key)))
+        gs.append(check_cost(cell,g_temp,x_key,y_key)[0])
+    cells_f_ranging=sorted(neighbours,key=check_cost(neighbours,g_temp,x_key,y_key))
+    return cells_f_ranging.pop(0)       
+
+
+def find_route_by_A(x,y,x_key,y_key,maze):
+    list_to_visit2=[]
+    route=[]
+    while x!=x_key and y!=y_key:
+
+            v=(x,y)
+            if v not in route:
+                route.append(v)
+                
+                point=(x,y)
+                parent_g=0
+                [x,y]=find_cell_with_min_cost([x,y],neighbours_list(x,y,our_maze,route),x_key,y_key)
+                
+    return route
+
+route2=find_route_by_A(x, y, x_key, y_key,our_maze)
+print("Маршрут:\n")               
+print(route2)
+print('\n')
+print()
