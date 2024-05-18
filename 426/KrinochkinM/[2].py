@@ -183,7 +183,7 @@ sorting_algorithm = choose_sorting_algorithm()
 data_to_sort = choose_data_to_sort()
 
 # Сортировка выбранных данных
-sorted_data = sorting_algorithm(data_to_sort)
+sorted_data = sorting_algorithm(data_to_sort, key = abs)
 
 # Вывод отсортированных данных
 print("Отсортированные данные:")
