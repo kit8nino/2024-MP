@@ -183,8 +183,11 @@ sorting_algorithm = choose_sorting_algorithm()
 data_to_sort = choose_data_to_sort()
 
 # Сортировка выбранных данных
-sorted_data = sorting_algorithm(data_to_sort, key = abs)
-
+if data_to_sort == random_points:
+    sorted_data = sorting_algorithm(data_to_sort, key = abs)
+else:
+    sorted_data = sorting_algorithm(data_to_sort)
+    
 # Вывод отсортированных данных
 print("Отсортированные данные:")
 print(sorted_data)
