@@ -1,7 +1,4 @@
 import random, re
-#print(random.sample(range(1, 18), 4)) # вернет список из 4 случайных значений в заданном диапазоне
-#15, 7, 8, 2
-
 #1 список целых чисел от 0 до 999999
 n=1000000
 generate_random_int = [random.randint(0, 999999) for i in range(n)]
@@ -21,7 +18,6 @@ sorted_points = sorted(generate_random_points, key=abs)
 #4 отрывок из книги (любой, на свой выбор) не менее 10000 слов, разбитый в список по словам
 with open("C:\\Users\\CyberPC\\Desktop\\book.txt.txt", "r", encoding="utf-8") as file:
     text = file.read()
-#Разбиваем текст на слова
 words = re.findall(r'\w+', text.lower())
 #print(words)
 
@@ -55,3 +51,36 @@ def gnome_sort(a):
 
 print("Второй список: ", generate_random_float, "\n")     
 print("Сортировка 2 списка гномами: ", gnome_sort(generate_random_float[::100]), "\n")
+
+#Merge sort, сортировка слиянием;
+def merge_sort(arr):
+    if len(arr) > 1:
+        mid = len(arr) // 2
+        L = arr[:mid]
+        R = arr[mid:]
+
+        merge_sort(L)
+        merge_sort(R)
+
+        i = j = k = 0
+
+        while i < len(L) and j < len(R):
+            if abs(L[i]) < abs(R[j]):
+                arr[k] = L[i]
+                i += 1
+            else:
+                arr[k] = R[j]
+                j += 1
+            k += 1
+
+        while i < len(L):
+            arr[k] = L[i]
+            i += 1
+            k += 1
+
+        while j < len(R):
+            arr[k] = R[j]
+            j += 1
+            k += 1
+merge_sort(generate_random_points)
+print(generate_random_points[:10])
