@@ -13,7 +13,7 @@
 |    5 	| Ivan Alekseev	| 2 | 2 | . |            	|
 |   6 	| Kostritsa Kirill	| 2 | 2 |            	|            	|
 |   7	| Magdenko Daria Alekseevna	| 2 |            	|            	|            	|
-|   8 	| ManidovRM | 2 | а где вызов остальных? |            	|            	|
+|   8 	| ManidovRM | 2 | 2 |            	|            	|
 |   9	| MartyshkimDM	| 2 |            	|            	|            	|
 |   10	| Nikita Plechkov|           	|            	|            	|            	|
 |   11	| Popov_Evgenii	|           	|            	|            	|            	|
