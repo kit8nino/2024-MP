@@ -45,17 +45,17 @@ def bubble_sort(arr, key=lambda x: x):
     return arr
 
 
-#random_numbers = bubble_sort(random_numbers)
-#print (random_numbers)
+random_numbers = bubble_sort(random_numbers)
+print (random_numbers)
 
-#random_floats = bubble_sort(random_floats)
-#print(random_floats)
+random_floats = bubble_sort(random_floats)
+print(random_floats)
 
-#random_points = bubble_sort(random_points, key = abs)
-#print(random_points)
+random_points = bubble_sort(random_points, key = abs)
+print(random_points)
 
-#word_list = bubble_sort(word_list)
-#print(word_list)
+word_list = bubble_sort(word_list)
+print(word_list)
 
 #############################################################################################################
 
@@ -81,17 +81,17 @@ def comb_sort(arr, key=lambda x: x):
 
     return arr
 
-#random_numbers = comb_sort(random_numbers)
-#print(random_numbers)
+random_numbers = comb_sort(random_numbers)
+print(random_numbers)
 
-#random_floats = comb_sort(random_floats)
-#print(random_floats)
+random_floats = comb_sort(random_floats)
+print(random_floats)
 
-#random_points = comb_sort(random_points, key = abs)
-#print(random_points)
+random_points = comb_sort(random_points, key = abs)
+print(random_points)
 
-#word_list = comb_sort(word_list)
-#print(word_list)
+word_list = comb_sort(word_list)
+print(word_list)
 
 
 #############################################################################################################
@@ -124,17 +124,17 @@ def heap_sort(arr, key=lambda x: x):
 
     return arr
 
-#random_numbers = heap_sort(random_numbers)
-#print(random_numbers)
+random_numbers = heap_sort(random_numbers)
+print(random_numbers)
 
-#random_floats = heap_sort(random_floats)
-#print(random_floats)
+random_floats = heap_sort(random_floats)
+print(random_floats)
 
-#random_points = heap_sort(random_points, key = abs)
-#print(random_points)
+random_points = heap_sort(random_points, key = abs)
+print(random_points)
 
-#word_list = heap_sort(word_list)
-#print(word_list)
+word_list = heap_sort(word_list)
+print(word_list)
 
 #############################################################################################################
 #Реализация алгоритма №11 Merge sort, сортировка слиянием;
@@ -166,14 +166,14 @@ def merge(left, right, key=lambda x: x):
     return result
 
 
-#random_numbers = merge_sort(random_numbers)
-#print(random_numbers)
+random_numbers = merge_sort(random_numbers)
+print(random_numbers)
 
-#andom_floats = merge_sort(random_floats)
-#print(random_floats)
+random_floats = merge_sort(random_floats)
+print(random_floats)
 
-#random_points = merge_sort(random_points, key = abs)
-#print(random_points)
+random_points = merge_sort(random_points, key = abs)
+print(random_points)
 
-#word_list = merge_sort(word_list)
-#print(word_list)
+word_list = merge_sort(word_list)
+print(word_list)
