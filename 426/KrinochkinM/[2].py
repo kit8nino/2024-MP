@@ -27,7 +27,7 @@ def generate_data():
         random_points.append(complex(x, y))
 
     # отрывок из книги (любой, на свой выбор) не менее 10000 слов, разбитый в список по словам
-    with open('D:/file_for_[2].txt', 'r', encoding='utf-8') as file:
+    with open('file_for_[2].txt', 'r', encoding='utf-8') as file:
         book_contents = file.read()
     word_list = book_contents.split()
 
