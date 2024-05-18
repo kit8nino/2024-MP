@@ -40,3 +40,18 @@ def shell_sort(arr):
         gap //= 2
 shell_sort(generate_random_int)
 print(generate_random_int[:100])
+
+#Gnome sort, гномья сортировка
+def gnome_sort(a):
+    N = len(a) - 1
+    i = 0
+    while i < N:
+        if a[i] <= a[i+1]:
+            i+=1
+        else:
+            a[i], a[i+1] = a[i+1], a[i]
+            i -= 1 if i > 0 else i
+    return a
+
+print("Второй список: ", generate_random_float, "\n")     
+print("Сортировка 2 списка гномами: ", gnome_sort(generate_random_float[::100]), "\n")
