@@ -84,3 +84,16 @@ def merge_sort(arr):
             k += 1
 merge_sort(generate_random_points)
 print(generate_random_points[:10])
+
+#insertion sort, сортировка вставкой
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+        while j >= 0 and arr[j] > key:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+
+insertion_sort(words)
+print(words[:1000])  
