@@ -1,3 +1,9 @@
+# import random
+#
+# print(random.sample(range(1, 18), 4))
+
+# Result: [9, 2, 3, 11]
+
 import random
 import math
 
