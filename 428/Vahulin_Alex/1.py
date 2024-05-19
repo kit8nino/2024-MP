@@ -1,6 +1,7 @@
 from random import randint
 import datetime
 
+# Входные данные
 subjects={
     "Algebra": 5,
     "Geometry": 4,
@@ -18,7 +19,8 @@ subjects={
     "Physical education": 5
     }
 
-western_actor=tuple(["Lee Van Cleef","09","01","1925"])
+western_actor_birthday=datetime.datetime(1925,1,9)
+western_actor=tuple(["Lee Van Cleef",western_actor_birthday.day, western_actor_birthday.month, western_actor_birthday.year])
 
 popular_fnames_Voronezh=["Елена","Екатерина","Ольга","Мария","Анастасия","Ирина","Наталья","Татьяна","Юлия","Светлана"]
 popular_mnames_Voronezh=["Иван","Александр","Сергей","Дмитрий","Андрей","Алексей","Максим","Евгений","Владимир","Роман"]
@@ -34,6 +36,7 @@ for i in range(15):
     
 tamandua_name="Ушастая Булка"
 
+# Действия с данными
 average_mark=0
 for i in subjects.values():
     average_mark+=i
@@ -62,5 +65,55 @@ bin_tamandua=""
 bin_tamandua = ''.join(format(ord(x), '08b') for x in tamandua_name)
 print("\nИмя домашнего тамандуа в бинарном виде:",bin_tamandua)
 
-current_date = datetime.datetime.now()
-print(str(current_date)[:10])
+difference_in_days = (datetime.datetime.now()-western_actor_birthday).days
+print("\nЧисло дней с момента рождения актёра вестерна до текущей даты:", difference_in_days)
+
+building_materials=[]
+print("\nВведите наименование стройматериалов(q для вывода):")
+k=1
+while True:
+    data=input("№{}:".format(k))
+    if data=="q":
+        for i in building_materials:
+            print(i)
+        break
+    else:
+        k+=1
+        building_materials.append(data)
+
+popular_combos.sort()
+emperor_number=(western_actor[1]+western_actor[2]**2+western_actor[3])%39+1
+emperor_name="Чжоу Цзин-ван Гуй"
+name_index=int(input("\nВведите индекс элемента для замены (от 0 до 19):"))
+popular_combos[name_index]=emperor_name
+print(popular_combos)
+
+strange_settlement_names={
+    "Большой Куяш": 1,
+    "Иннах": 2,
+    "Да-да": 3,
+    "Чуваки": 4,
+    "Дно": 5,
+    }
+print("\nСписок странных названий населённых пунктов:", strange_settlement_names)
+while True:
+    text_entry=input("\nВведите название из списка для удаления либо индекс (от 0 до 4), по которому в список будет вставлен город Конец (q для выхода):")
+    if text_entry=='q':
+        break
+    elif text_entry.isdigit():
+        strange_settlement_names['Конец']=int(text_entry)+1
+        for i in strange_settlement_names:
+            if strange_settlement_names[i] > int(text_entry) and i!="Конец":
+                strange_settlement_names[i]+=1
+        print("\nСписок странных названий населённых пунктов с Концом:", strange_settlement_names)
+        break
+    elif not text_entry in strange_settlement_names.keys():
+        print("\nНет такого города")
+    else:
+        for k,v in strange_settlement_names.items():
+            if v==strange_settlement_names[text_entry]-1:
+                strange_settlement_names[k]+=1
+        del strange_settlement_names[text_entry]
+        print("\nСтранный населённый пункт {} удалён".format(text_entry))
+        print("\nСписок странных названий населённых пунктов без {}:\n{}".format(text_entry,strange_settlement_names))
+        break
