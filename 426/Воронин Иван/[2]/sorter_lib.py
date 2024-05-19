@@ -1,4 +1,6 @@
 # import random
+import numpy as np
+import math
 
 # print(random.sample(range(1, 18), 4))
 # [2, 3, 7, 17]
@@ -12,6 +14,8 @@ def sort_bubble(array):
 
 
 
+
+
 def sort_comp(array):
 	Lenght = len(array)
 	for step in range(Lenght, 0, -1):
@@ -19,6 +23,8 @@ def sort_comp(array):
 			if (array[i] > array[i+step]):
 				array[i], array[i+step] = array[i+step], array[i]
 	return(array)
+
+
 
 
 
@@ -36,6 +42,58 @@ def sort_gnome(array):
 			i -= 1
 		else:
 			array[i], array[i+1] = array[i+1], array[i]
-# array = [4,3,8,4,1,2,0,9,114,12,64,98]
-# sort_gnome(array)
-# print(array)
+
+
+
+
+
+def bitonic_merge(left, right):
+	return(np.concatenate([left, right]))
+
+def array_optimisation(array):
+	addition = 2**math.ceil(math.log2(len(array))) - len(array)
+	array_addition = np.empty((addition))
+	array_addition.fill(math.inf)
+	array = bitonic_merge(array, array_addition)
+	return array
+
+def comp_and_switch(array, a, b, inverted):
+	size = b - a
+	step = int(size / 2)
+	if not inverted:
+		for i in range(a, math.floor(a + size / 2)):
+			if array[i] <= array[i + step]:
+				pass
+			else:
+				array[i], array[i + step] = array[i + step], array[i]
+	else:
+		for i in range(a, math.floor(a + size / 2)):
+			if array[i] >= array[i + step]:
+				pass
+			else:
+				array[i], array[i + step] = array[i + step], array[i]
+	if size > 2:
+		comp_and_switch(array, a, a + step, inverted)
+		comp_and_switch(array, a+step, b, inverted)
+
+def sort_bitonic_subfunction(array, limit_size, inverted):
+	if len(array) == limit_size:
+		comp_and_switch(array, 0, limit_size, inverted)	
+	else:
+		middle = int(len(array)/2)
+		left = array[:middle]
+		right = array[middle:]
+		sort_bitonic_subfunction(left, limit_size, False)
+		sort_bitonic_subfunction(right, limit_size, True)
+		array = bitonic_merge(left, right)
+
+def sort_bitonic(array): 
+	# Preparation to sort (adjust the size to degree of 2)
+	array = array_optimisation(array)
+	# Ready for sort
+	sort_interval = 2
+	limit_interval = len(array)+1
+	while(sort_interval < limit_interval):
+		sort_bitonic_subfunction(array, sort_interval, False)
+		sort_interval *= 2
+	return array
