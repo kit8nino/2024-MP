@@ -95,7 +95,7 @@ def gnome_sort(list):
     return loc_list
 
 #код
-#print(merge_sort(integer_list))
-#print(quick_sort(real_list))
-#print(insertion_sort(complexity_list))
-#print(gnome_sort(word_list))
+print(merge_sort(integer_list))
+print(quick_sort(real_list))
+print(insertion_sort(complexity_list))
+print(gnome_sort(word_list))
