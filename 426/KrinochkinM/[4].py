@@ -35,7 +35,7 @@ class Radar:
             azimuth += 360
         
         if dz == 0:
-            elevation = 90
+            elevation = 0
         else:
             elevation = math.degrees(math.atan(math.sqrt(dx**2 + dy**2) / dz))
         if dz < 0:
