@@ -52,5 +52,7 @@ for line in file:
 				word.replace(symbol, '')
 			array_4.append(word.replace('\n', ''))
 # print(len(array_4))
-
+print(array_4)
+array_4 = sorter_lib.sort_bitonic(array_4)
+# print(array_4)
 print("sorted 4")

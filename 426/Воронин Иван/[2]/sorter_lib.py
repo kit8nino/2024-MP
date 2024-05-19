@@ -52,23 +52,23 @@ def bitonic_merge(left, right):
 
 def array_optimisation(array):
 	addition = 2**math.ceil(math.log2(len(array))) - len(array)
-	array_addition = np.empty((addition))
-	array_addition.fill(math.inf)
+	array_addition = np.full((addition), chr(1))
+	# array_addition.fill(0)
 	array = bitonic_merge(array, array_addition)
-	return array
+	return array, addition
 
 def comp_and_switch(array, a, b, inverted):
 	size = b - a
 	step = int(size / 2)
 	if not inverted:
 		for i in range(a, math.floor(a + size / 2)):
-			if array[i] <= array[i + step]:
+			if ord(array[i][0]) <= ord(array[i + step][0]):
 				pass
 			else:
 				array[i], array[i + step] = array[i + step], array[i]
 	else:
 		for i in range(a, math.floor(a + size / 2)):
-			if array[i] >= array[i + step]:
+			if ord(array[i][0]) >= ord(array[i + step][0]):
 				pass
 			else:
 				array[i], array[i + step] = array[i + step], array[i]
@@ -89,11 +89,11 @@ def sort_bitonic_subfunction(array, limit_size, inverted):
 
 def sort_bitonic(array): 
 	# Preparation to sort (adjust the size to degree of 2)
-	array = array_optimisation(array)
+	array, trunked_size = array_optimisation(array)
 	# Ready for sort
 	sort_interval = 2
 	limit_interval = len(array)+1
 	while(sort_interval < limit_interval):
 		sort_bitonic_subfunction(array, sort_interval, False)
 		sort_interval *= 2
-	return array
+	return array[trunked_size:]
