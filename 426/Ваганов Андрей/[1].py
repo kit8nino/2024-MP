@@ -46,8 +46,8 @@ average_mark = sum(attestat.values())/len(attestat)
 print("Средняя оценка = ", str(average_mark))
 
 # 2
-unique = list(set(top_names))
-print("Уникальные имена: ", unique)
+unique_names = list(set(top_names))
+print("Уникальные имена: ", unique_names)
 
 # 3
 summ = 0
@@ -82,6 +82,7 @@ while(material.lower() != 'q'):
 print("Список введённых материалов")
 while(materials_queue.empty() == False):
 	print(materials_queue.get() + "; ", end='')
+print()
 
 # 8
 # Вычисление китайского императора
@@ -90,10 +91,50 @@ while(materials_queue.empty() == False):
 # номер 37, Цзи Бянь
 unique_names = sorted(unique_names)
 print(unique_names)
-print("Введите индекс (цифра от 0 до ", len(unique_names),"): ")
+print("Введите индекс (цифра от 0 до", len(unique_names),"): ")
 index = input()
 while(not (0 <= int(index) and int(index) <= 29)):
-	print("НЕВЕРНЫЙ ИНДЕКС. Ожидается цифра от 0 до ", len(unique_names),": ")
+	print("НЕВЕРНЫЙ ИНДЕКС. Ожидается цифра от 0 до", len(unique_names),": ")
 	index = input()
 unique_names[int(index)] = ("Цзи Бянь")
 print(unique_names)
+
+# 9
+cities = {0: "Синие лепяги", 
+	"Синие лепяги": "Да-да",
+	"Да-да": "Пысса",
+	"Пысса": "Большие Пупсы",
+	"Большие Пупсы": "Манды",
+	"Манды": "Дешевки",
+	"Дешевки": "Новый русский спуск",
+	"Новый русский спуск": "Такое",
+	"Такое": "Тухлянка",
+	"Тухлянка": 0}
+
+print(cities)
+delete_index = input("Введите название города для удаления или q для пропуска этого шага: ")
+index = 0
+if (delete_index != 'q'):
+	limit = len(cities)
+	counter = 0
+	while (cities[index] != delete_index and counter < limit):
+		index = cities[index]
+		counter += 1
+	if counter != limit:
+		cities[index] = cities[cities[index]]
+		del cities[delete_index]
+	else:
+		print("Такой город не найден")
+
+print(cities)
+delete_index = input("Введите индекс для вставки: ")
+index = 0
+if (delete_index != 'q'):
+	delete_index = int(delete_index)
+	i = 0
+	while i != delete_index-1:
+		index = cities[index]
+		i += 1
+	cities["Конец"] = cities[index]
+	cities[index] = "Конец"
+	print(cities)
