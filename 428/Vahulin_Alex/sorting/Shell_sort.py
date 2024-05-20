@@ -1,5 +1,4 @@
 import random
-# 5,15,14,11
 data_array=[i for i in range(1000000)]
 random.shuffle(data_array)
 print("Исходный массив:\n{}".format(data_array))
