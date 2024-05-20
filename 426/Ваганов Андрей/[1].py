@@ -46,3 +46,9 @@ print("Средняя оценка = ", str(average_mark))
 # 2
 unique = list(set(top_names))
 print("Уникальные имена: ", unique)
+
+# 3
+summ = 0
+for subject in attestat:
+	summ += len(subject)
+print("Длина всех названий предметов = ", str(summ))
