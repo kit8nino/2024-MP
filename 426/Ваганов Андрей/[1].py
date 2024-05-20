@@ -1,4 +1,5 @@
 import random
+import datetime
 
 # Структуры данных
 # Школьный аттестат
@@ -62,3 +63,10 @@ tamandua_bin_name = ''
 for letter in tamandua_name:
 	tamandua_bin_name += str(bin(ord(letter))).split('b')[1]
 print("Бинарное имя тамандуа: ", str(tamandua_bin_name))
+
+# 6
+birth_date = datetime.datetime.strptime(actor[1], '%d.%m.%Y')
+current_date = datetime.datetime.now()
+days_since_birth = (current_date - birth_date).days
+print("Возраст актёра, если бы он был вампиром, в днях :", days_since_birth)
+
