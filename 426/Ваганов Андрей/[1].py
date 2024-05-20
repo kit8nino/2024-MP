@@ -52,3 +52,8 @@ summ = 0
 for subject in attestat:
 	summ += len(subject)
 print("Длина всех названий предметов = ", str(summ))
+
+# 4
+print("Задание 4")
+unique = list(set(''.join(attestat.keys())))
+print(unique)
