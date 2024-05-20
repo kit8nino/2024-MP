@@ -1,5 +1,6 @@
 import random
 import datetime
+import queue
 
 # Структуры данных
 # Школьный аттестат
@@ -70,3 +71,14 @@ current_date = datetime.datetime.now()
 days_since_birth = (current_date - birth_date).days
 print("Возраст актёра, если бы он был вампиром, в днях :", days_since_birth)
 
+# 7
+print("Вводите названия материалов, для завершения введите Q")
+materials_queue = queue.Queue()
+material = input()
+while(material.lower() != 'q'):
+	materials_queue.put(material)
+	material = input()
+
+print("Список введённых материалов")
+while(materials_queue.empty() == False):
+	print(materials_queue.get() + "; ", end='')
