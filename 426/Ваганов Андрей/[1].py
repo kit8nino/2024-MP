@@ -40,6 +40,9 @@ tamandua_name = "Пустыный Лис"
 # Действия:
 
 # 1
-
 average_mark = sum(attestat.values())/len(attestat)
 print("Средняя оценка = ", str(average_mark))
+
+# 2
+unique = list(set(top_names))
+print("Уникальные имена: ", unique)
