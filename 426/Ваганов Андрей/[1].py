@@ -54,6 +54,11 @@ for subject in attestat:
 print("Длина всех названий предметов = ", str(summ))
 
 # 4
-print("Задание 4")
 unique = list(set(''.join(attestat.keys())))
-print(unique)
+print("Уникальные буквы: ", unique)
+
+# 5
+tamandua_bin_name = ''
+for letter in tamandua_name:
+	tamandua_bin_name += str(bin(ord(letter))).split('b')[1]
+print("Бинарное имя тамандуа: ", str(tamandua_bin_name))
