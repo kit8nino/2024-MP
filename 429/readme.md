@@ -4,11 +4,12 @@
   
 | **№**	| **Фамилия**  	| **Лаба 1** 	| **Лаба 2** 	| **Лаба 3** 	| **Лаба 4** 	|
 |------:	|:--------------|:----------:	|:----------:	|:----------:	|:----------:	|
-|     1 	|Evgeniy Deulin|           	|           	|            	|            	|  
-|    2 	|Gorenstein Lev|           	|            	|            	|            	|
-|    3 	|Holodnyi Aleksandr|           	|            	|            	|            	|
-|    4 	|Surin Vasiliy|           	|            	|            	|            	|
-|    5 	|Tulyakov Konstantin|           	|            	|            	|            	|
-|    6 	| |           	|            	|            	|            	|
-|   7 	| |           	|            	|            	|            	|
+|     1 	|Evgeniy Deulin|     2      	|     2      	|            	|            	|  
+|    2 	|Gordonov Evgenii|           	|            	|            	|            	|
+|    3 	|Gorenstein Lev|     2      	|      2      	|            	|            	|
+|    4 	|Holodnyi Aleksandr| 2 | 1.5 (вывод закомменчен) |            	|            	|
+|    5 	|Surin Vasiliy| 2 | 2 |  |            	|
+|    6 	|Tulyakov Konstantin| 1.5 (предостерегал от использования чужих классов) | 2 |            	|            	|
+|    7 	| |           	|            	|            	|            	|
+|   8 	| |           	|            	|            	|            	|
 </div>
