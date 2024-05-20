@@ -1,8 +1,8 @@
 class Radar(position):
-    self.position =position
+    _position =position
     def __new__(cls):
-          if cls.position is None:
-              cls.position = super(Radar, cls).__new__(cls)
-          return cls.position
+          if cls._position is None:
+              cls._position = super(Radar, cls).__new__(cls)
+          return cls._position
     def __init__:
           pass
