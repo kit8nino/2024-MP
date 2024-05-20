@@ -82,3 +82,18 @@ while(material.lower() != 'q'):
 print("Список введённых материалов")
 while(materials_queue.empty() == False):
 	print(materials_queue.get() + "; ", end='')
+
+# 8
+# Вычисление китайского императора
+# number = (31 + 5**2 + 1930) % 39 + 1
+# print(number)
+# номер 37, Цзи Бянь
+unique_names = sorted(unique_names)
+print(unique_names)
+print("Введите индекс (цифра от 0 до ", len(unique_names),"): ")
+index = input()
+while(not (0 <= int(index) and int(index) <= 29)):
+	print("НЕВЕРНЫЙ ИНДЕКС. Ожидается цифра от 0 до ", len(unique_names),": ")
+	index = input()
+unique_names[int(index)] = ("Цзи Бянь")
+print(unique_names)
