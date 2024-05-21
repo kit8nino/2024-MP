@@ -69,3 +69,23 @@ def a_star_search(start, end, maze):
                     open_list.append(neighbor)
 
     return open_list
+    # проверяем соседей
+def check_adjacent_cells(maze, coord):
+    maze_height = len(maze)
+    maze_width = len(maze[0])
+    x_coord, y_coord = coord
+    adjacent_cells = []
+
+    if (x_coord - 1) >= 0 and maze[x_coord - 1][y_coord] == " ":
+        adjacent_cells.append((x_coord - 1, y_coord))
+
+    if (x_coord + 1) < maze_height and maze[x_coord + 1][y_coord] == " ":
+        adjacent_cells.append((x_coord + 1, y_coord))
+
+    if (y_coord - 1) >= 0 and maze[x_coord][y_coord - 1] == " ":
+        adjacent_cells.append((x_coord, y_coord - 1))
+
+    if (y_coord + 1) < maze_width and maze[x_coord][y_coord + 1] == " ":
+        adjacent_cells.append((x_coord, y_coord + 1))
+
+    return adjacent_cells
