@@ -89,6 +89,21 @@ def check_adjacent_cells(maze, coord):
         adjacent_cells.append((x_coord, y_coord + 1))
 
     return adjacent_cells
+# Построение пути
+def build_path(path_to_key, path_to_exit, key):
+    for coords in path_to_key:
+        x, y = coords
+        maze[x][y] = "."
+
+    for coords in path_to_exit:
+        x, y = coords
+        if maze[x][y] == ".":
+            maze[x][y] = ";"
+        else:
+            maze[x][y] = ","
+
+    maze[key[0]][key[1]] = '*'
+
 #чтение и сохранение файла
 with open('maze-for-u.txt', 'r') as file:
     maze = [list(line.strip()) for line in file.readlines()]
