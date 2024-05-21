@@ -89,3 +89,16 @@ def check_adjacent_cells(maze, coord):
         adjacent_cells.append((x_coord, y_coord + 1))
 
     return adjacent_cells
+#чтение и сохранение файла
+with open('maze-for-u.txt', 'r') as file:
+    maze = [list(line.strip()) for line in file.readlines()]
+
+start_position, exit_position, key_position = get_coordinates(maze)
+path_to_key = depth_first_search(start_position, key_position, maze)
+path_to_exit = a_star_search(key_position, exit_position, maze)
+
+build_path(path_to_key, path_to_exit, key_position)
+
+with open('maze-for-me-done.txt', 'w') as file:
+    for line in maze:
+        file.write("".join(line) + "\n")
