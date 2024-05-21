@@ -16,7 +16,7 @@ sorted_points = sorted(generate_random_points, key=abs)
 #print(sorted_points)
 
 #4 отрывок из книги (любой, на свой выбор) не менее 10000 слов, разбитый в список по словам
-with open("C:\\Users\\CyberPC\\Desktop\\book.txt.txt", "r", encoding="utf-8") as file:
+with open("book.txt", "r", encoding="utf-8") as file:
     text = file.read()
 words = re.findall(r'\w+', text.lower())
 #print(words)
