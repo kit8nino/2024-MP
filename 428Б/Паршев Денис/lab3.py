@@ -15,3 +15,21 @@ def get_coordinates(maze):
             exit_position = (len(maze) - 1, y)
 
     return start_position, exit_position, key_position
+# поиск в глубину
+def depth_first_search(start, end, maze):
+    stack = [start]
+    visited = {start}
+    paths = {start: []}
+
+    while stack:
+        current_pos = stack.pop()
+        if current_pos == end:
+            return paths[current_pos]
+        
+        for neighbor in check_adjacent_cells(maze, current_pos):
+            if neighbor not in visited:
+                stack.append(neighbor)
+                visited.add(neighbor)
+                paths[neighbor] = paths[current_pos] + [current_pos]
+
+    return None
