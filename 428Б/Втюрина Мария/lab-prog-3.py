@@ -15,9 +15,9 @@ maze=np.array(maze)
 #лабиринт для отладки
 maze1=[['#',' ','#',' ','#'],
        ['#',' ','#',' ','#'],
-       [' ',' ',' ','#','#'],
+       [' ',' ',' ',' ','#'],
        [' ','#',' ',' ','#'],
-       [' ','#','#','.',' ']]
+       [' ','#','#',' ',' ']]
 
 maze1=np.array(maze1)
 def is_key(key,x,y):
@@ -61,7 +61,7 @@ def directions():
     return [[0,1],[1,0],[0,-1],[-1,0]]
 
 def is_in_boundaries(x,y,maze):
-    return x<=maze.shape[0] and x>=0 and y<=maze.shape[1] and y>=0
+    return x<maze.shape[0] and x>=0 and y<maze.shape[1] and y>=0
 
 def is_exit(x,y,maze):
     exits_list=exits(maze)
@@ -82,14 +82,14 @@ def neighbours(x,y,maze):
         #print(d)
         x_new=x+d[0]
         y_new=y+d[1]
-
-        if is_empty(x_new,y_new,maze) and is_in_boundaries(x_new,y_new,maze):
-            list_of_neighbours.append([x_new,y_new])
+        if is_in_boundaries(x_new,y_new,maze):
+            if is_empty(x_new,y_new,maze):
+                list_of_neighbours.append([x_new,y_new])
     return list_of_neighbours
 
-def mark_the_way(way,maze):
+def mark_the_way(way,maze,mark):
     for el in way:
-        maze[el[0]][el[1]]='^'
+        maze[el[0]][el[1]]=mark
     return maze
 
 def updated_path(path,next_element,previous_element):
@@ -102,42 +102,59 @@ def path_to_list_using_previous_cells(came_from):
     [list_needed.append(t) for t in path]
     return list_needed
 
-def dfs(x,y,key_x,key_y,maze):
+def is_start(next_cell,start):
+    return next_cell[0]==start[0] and next_cell[1]==start[1]
 
+
+
+def dfs(x,y,key_x,key_y,maze):
     cells_to_visit=[]
     came_from={}
     start=[x,y]
     key=[key_x,key_y]
 
     came_from[tuple(start)]=None
-    cells_to_visit.append(start)
+    cells_to_visit.append((x,y,[]))
 
     while len(cells_to_visit)>0:
         previous_cell=[x,y]
-        new_cell=cells_to_visit.pop(-1)
-        
+        x,y,path=cells_to_visit.pop(-1)
+        new_cell=[x,y]
         if new_cell not in visited:
             x=new_cell[0]
             y=new_cell[1]
             visited.append(new_cell)
+            path.append(new_cell)
             came_from=updated_path(came_from,new_cell,previous_cell)
-
+            
+            way_to_key=[]
+            
             if is_key(key,x, y):
-                maze[x][y] = '*'
-                way_to_key=path_to_list_using_previous_cells(came_from)
-                maze=mark_the_way(way_to_key,maze)
+                next_cell=[key_x,key_y]
+                while not is_start(next_cell,start):
+                    pre_cell=came_from[tuple(next_cell)]
+                    maze[pre_cell[0]][pre_cell[1]]='.'
+                    way_to_key.append(pre_cell)
+                    next_cell=pre_cell
+
+                maze=mark_the_way(way_to_key,maze,'.')
+                maze[key[0]][key[1]]='*'
+                start=path.pop(0)
+                maze[start[0]][start[1]]='@'
                 print('Поиск пути до ключа выполнен!')
                 return True
 
             list_of_neighbours=neighbours(x,y,maze)
-            [cells_to_visit.append(cell) for cell in list_of_neighbours]
+            [cells_to_visit.append((cell[0],cell[1],path)) for cell in list_of_neighbours]
+
     return False
 
 #Вывод
-avatar_x,avatar_y=create_object(maze)
-key_x,key_y=create_object(maze)
-
-way_to_key=dfs(avatar_x,avatar_y,key_x,key_y,maze1)
+avatar_x,avatar_y=create_object(maze1)
+print('start:',avatar_x,avatar_y,'\n')
+key_x,key_y=create_object(maze1)
+print('key:',key_x,key_y,'\n')
+seek_for_key=dfs(avatar_x,avatar_y,key_x,key_y,maze1)
 
 
 #запись в файл
