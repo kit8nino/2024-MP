@@ -105,7 +105,13 @@ def path_to_list_using_previous_cells(came_from):
 def is_start(next_cell,start):
     return next_cell[0]==start[0] and next_cell[1]==start[1]
 
-
+def recall_the_way(start,came_from,way_to_key):
+    next_cell=[key_x,key_y]
+    while not is_start(next_cell,start):
+        pre_cell=came_from[tuple(next_cell)]
+        maze[pre_cell[0]][pre_cell[1]]='.'
+        way_to_key.append(pre_cell)
+        next_cell=pre_cell
 
 def dfs(x,y,key_x,key_y,maze):
     cells_to_visit=[]
@@ -130,12 +136,7 @@ def dfs(x,y,key_x,key_y,maze):
             way_to_key=[]
             
             if is_key(key,x, y):
-                next_cell=[key_x,key_y]
-                while not is_start(next_cell,start):
-                    pre_cell=came_from[tuple(next_cell)]
-                    maze[pre_cell[0]][pre_cell[1]]='.'
-                    way_to_key.append(pre_cell)
-                    next_cell=pre_cell
+                recall_the_way(start,came_from,way_to_key)
 
                 maze=mark_the_way(way_to_key,maze,'.')
                 maze[key[0]][key[1]]='*'
