@@ -10,12 +10,11 @@ while True:
         mass_row.append(i)
     our_maze.append(mass_row)
     
-print(len(our_maze), len(our_maze[0]))
+# print(len(our_maze), len(our_maze[0]))
 
 x, y = 0, 0
 x_key, y_key = 0, 0
 list_to_visit = []
-route = []
 
 def is_exit(x, y):
     return y == len(our_maze[-1])-1 and x == len(our_maze)-1
@@ -45,7 +44,7 @@ def neighbours_list(x,y, maze, route):
         x_n = x + d[0]
         y_n = y + d[1]
         if is_available(x, y, d, maze):
-            if  not is_in_route(x_n,y_n,route):
+            if not is_in_route(x_n,y_n,route):
                 neighbours.append((x + d[0], y + d[1]))
     return neighbours
 
@@ -64,16 +63,22 @@ def put_object(x, y, maze):
         y += randint(0, 1)
     return x, y
 
-# x, y = put_object(x, y, our_maze)
-# x_key, y_key = put_object(x_key, y_key, our_maze)
+def paint_path(maze, route, symbol):
+    for i in route:
+        if maze[i[0]][i[1]] != "*": maze[i[0]][i[1]] = symbol
+    return None
+
+while x == x_key and y == y_key:
+    x_key, y_key = put_object(x_key, y_key, our_maze)
 
 x, y = 0, 1
-x_key, y_key = 718, 328
+# x_key, y_key = 24, 1
 our_maze[x_key][y_key]='*'
 
 print(x, y, x_key, y_key, our_maze[x_key][y_key], our_maze[x][y])
 
 def bfs_route(x, y, x_key, y_key, maze):
+    
     route = []
     while not is_key(x, y):
         step = (x, y)
@@ -83,57 +88,46 @@ def bfs_route(x, y, x_key, y_key, maze):
             x, y = choose_cell_to_visit(list_to_visit)
     return route
 
-route = bfs_route(x, y, x_key, y_key, our_maze)
-for i in route:
-    our_maze[i[0]][i[1]]='.'
-print(route)
+bfs_path = bfs_route(x, y, x_key, y_key, our_maze)
+if bfs_path:
+    print("Клеток пройдено от старта до ключа:", len(bfs_path))
+    paint_path(our_maze, bfs_path, ".")
 
-# x_exit, y_exit = len(our_maze)-1, len(our_maze[-1])-2
-# print(our_maze[x_exit][y_exit])
+x_exit, y_exit = len(our_maze)-1, len(our_maze[-1])-2
+print(our_maze[x_exit][y_exit])
 
-# from math import sqrt
-# def h(x, y, x_key, y_key):
-#     return sqrt((x_key-x)**2+(y_key-y)**2)
+from heapq import heappop, heappush
+def key_search(maze, start_coord, goal, g_weight, h_weight, max_steps): 
+    def heuristic(node, goal):
+        return abs(node[0] - goal[0]) + abs(node[1] - goal[1])
+    queue = [(heuristic(start_coord, goal), 0, start_coord, [])]
+    visited = set()
+    while queue:
+        _, cost, current, path = heappop(queue)
+        if current == goal:
+            return path + [current]
+        visited.add(current)
+        row, col = current
+        neighbours = [(row - 1, col), (row + 1, col), (row, col - 1), (row, col + 1)]
+        for neighbour in neighbours:
+            n_row, n_col = neighbour
+            if is_available(row, col, (n_row-row, n_col-col), maze) and not is_in_route(neighbour[0], neighbour[1], visited):
+                new_cost = cost + 1
+                priority = new_cost * g_weight + heuristic(neighbour, goal) * h_weight
+                if priority <= max_steps:
+                    heappush(queue, (priority, new_cost, neighbour, path + [current]))
+    return None
 
-# def g(g_tmp):
-#     return g_tmp+10
-
-# def check_cost(cell,g_temp,x_key,y_key):
-#     print("cell:",cell)
-#     x=cell[0]
-#     y=cell[1]
-#     for_f=[]
-#     for_f.append(g(g_temp))
-#     for_f.append(h(x,y,x_key,y_key))
-#     print(for_f)
-#     return for_f
-
-# def find_cell_with_min_cost(cell,neighbours,x_key,y_key):
-#     costs=[]
-#     gs=[]
-#     g_temp=0
-#     for i in neighbours:
-#         costs.append(sum(check_cost(neighbours,g_temp,x_key,y_key)))
-#         print("costs",costs)
-#         gs.append(check_cost(neighbours,g_temp,x_key,y_key)[0])
-#         print(gs)
-#     print("neighbours:",neighbours)
-#     cells_f_ranging=sorted(neighbours,key=check_cost(neighbours,g_temp,x_key,y_key))
-#     print(cells_f_ranging)
-#     return cells_f_ranging.pop(0)       
-
-
-# def find_route_by_A(x,y,x_key,y_key,maze):
-#     route=[]
-#     while x!=x_key and y!=y_key:
-#             v=(x,y)
-#             if v not in route:
-#                 route.append(v)
-#                 x, y = find_cell_with_min_cost((x,y),neighbours_list(x,y,our_maze,route),x_key,y_key)
-#     return route
-
-# route2=find_route_by_A(x, y, x_exit, y_exit, our_maze)
-# print("Маршрут:\n")               
-# print(route2)
-# print('\n')
-# print()
+g_weight = 1 
+h_weight = 1  
+max_steps = 7000
+a_star_route = key_search(our_maze, (x_key, y_key), (x_exit, y_exit), g_weight, h_weight, max_steps)
+if a_star_route:
+    print("Длина пути от ключа до выхода:", len(a_star_route))
+    paint_path(our_maze, a_star_route, ",")
+    
+f=open("maze-for-me-done.txt", "w")
+for i in our_maze:
+    f.write("".join(i))
+f.close()
+# print("".join(our_maze[0]))
