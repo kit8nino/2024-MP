@@ -111,3 +111,17 @@ def dextraPathByCoordinate(graph, start_cords, end_cords):
 	path = fireBackStep(end_node, path)
 
 	return path, fire_front
+
+# Heat map
+def heatMap(map_array, map_graph):
+	for line in range(len(map_array)):
+		for letter in range(len(map_array[0])):
+			if map_graph.array.__contains__((letter, line)):
+				if map_graph.array[(letter, line)].weigh != math.inf:
+					print(map_graph.array[(letter, line)].weigh, end='')
+				else:
+					print(map_array[line][letter], end='')
+			else:
+				print(map_array[line][letter], end='')
+		print()
+	print()

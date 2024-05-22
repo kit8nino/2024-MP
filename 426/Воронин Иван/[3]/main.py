@@ -1,19 +1,19 @@
 import pathfinder as pf
 import math
 
-man = [1, 1]
+man = [10, 10]
 # man[0] = int(input("Введите начальную координату игрока (x): "))
 # man[1] = int(input("Введите начальную координату игрока (y): "))
-key = [6, 3]
+key = [60, 30]
 # key[0] = int(input("Введите начальную координату ключа (x): "))
 # key[1] = int(input("Введите начальную координату ключа (y): "))
-end = [3, 6]
+end = [1, 15]
 # end[0] = int(input("Введите начальную координату выхода (x): "))
 # end[1] = int(input("Введите начальную координату выхода (y): "))
 
 
 map_array = []
-file = open('maze.test', 'r')
+file = open('maze.txt', 'r')
 for line in file:
 	map_array.append(list(line.strip('\n')))
 
@@ -37,24 +37,21 @@ for cord in path:
 
 
 path, fire_front = pf.dextraPathByCoordinate(map_graph, key_cords, end_cords)
-print(path)
+# print(path)
 for cord in path:
 	map_array[cord[1]][cord[0]] = ','
 
 # Вывод тепловой карты
-for line in range(len(map_array)):
-	for letter in range(len(map_array[0])):
-		if map_graph.array.__contains__((letter, line)):
-			if map_graph.array[(letter, line)].weigh != math.inf:
-				print(map_graph.array[(letter, line)].weigh, end='')
-			else:
-				print(map_array[line][letter], end='')
-		else:
-			print(map_array[line][letter], end='')
-	print()
-print()
+# pf.heatMap(map_array, map_graph)
 
+# for line in map_array:
+# 	for letter in line:
+# 		print(letter, end='')
+# 	print()
+
+file = open("maze-for-me-done.txt", 'w')
 for line in map_array:
-	for letter in line:
-		print(letter, end='')
-	print()
+	for symbol in line:
+		file.write(symbol)
+	file.write('\n')
+file.close()
