@@ -25,7 +25,7 @@ pf.tryToSet(map_array, key[0], key[1], '*', 0, key_cords)
 map_graph = pf.Graph(map_array)
 
 
-path = pf.dextraPathByCoordinate(map_graph, (1, 1), (5, 5))
+path = pf.dextraPathByCoordinate(map_graph, man_cords, key_cords)
 for cord in path:
 	map_array[cord[1]][cord[0]] = '.'
 

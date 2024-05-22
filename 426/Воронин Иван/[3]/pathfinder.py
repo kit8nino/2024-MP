@@ -95,7 +95,11 @@ def fireBackStep(node, path = []):
 
 # Find the way from start to end and return path
 def dextraPathByCoordinate(graph, start_cords, end_cords):
+	for node in graph.array.values():
+		node.weigh = math.inf
 	# direction reversed because of fireBackStep function reverced return
+	start_cords = tuple(start_cords)
+	end_cords = tuple(end_cords)
 	start_node = graph.array[end_cords]
 	end_node = graph.array[start_cords]
 	start_node.weigh = 0
@@ -103,6 +107,7 @@ def dextraPathByCoordinate(graph, start_cords, end_cords):
 	fire_front.add(start_node)
 
 	fireStep(fire_front, end_node)
+	path = []
+	path = fireBackStep(end_node, path)
 
-	path = fireBackStep(end_node)
-	return path
+	return path, fire_front
