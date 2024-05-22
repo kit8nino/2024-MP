@@ -9,8 +9,6 @@ while True:
     for i in row:
         mass_row.append(i)
     our_maze.append(mass_row)
-    
-# print(len(our_maze), len(our_maze[0]))
 
 x, y = 0, 0
 x_key, y_key = 0, 0
@@ -72,7 +70,7 @@ while x == x_key and y == y_key:
     x_key, y_key = put_object(x_key, y_key, our_maze)
 
 x, y = 0, 1
-# x_key, y_key = 24, 1
+# x_key, y_key = 24, 1      # отладочное положение ключа
 our_maze[x_key][y_key]='*'
 
 print(x, y, x_key, y_key, our_maze[x_key][y_key], our_maze[x][y])
@@ -130,4 +128,3 @@ f=open("maze-for-me-done.txt", "w")
 for i in our_maze:
     f.write("".join(i))
 f.close()
-# print("".join(our_maze[0]))
