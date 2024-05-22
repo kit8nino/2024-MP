@@ -37,8 +37,7 @@ class Point(object):
 		self.x = x
 		self.y = y
 		self.weigh = math.inf
-		self.start = False
-		self.out = False
+		self.passed = False
 		self.next = []
 
 # Преобразует массив в граф возможных путей
@@ -49,18 +48,61 @@ class Graph(object):
 		for y in range(len(array)):
 			for x in range(len(array[0])):
 				if (array[y][x] != '#'):
-					self.array[y, x] = (Point(array, x, y))
+					self.array[x, y] = (Point(array, x, y))
 
 		# print(f"lenght of graph: {len(self.array)}, lenght of array: {len(array)*len(array[0])}")
 		for point in self.array.values():
 			if self.array.__contains__((point.x, point.y+1)):
 				point.next.append(self.array[(point.x, point.y+1)])
-			elif self.array.__contains__((point.x+1, point.y)):
+			if self.array.__contains__((point.x+1, point.y)):
 				point.next.append(self.array[(point.x+1, point.y)])
-			elif self.array.__contains__((point.x, point.y-1)):
+			if self.array.__contains__((point.x, point.y-1)):
 				point.next.append(self.array[(point.x, point.y-1)])
-			elif self.array.__contains__((point.x-1, point.y)):
+			if self.array.__contains__((point.x-1, point.y)):
 				point.next.append(self.array[(point.x-1, point.y)])
 
-# def dextraFindSymbol():
-# 	
+
+# check all next nodes in fire_front and add them to fire_front, moves fire_front
+def fireStep(fire_front, end_node):
+	fire_addition = set()
+	for node in fire_front:
+		if node == end_node:
+			return True
+		else:
+			for direction in node.next:
+				fire_addition.add(direction)
+				if direction.weigh > node.weigh+1:
+					direction.weigh = node.weigh+1
+	fire_front.update(fire_addition)
+	fire_front.discard(node)
+	fireStep(fire_front, end_node)
+
+# while fireStep will have gone to end node this function make path from end to start
+def fireBackStep(node, path = []):
+	min_weight = node.weigh
+	min_node = node
+	if min_weight == 0:
+		return
+	for direction in node.next:
+		if direction.weigh < min_weight:
+			min_weight = direction.weigh
+			min_node = direction
+	x = min_node.x
+	y = min_node.y
+	path.append((x,y))
+	fireBackStep(min_node, path)
+	return path
+
+# Find the way from start to end and return path
+def dextraPathByCoordinate(graph, start_cords, end_cords):
+	# direction reversed because of fireBackStep function reverced return
+	start_node = graph.array[end_cords]
+	end_node = graph.array[start_cords]
+	start_node.weigh = 0
+	fire_front = set()
+	fire_front.add(start_node)
+
+	fireStep(fire_front, end_node)
+
+	path = fireBackStep(end_node)
+	return path
