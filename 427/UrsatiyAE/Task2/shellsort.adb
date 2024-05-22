@@ -37,7 +37,6 @@ procedure ShellSort is
         end loop;
     end Read_Text;
 
-    -- Calculate weight of each word
     function Calculate_Weight(Word : Unbounded_String) return Integer is
         Weight : Integer := 0;
     begin
@@ -47,7 +46,6 @@ procedure ShellSort is
         return Weight;
     end Calculate_Weight;
 
-    -- Shellsort algorithm
     procedure Shell_Sort is
         Temp : Unbounded_String;
     begin
@@ -62,7 +60,6 @@ procedure ShellSort is
         end loop;
     end Shell_Sort;
 
-    -- Main program
     File : File_Type;
 begin
     Open(File, In_File, "1984.txt");
