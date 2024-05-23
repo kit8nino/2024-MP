@@ -20,9 +20,24 @@ for i in range(42000):
 	y = random.uniform(-(r**2-x**2)**0.5, (r**2-x**2)**0.5)
 	arr3.append([x, y])
 
-file = open("text.txt", 'r', encoding="Windows-1251")
 arr4 = []
+file = open("text.txt", 'r', encoding="Windows-1251")
 for line in file:
 	for word in line.split(' '):
 		if (word != '' and word != '\n' and word != '-'):
 			arr4.append(word.replace('n', ''))
+
+
+
+def selection_sort(array):
+	i = 0
+	length = len(array)
+	while i < length-1:
+		min_i = i
+		for j in range(i+1, length):
+			if array[j] < array[min_i]:
+				min_i = j
+		array[i], array[min_i] = array[min_i], array[i]
+		i += 1
+selection_sort(arr1)
+# Отсортировано
