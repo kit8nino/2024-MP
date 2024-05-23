@@ -1,7 +1,6 @@
 from datetime import datetime as dt
 import collections
 
-
 predmeti ={"Алгебра": 3,
            "Геометрия": 4,
            "Физика": 2,
