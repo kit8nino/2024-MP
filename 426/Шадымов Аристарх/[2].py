@@ -28,7 +28,8 @@ for line in file:
 	for word in line.split(' '):
 		if (word != '' and word != '\n' and word != '-'):
 			arr4.append(word.replace('n', ''))
-
+file.close()
+# 21801 слово
 
 
 def selection_sort(array):
@@ -126,3 +127,16 @@ def msd_sort(array, length, bigger = True):
 
 arr3 = msd_sort(arr3,math.ceil(math.log2(310)), False)
 print("Отсортировано 3 (точность 4 знака после запятой)")
+
+
+
+def sort_comp(array):
+	Lenght = len(array)
+	for step in range(Lenght, 0, -1):
+		for	i in range(0, Lenght-step):
+			if (array[i][0] > array[i+step][0]):
+				array[i], array[i+step] = array[i+step], array[i]
+	return(array)
+
+sort_comp(arr4)
+print("Отсортировано 4")
