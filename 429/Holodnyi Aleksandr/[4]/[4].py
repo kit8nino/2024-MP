@@ -26,6 +26,12 @@ class Radar:
         x0,y0,z0 = self.get_radar_coords()
         r = ((x-x0)**2 + (y-y0)**2 + (z-z0)**2)**0.5
         phi = np.arctan((y-y0)/(x-x0))
+        if y-y0 > 0 and x-x0 < 0:
+            phi += np.pi
+        elif y-y0 < 0 and x-x0 < 0:
+            phi += np.pi
+        elif y-y0 < 0 and x-x0 >0:
+            phi += 2*np.pi
         tetta = np.arctan((z-z0)/((x-x0)**2 + (y-y0)**2)**0.5)
         ufo_spheric_coords = r, phi, tetta
         return ufo_spheric_coords
@@ -63,6 +69,10 @@ ufo_list = []
 for i in range(N):
     rand_x = random.randint(-10, 10)
     rand_y = random.randint(-10, 10)
+    while rand_x == 0:
+        rand_x = random.randint(-10, 10)
+    while rand_y == 0:
+        rand_y = random.randint(-10, 10)
     rand_z = random.randint(1, 10)
     rand_coords = [rand_x, rand_y, rand_z]
     
@@ -74,15 +84,15 @@ for i in range(N):
 print("\nInitial spheric coordinates regarding radar:")
 for i in range(N):    
     r, phi, tetta = radar.get_ufo_spheric_coords(ufo_list[i],-dt) #начальные сфер. координаты без учета времени возврата радиоимпульса
-    print(f'UFO {i}: r(0)={r}м phi(0)={phi}rad tetta(0)={tetta}rad')
+    print(f'UFO {i}: r(0)={r:0.2f}м phi(0)={phi:0.2f}rad tetta(0)={tetta:0.2f}rad')
 
 while True:
     flag = input("\nSet time: ")
     if flag == '!': break 
-    t = float(flag)
+    t = int(flag)
     
     for i in range(N):    
         r, phi, tetta = radar.get_ufo_spheric_coords(ufo_list[i],t) #сфер. координаты с учетом времени возврата радиоимпульса
-        print(f'UFO {i}: r({t})={r}м phi({t})={phi}rad tetta({t})={tetta}rad')
+        print(f'UFO {i}: r({t})={r:0.2f}м phi({t})={phi:0.2f}rad tetta({t})={tetta:0.2f}rad')
     print("ENTER '!' TO FINISH")
     
