@@ -42,7 +42,7 @@ def selection_sort(array):
 		array[i], array[min_i] = array[min_i], array[i]
 		i += 1
 selection_sort(arr1)
-# Отсортировано
+print("Отсортировано 1")
 
 
 
@@ -87,7 +87,6 @@ def bitonic_sort(array):
 	while array[last_symbol] == math.inf:
 		inf_len += 1
 		last_symbol -= 1
-	print(last_symbol)
 	array = array[:last_symbol+1]
 	return array
 
@@ -96,4 +95,34 @@ arr2_extension = np.full((extension_length), math.inf)
 arr2 = np.concatenate([arr2, arr2_extension])
 
 arr2 = bitonic_sort(arr2)
-# Отсортировано
+print("Отсортировано 2")
+
+
+
+def module(array):
+	summ = 0
+	for element in array:
+		summ += element ** 2
+	return summ ** 0.5
+
+def msd_sort(array, length, bigger = True):
+	# Целая часть
+	
+	small = []
+	big = []
+	for i in range(len(array)):
+		number = str(bin(math.floor(module(array[i])*100)))[2:]
+		if len(number) < length or number[-length] == '0':
+			small.append(array[i])
+		else:
+			big.append(array[i])
+	if length >= 1:
+		if len(small) > 1:
+			small = msd_sort(small, length-1, False)
+		if len(big) > 1:
+			big = msd_sort(big, length-1)
+	array = small + big
+	return array
+
+arr3 = msd_sort(arr3,math.ceil(math.log2(310)), False)
+print("Отсортировано 3 (точность 4 знака после запятой)")
