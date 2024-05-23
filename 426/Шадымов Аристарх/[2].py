@@ -1,4 +1,6 @@
 import random
+import numpy as np
+import math
 
 # print(random.sample(range(1, 18), 4))
 # 8 17 16 3
@@ -40,4 +42,58 @@ def selection_sort(array):
 		array[i], array[min_i] = array[min_i], array[i]
 		i += 1
 selection_sort(arr1)
+# Отсортировано
+
+
+
+def c_swap(array, a, b, inverted):
+	size = b - a
+	step = int(size / 2)
+	if not inverted:
+		for i in range(a, math.floor(a + size / 2)):
+			if (array[i]) <= (array[i + step]):
+				pass
+			else:
+				array[i], array[i + step] = array[i + step], array[i]
+	else:
+		for i in range(a, math.floor(a + size / 2)):
+			if (array[i]) >= (array[i + step]):
+				pass
+			else:
+				array[i], array[i + step] = array[i + step], array[i]
+	if size > 2:
+		c_swap(array, a, a + step, inverted)
+		c_swap(array, a+step, b, inverted)
+
+def subfunction(array, limit_size, inverted):
+	if len(array) == limit_size:
+		c_swap(array, 0, limit_size, inverted)	
+	else:
+		middle = int(len(array)/2)
+		left = array[:middle]
+		right = array[middle:]
+		subfunction(left, limit_size, False)
+		subfunction(right, limit_size, True)
+		array = np.concatenate([left, right])
+
+def bitonic_sort(array): 
+	step = 2
+	limit = len(array)+1
+	while(step < limit):
+		subfunction(array, step, False)
+		step *= 2
+	inf_len = 0
+	last_symbol = len(array)-1
+	while array[last_symbol] == math.inf:
+		inf_len += 1
+		last_symbol -= 1
+	print(last_symbol)
+	array = array[:last_symbol+1]
+	return array
+
+extension_length = 2**math.ceil(math.log2(len(arr2))) - len(arr2)
+arr2_extension = np.full((extension_length), math.inf)
+arr2 = np.concatenate([arr2, arr2_extension])
+
+arr2 = bitonic_sort(arr2)
 # Отсортировано
