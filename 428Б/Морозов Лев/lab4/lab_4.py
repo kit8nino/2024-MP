@@ -104,6 +104,7 @@ class Flying_objects_shower:
             print (f"\nX-координата: {flying_object.x_object} м\nY-координата: {flying_object.y_object} м\nZ-координата: {flying_object.z_object} м")
             print (f"\nVx-скорость: {flying_object.vx_object} м/с\nVy-скорость: {flying_object.vy_object} м/с\nVz-скорость: {flying_object.vz_object} м/с")
             counter+=1
+            
 def main():
     
     radar = Radar_creator.radar_creation()
