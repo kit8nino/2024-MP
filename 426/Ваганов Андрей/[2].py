@@ -62,3 +62,20 @@ def compsort(array):
 array_2 = compsort(array_2)
 print("compsort")
 # Долго соритрует такой массив, при длине в 9999 укладывается в секунду
+
+def abs(number):
+	return (number[0]**2+number[1]**2)**0.5
+
+def bubblesort(array):
+	last = len(array) - 1
+	while(last > 0):
+		for i in range(0, last):
+			if abs(array[i]) > abs(array[i+1]):
+				array[i], array[i+1] = array[i+1], array[i]
+		last -= 1
+		print(last)
+	return array
+
+array_3 = bubblesort(array_3)
+print("bubblesort")
+# Долго соритрует такой массив, при длине в 4200 укладывается в 5 секунд
