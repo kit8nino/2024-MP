@@ -25,7 +25,7 @@ class Plane:
         self.vz=velocity[2]
     
     def to_SSC(self):
-        r=np.sqrt(self.x**2+self.y**2)
+        r=np.sqrt(self.x**2+self.y**2+self.z**2)
         phi=np.degrees(math.atan2(self.y,self.x))
         theta=np.degrees(math.atan2(self.z,np.sqrt(self.x**2+self.y**2)))
         return r,phi,theta
@@ -38,9 +38,9 @@ n=int(input('Количество исследуемых самолетов:'))
 #исходные данные задаются рандомно
 planes=[]
 for i in range (n):
-    x=random.randint(-10,10)
-    y=random.randint(-10,10)
-    z=random.randint(0,10)
+    x=random.randint(-10000,10000)
+    y=random.randint(-10000,10000)
+    z=random.randint(0,10000)
     velocity=[]
     for j in range (3):
         velocity.append(random.randint(-600,600))
