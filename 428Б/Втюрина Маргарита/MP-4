@@ -28,9 +28,9 @@ class flying_object:
         self.time = time
  objects = []
 for _ in range(num_objects):
-        position = Vector(random.uniform(-1000, 1000),
-                            random.uniform(-1000, 1000),
-                            random.uniform(-1000, 1000))
+        position = Vector(random.uniform(-10000, 10000),
+                            random.uniform(-10000, 10000),
+                            random.uniform(-10000, 10000))
         velocity = Vector(random.uniform(-800, 800),
                             random.uniform(-800, 800),
                             random.uniform(-800, 800))
