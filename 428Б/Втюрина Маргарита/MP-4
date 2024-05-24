@@ -9,11 +9,7 @@ class Radar(position):
           return cls._position
     def __init__:
           pass
-    def spherical(self):
-        r = math.sqrt(self.x**2 + self.y**2 + self.z**2)
-        phi = math.atan2(self.y, self.x) 
-        theta = math.atan2(self.z, math.sqrt(self.x**2 + self.y**2))
-        return r, math.degrees(phi), math.degrees(theta)
+     
 
 class Vector:
     def __init__(self, x, y, z):
@@ -22,6 +18,11 @@ class Vector:
         self.z = z
     def __mul_vect__(self, arg):
         return Vector(self.x * arg, self.y * arg, self.z * arg)
+    def spherical(self):
+        r = math.sqrt(self.x**2 + self.y**2 + self.z**2)
+        phi = math.atan2(self.y, self.x) 
+        theta = math.atan2(self.z, math.sqrt(self.x**2 + self.y**2))
+        return r, math.degrees(phi), math.degrees(theta)
 
 class flying_object:
     def __init__(self, position, v):
