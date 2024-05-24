@@ -3,17 +3,21 @@ import numpy as np
 import random
 
 class Radar:
-    def __new__(cls):
-        instance=None
-        if instance is None:
-            instance = super().__new__(cls)
-        return instance
+    _instance=None
+    def __new__(cls,x,y,z):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+            cls._instance.x=x
+            cls._instance.y=y
+            cls._instance.z=z
+        return cls._instance
     
     def send_pulse(self,phi,theta):
         pass
     
     def receive_pulse(self,plane):
         return plane.x,plane.y,plane.z
+    
     
 class Plane:
     def __init__(self,x,y,z,velocity):
@@ -24,14 +28,15 @@ class Plane:
         self.vy=velocity[1]
         self.vz=velocity[2]
     
-    def to_SSC(self):
-        r=np.sqrt(self.x**2+self.y**2+self.z**2)
-        phi=np.degrees(math.atan2(self.y,self.x))
-        theta=np.degrees(math.atan2(self.z,np.sqrt(self.x**2+self.y**2)))
+    def to_SSC(self,obj_x,obj_y,obj_z):
+        r=np.sqrt((self.x-obj_x)**2+(self.y-obj_y)**2+(self.z-obj_z)**2)
+        phi=np.degrees(math.atan2(self.y-obj_y,self.x-obj_x))
+        theta=np.degrees(math.atan2(self.z-obj_z,np.sqrt((self.x-obj_x)**2+(self.y-obj_y)**2)))
         return r,phi,theta
     
-#пусть радар стоит в точке начала отсчета
-My_radar=Radar()
+
+My_radar=Radar(0,0,0)
+
 
 n=int(input('Количество исследуемых самолетов:'))
 
@@ -42,13 +47,15 @@ for i in range (n):
     y=random.randint(-10000,10000)
     z=random.randint(0,10000)
     velocity=[]
-    for j in range (3):
+    for j in range (2):
         velocity.append(random.randint(-600,600))
+    velocity.append(random.randint(-600,200))
     planes.append(Plane(x,y,z,velocity))
     
 for plane in planes:
-    r,phi,theta=plane.to_SSC()
-    print('r={}\n\nphi={}\n\ntheta={}\n\n'.format(r,phi,theta))
+    #plane.x,plane.y,plane.z=plane.relative_position(My_radar)
+    r,phi,theta=plane.to_SSC(My_radar.x,My_radar.y,My_radar.z)
+    print('\nr={}\n\nphi={}\n\ntheta={}\n\n'.format(r,phi,theta))
     
 t=int(input("Время(в секундах):"))
 
@@ -60,7 +67,7 @@ for plane in planes:
     planes.remove(plane)
     planes.append(Plane(x1,y1,z1,velocity1))
     
-    print("Координаты через время:{} c".format(t))
+print("--------------------Координаты через {} c-------------------".format(t))
 for plane in planes:
-    r,phi,theta=plane.to_SSC()
-    print('r={}\nphi={}\n\ntheta={}\n\n'.format(r,phi,theta))
+    r,phi,theta=plane.to_SSC(My_radar.x,My_radar.y,My_radar.z)
+    print('\nr={}\n\nphi={}\n\ntheta={}\n\n'.format(r,phi,theta))
