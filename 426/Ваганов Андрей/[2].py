@@ -48,3 +48,17 @@ def quicksort(array):
 
 array_1 = quicksort(array_1)
 print("quicksort")
+
+
+
+def compsort(array):
+	max_len = len(array)
+	for step in range(max_len, 0, -1):
+		for	i in range(0, max_len-step):
+			if (array[i] > array[i+step]):
+				array[i], array[i+step] = array[i+step], array[i]
+	return(array)
+
+array_2 = compsort(array_2)
+print("compsort")
+# Долго соритрует такой массив, при длине в 9999 укладывается в секунду
