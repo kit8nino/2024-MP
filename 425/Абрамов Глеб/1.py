@@ -1,5 +1,6 @@
-import random
+
 from datetime import date
+import random
 
 # Словарь, составленный из оценок
 certificate = {
