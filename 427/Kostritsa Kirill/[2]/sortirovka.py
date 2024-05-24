@@ -25,7 +25,7 @@ def get_list3(n=42000):
             number = complex(x, y)
             list3.append(number)
     return list3
-list3 = get_list3()
+list3 = get_list3(42)
 
 def get_list4():
     f = open('Крёстный Отец (отрывок).txt') # Количество слов = 11981
