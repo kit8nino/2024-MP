@@ -79,3 +79,19 @@ def bubblesort(array):
 array_3 = bubblesort(array_3)
 print("bubblesort")
 # Долго соритрует такой массив, при длине в 4200 укладывается в 5 секунд
+
+def gnomesort(array):
+	i_max = len(array)
+	i = 0
+	while(i < i_max-1):
+		if array[i][0] <= array[i+1][0]:
+			i += 1
+		elif (i != 0):
+			array[i], array[i+1] = array[i+1], array[i]
+			i -= 1
+		else:
+			array[i], array[i+1] = array[i+1], array[i]
+	return array
+array_4 = gnomesort(array_4)
+print("gnomesort")
+# Соритровка за 8 секунд
