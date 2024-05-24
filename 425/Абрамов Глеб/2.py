@@ -1,147 +1,135 @@
 import random
-import math
+import cmath
+import re 
 
-# список целых чисел от 0 до 999999
-integers = []
-for i in range(100000):
-    integers.append(i)
-# random.shuffle(integers)
+def generate_and_shuffle_list(size):
+    integer_list = list(range(size))
+    random.shuffle(integer_list)
+    return integer_list
 
-# список из 99999 случайных вещественных чисел в диапазоне [-1, 1]
-real_numbers = []
-for i in range(10000):
-    real_numbers.append(random.uniform(-1, 1))
-
-# 42000 разных точки комплексной плоскости, лежащие внутри окружности радиуса r = birth_day / birth_month
-# (можно случайных, можно равномерно распределённых), сортировать по модулю числа
+integer_list = generate_and_shuffle_list(1000000)
 
 
-birth_day = 15
-birth_month = 6
-max_module = birth_day / birth_month
-complex_points = []
-while len(complex_points) != 42000:
-    radius = random.uniform(0, max_module)
-    angle = random.uniform(0, 2 * math.pi)
-    complex_points.append([radius * math.cos(angle),
-                           radius * math.sin(angle)])
+real_numbers_list = [random.uniform(-1, 1) for _ in range(99999)]
 
-# отрывок из книги (любой, на свой выбор) не менее 10000 слов, разбитый в список по словам
-words = []
-with open('отрывок из книги.txt', encoding='utf-8') as book:
-    for line in book:
-        for i in (line.split(" ")):
-            if i != '\n' and len(words) < 10000:
-                words.append(str(i))
+def calculate_radius(birth_day, birth_month):
+    radius = birth_day / birth_month
+    return radius
 
+def generate_complex_numbers(radius):
+    points = []
+    while len(points) < 42000:
+        x = random.uniform(-radius, radius)
+        y = random.uniform(-radius, radius)
+        if abs(cmath.rect(1, 0) * cmath.rect(x, y)) <= radius:
+            points.append(x + y * 1j)
 
-# номера выпавшие для сортировки:
-# 4 сортировка вставкой
-# 7 гномья сортировка
-# 12 сортировка подсчетом
-# 13 блочная (карманная) сортировка
+    return points
 
+radius = calculate_radius(24, 11)
+complex_points = generate_complex_numbers(radius)
 
-# функция сортировки вставкой для действительных чисел
+def read_file(filename):
+    with open(filename, "r", encoding="utf-8") as file:
+        text = file.read()
 
-def insertion(list):
-    for i in range(1, len(list)):
-        value = list[i]
-        j = i - 1
-        # будем передвигать элемент пока он не встанет на нужное место
-        while ((j >= 0) and (list[j] > value)):
-            list[j + 1] = list[j]
-            j = j - 1
-        list[j + 1] = value
+    return text
 
+def split_into_words(text):
+    words = re.findall(r'\w+', text.lower())
 
-# функция для нахождения модуля комплексного числа
-def module(complex):
-    return math.sqrt((complex[0] * complex[0]) + (complex[1] * complex[1]))
+    return words
 
+word_list = split_into_words(read_file("отрывок из книги.txt"))
 
-# функция сортировки вставкой для комлексных чисел(будет использоваться позже)
-def complex_insertion(list):
-    for i in range(1, len(list)):
-        value = module(list[i])
-        j = i - 1
-        while ((j >= 0) and (module(list[j]) > value)):
-            list[j + 1] = list[j]
-            j = j - 1
-        list[j + 1] = list[j]
+def bubble_sort(sorting_list):
+    size = len(sorting_list)
+
+    for i in range(size - 1):
+        swapped = False
+        for j in range(0, size - i - 1):
+            if abs(sorting_list[j]) > abs(sorting_list[j + 1]):
+                swap(sorting_list, j, j + 1)
+                swapped = True
+        if not swapped:
+            break
+
+def swap(lst, i, j):
+    lst[i], lst[j] = lst[j], lst[i]
 
 
-insertion(real_numbers)
-print("сортировка вставкой для действительных чисел", "\n")
 
+def shell_sort(sorting_list):
+    size = len(sorting_list)
+    gap = size // 2
+    while gap > 0:
+        for i in range(size - gap):
+            j = i
+            while j >= 0 and sorting_list[j] > sorting_list[j + gap]:
+                swap(sorting_list, j, j + gap)
+                j -= 1
+        gap //= 2
 
-# print(real_numbers)
+def merge_sort(sorting_list):
+    if len(sorting_list) > 1:
+        middle = len(sorting_list) // 2
+        left_list = sorting_list[:middle]
+        right_list = sorting_list[middle:]
+        merge_sort(left_list)
+        merge_sort(right_list)
+        merge(left_list, right_list, sorting_list)
+    return sorting_list
 
-# гномья сортировка для списка слов
-def Gnome_sort(list):
-    index = 1
-    i = 0
-    n = len(list)
-    while i < n - 1:
-        # если следующий элемент больше то идем дальше
-        if len(list[i]) <= len(list[i + 1]):
-            i = index
-            index = index + 1
-        # если следующий меньше то меняем местами и сдвигаемся назад
+def merge(left_list, right_list, merged_list):
+    left_index, right_index, current_index = 0, 0, 0
+
+    while left_index < len(left_list) and right_index < len(right_list):
+        if left_list[left_index] <= right_list[right_index]:
+            merged_list[current_index] = left_list[left_index]
+            left_index += 1
         else:
-            list[i], list[i + 1] = list[i + 1], list[i]
-            i = i - 1
-            if i < 0:
-                i = index
-                index = index + 1
+            merged_list[current_index] = right_list[right_index]
+            right_index += 1
+        current_index += 1
+
+    while left_index < len(left_list):
+        merged_list[current_index] = left_list[left_index]
+        left_index += 1
+        current_index += 1
+
+    while right_index < len(right_list):
+        merged_list[current_index] = right_list[right_index]
+        right_index += 1
+        current_index += 1
+
+def bucket_sort(sorting_list, bucket_size=10):
+    min_value = min(sorting_list)
+    max_value = max(sorting_list)
+
+    bucket_count = (max_value - min_value) // bucket_size + 1
+    buckets = [[] for _ in range(int(bucket_count))]  
+
+    for num in sorting_list:
+        index = int((num - min_value) // bucket_size) 
+        buckets[index].append(num)
+    for bucket in buckets:
+       shell_sort(bucket)
+
+    sorted_list = []
+    for bucket in buckets:
+        sorted_list.extend(bucket)
+
+    return sorted_list
 
 
-Gnome_sort(words)
-print("гномья сортировка")
-print("отсортированный список слов", words)
+bubble_sort(complex_points[:20])
+print('Отсортированный список комплексных чисел:', complex_points[:20])
 
+shell_sort(real_numbers_list[:20])
+print('Отсортированный список вещественных чисел :', real_numbers_list[:20])
 
-# сортировка подсчетом для списка целых чисел
+sorted_words = merge_sort(word_list[:20])
+print('Отсортированный список слов:', sorted_words[:20])
 
-
-def counting_sort(list):
-    list_count = [0] * len(list)
-    for i in list:
-        list_count[i] += 1
-    list.clear()
-    for i in range(len(list_count)):
-        for a in range(list_count[i]):
-            list.append(i)
-
-
-counting_sort(integers)
-print("сортировка подсчетом для списка целых чисел", "\n")
-print(integers)
-
-
-# print(integers)
-
-
-# карманная сортировка для комплексных чисел
-
-def Bucket_sort(list):
-    buckets = []
-    # создадим пустых корзин столько же сколько и переменных в сортируемом списке
-    for i in range(len(list)):
-        buckets.append([])
-    # каждую переменную из сортируемого списка положим в свою корзину
-    for i in list:
-        buckets[int((module(i)) // (max_module / 42000))].append(i)
-    # каждую корзину отсортируем вставкой
-    for i in buckets:
-        complex_insertion(i)
-    # очистим список и заполним его значениями из корзин
-    list.clear()
-    for i in buckets:
-        for number in i:
-            list.append(number)
-
-
-Bucket_sort(complex_points)
-print("карманная сортировка для комплексных чисел", "\n")
-print(complex_points)
+sorted_integer_list = bucket_sort(integer_list[:20])
+print('Отсортированный список целых чисел:', sorted_integer_list[:20])

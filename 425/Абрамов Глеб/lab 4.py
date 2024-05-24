@@ -1,59 +1,92 @@
 import math
 
+# Определение класса для представления трехмерных векторов
+class Vector3D:
+    def __init__(self, x, y, z):
+        # Инициализация компонентов вектора
+        self.x = x
+        self.y = y
+        self.z = z
+
+    # Метод для сложения двух векторов
+    def __add__(self, other):
+        return Vector3D(self.x + other.x, self.y + other.y, self.z + other.z)
+
+    # Метод для вычитания одного вектора из другого
+    def __sub__(self, other):
+        return Vector3D(self.x - other.x, self.y - other.y, self.z - other.z)
+
+    # Метод для умножения вектора на скаляр
+    def __mul__(self, scalar):
+        return Vector3D(self.x * scalar, self.y * scalar, self.z * scalar)
+
+    # Метод для вычисления расстояния до другого вектора
+    def distance_to(self, other):
+        return math.sqrt((self.x - other.x)**2 + (self.y - other.y)**2 + (self.z - other.z) ** 2)
+
+    # Метод для преобразования декартовых координат в сферические
+    def to_spherical(self):
+        r = math.sqrt(self.x**2 + self.y**2 + self.z**2)
+        theta = math.atan2(math.sqrt(self.x**2 + self.y**2), self.z)  # угол места
+        phi = math.atan2(self.y, self.x)  # азимут
+        return r, math.degrees(theta), math.degrees(phi)
+
+# Реализация паттерна Singleton для класса Radar
 class SingletonMeta(type):
     _instances = {}
+
     def __call__(cls, *args, **kwargs):
         if cls not in cls._instances:
             instance = super().__call__(*args, **kwargs)
             cls._instances[cls] = instance
         return cls._instances[cls]
 
+# Класс радара, использующий паттерн Singleton
 class Radar(metaclass=SingletonMeta):
-    def __init__(self, x, y, z):
-        self.x = x
-        self.y = y
-        self.z = z
+    def __init__(self, position):
+        self.position = position
 
-    def calculate_spherical_coordinates(self, obj):
-        dx = obj.x - self.x
-        dy = obj.y - self.y
-        dz = obj.z - self.z
-        r = math.sqrt(dx**2 + dy**2 + dz**2)
-        azimuth = math.degrees(math.atan2(dy, dx)) % 360
-        elevation = math.degrees(math.asin(dz / r))
-        return r, azimuth, elevation
+    # Метод для получения сферических координат объекта
+    def get_object_coordinates(self, flying_object):
+        relative_position = flying_object.position - self.position
+        return relative_position.to_spherical()
 
-    def update_position(self, obj, t):
-        obj.x += obj.vx * t
-        obj.y += obj.vy * t
-        obj.z += obj.vz * t
+    # Метод для предсказания сферических координат объекта через время t
+    def predict_object_coordinates(self, flying_object, time):
+        future_position = flying_object.position + flying_object.velocity * time
+        relative_position = future_position - self.position
+        return relative_position.to_spherical()
 
+# Класс для представления летающих объектов
 class FlyingObject:
-    def __init__(self, x, y, z, vx, vy, vz):
-        self.x = x
-        self.y = y
-        self.z = z
-        self.vx = vx
-        self.vy = vy
-        self.vz = vz
+    def __init__(self, position, velocity):
+        self.position = position
+        self.velocity = velocity
 
-# Создание радара и летающих объектов
-radar = Radar(0, 0, 0)
-N = int(input("Введите количество летающих объектов: "))
-flying_objects = []
-for i in range(N):
-    x, y, z = map(float, input(f"Введите координаты объекта {i+1}: ").split())
-    vx, vy, vz = map(float, input(f"Введите проекции скоростей объекта {i+1}: ").split())
-    flying_objects.append(FlyingObject(x, y, z, vx, vy, vz))
+# Главная функция программы
+def main():
+    radar_position = Vector3D(0, 0, 0)  # координаты радара
+    radar = Radar(radar_position)
 
-# Вывод текущих сферических координат
-for i, obj in enumerate(flying_objects, 1):
-    r, azimuth, elevation = radar.calculate_spherical_coordinates(obj)
-    print(f"Текущие сферические координаты объекта {i}: r={r}, azimuth={azimuth}, elevation={elevation}")
+    num_objects = int(input("Введите количество летающих объектов: "))
+    flying_objects = []
 
-# Ввод времени и вывод сферических координат через это время
-t = float(input("Введите время в секундах: "))
-for i, obj in enumerate(flying_objects, 1):
-    radar.update_position(obj, t)
-    r, azimuth, elevation = radar.calculate_spherical_coordinates(obj)
-    print(f"Сферические координаты объекта {i} через {t} секунд: r={r}, azimuth={azimuth}, elevation={elevation}")
+    for i in range(num_objects):
+        x, y, z = map(float, input(f"Введите координаты объекта {i + 1} (x y z): ").split())
+        vx, vy, vz = map(float, input(f"Введите скорость объекта {i + 1} (vx vy vz): ").split())
+        flying_objects.append(FlyingObject(Vector3D(x, y, z), Vector3D(vx, vy, vz)))
+
+    print("\nТекущие сферические координаты объектов относительно радара:")
+    for i, obj in enumerate(flying_objects):
+        r, theta, phi = radar.get_object_coordinates(obj)
+        print(f"Объект {i + 1}: r={r:.2f} м, θ(угол)={theta:.2f}°, φ(азимут)={phi:.2f}°")
+
+    time = float(input("\nВведите время в секундах: "))
+    print("\nСферические координаты объектов относительно радара через это время:")
+    for i, obj in enumerate(flying_objects):
+        r, theta, phi = radar.predict_object_coordinates(obj, time)
+        print(f"Объект {i + 1}: r={r:.2f} м, θ(угол)={theta:.2f}°, φ(азимут)={phi:.2f}°")
+
+
+if __name__ == "__main__":
+    main()

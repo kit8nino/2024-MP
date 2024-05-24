@@ -1,15 +1,15 @@
-import datetime
 import random
-import queue
+from datetime import date
 
-predmet = {
-    "русский язык": 4, 
+# Словарь, составленный из оценок
+certificate = {
+     "русский_язык": 4, 
     "алгебра": 4,
     "геометрия": 4,
     "литература": 5,
     "химия": 5,
     "география": 5,
-    "английский язык": 5,
+    "английский_язык": 5,
     "информатика": 5,
     "ОБЖ":3,
     "физика": 4,
@@ -19,223 +19,222 @@ predmet = {
     "биология": 3
 }
 
-western_actor = ("Чарльз Бронсон", datetime.date(1921, 11, 3))
+actor = ('Джон',' Расселл','03.01.1921')
 
+# составление списка из имени и фамилии
 
-men_names = [
+popular_name_man = [
     'Иван', 'Александр', 'Сергей', 'Андрей', 'Дмитрий', 
     'Алексей', 'Максим', 'Евгений', 'Антон', 'Владимир'
 ]
 
-women_names = [
-    'Екатерина', 'Мария', 'Елена','Анна', 
-    'Ольга','Анастасия',  'Наталья', 'Ирина', 'Татьяна', 'Светлана'
-]
-
-men_surnames = [
-    'Иванов', 'Петров', 'Смирнов', 'Кузнецов', 'Попов', 'Сергеев', 
+popular_surname_man = [   
+   'Иванов', 'Петров', 'Смирнов', 'Кузнецов', 'Попов', 'Сергеев', 
     'Волков', 'Васильев'
 ]
 
-women_surnames = [
-    'Иванова','Петрова', 'Кузнецова', 'Смирнова','Попова', 'Волкова', 
-    'Васильева', 'Романова'
+popular_name_woman = [   
+   'Екатерина', 'Мария', 'Елена','Анна', 
+    'Ольга','Анастасия',  'Наталья', 'Ирина', 'Татьяна', 'Светлана'
 ]
 
+popular_surname_woman = [
+    'Иванова','Петрова', 'Кузнецова', 'Смирнова','Попова', 'Волкова', 
+    'Васильева', 'Романова'     
+]
 
-popular_names = []
+person_data = []
+#('Мужчины: ')
+for i in range(0,len(popular_name_man)):
+    random_name_man = random.choice(popular_name_man)
+    random_surname_man = random.choice(popular_surname_man)
+    person_data.append(random_name_man)
+    person_data.append(random_surname_man)
 
-for _ in range(10):
-    random_male_name = random.choice(men_names)
-    random_male_surname = random.choice(men_surnames)
-    popular_names.append(random_male_name + ' ' + random_male_surname)
-
-for _ in range(10):
-    random_female_name = random.choice(women_names)
-    random_female_surname = random.choice(women_surnames)
-    popular_names.append(random_female_name + ' ' + random_female_surname)
+#( 'Женщины: ')
+for i in range(0,len(popular_name_man)):
+    random_name_woman = random.choice(popular_name_woman)
+    random_surname_woman = random.choice(popular_surname_woman)
+    person_data.append(random_name_woman)
+    person_data.append(random_surname_woman)
 
 
-pet_name = "Овальный Червонец"
+#Имя тамандуа
+name_pet = 'Овальный Червонец'
 
-# Задание 1
-print("Задание 1")
-total_grades = 0
-subject_count = 0
+# 1-9 Задание
 
-for subject, grade in predmet.items():
-    total_grades += grade
-    subject_count += 1
+print ("1 задание")
 
-average_grade = total_grades / subject_count
-print("Средний балл =", average_grade)
+total_score = sum(certificate.values())
+num_subjects = len(certificate)
+average_score = total_score / num_subjects
+print(f"Средняя оценка в аттестате: {average_score}")
 
-#Задание 2
-print("Задание 2")
-names = [None] * 20
+print ("2 задание")
 
-for i in range(20):
-    split_name = popular_names[i].split()
-    names[i] = split_name[0]
+full_nam = popular_name_man + popular_name_woman
+unique_names = set(full_nam)
+for name in unique_names:
+    print(name)
 
-for i in range(20):
-    count = 0
-    for j in range(0, 20, 1):
-        if (names[i] == names[j]) and (i != j):
-            count += 1
-    if count == 0:
-        print(names[i])
+print ("3 задание")
 
-# Задание 3
-print("Задание 3")
-total_letters = 0
+total_length = 0 
 
-for subject, _ in predmet.items():
-    total_letters += len(subject)
+for subject in certificate:
+    total_length += len(subject)
 
-print("Общее количество букв в названиях предметов =", total_letters)
+print(f"Длина всех названий предметов: {total_length}")
 
-#Задание 4
-print("Задание 4")
-concatenated_str = ""
+print ("4 задание")
 
-for subject, _ in predmet.items():
-    concatenated_str += str(subject)
+unique_letters = set()
 
-for i in range(len(concatenated_str)):
-    count = 0
-    for j in range(len(concatenated_str)):
-        if (concatenated_str[i] == concatenated_str[j]) and (i != j):
-            count += 1
-    if count == 0:
-        print(concatenated_str[i])
+for subject in certificate:
+    for letter in subject:
+        unique_letters.add(letter)
 
-#Задание 5
-print("Задание 5")
-bits = bin(int.from_bytes(pet_name.encode('utf-8', 'surrogatepass'), 'big'))[2:]
-print(bits.zfill(8 * ((len(bits) + 7) // 8)))
+print("Уникальные буквы в названиях предметов:")
+for letter in sorted(unique_letters):
+    print(letter, end=" ")
 
-# Задание 6
-print("Задание 6")
-сегодня = datetime.date.today()
-print(сегодня - western_actor[1])
+print ("5 задание")
 
-# Задание 7
-print("Задание 7")
-fifo_queue = queue.Queue()
-flag = True
+name_bytes = name_pet.encode('utf-8')
 
-print("Введите название строительного материала, введите stop, чтобы остановиться и показать список:")
+binary_string = ''.join(format(byte, '08b') for byte in name_bytes)
 
-while flag:
-    queue_element = input()
+print("Имя домашнего тамандуа в бинарном виде:")
+print(binary_string)
 
-    if queue_element == "stop":
-        print("Список строительных материалов:")
-        for i in range(fifo_queue.qsize()):
-            res = fifo_queue.get()
-            print(res)
+print ("6 задание")
+
+birth_date_str = actor[2]
+birth_date = date(int(birth_date_str[-4:]), int(birth_date_str[3:5]), int(birth_date_str[:2]))
+
+today = date.today()
+
+days_since_birth = (today - birth_date).days
+
+print(f"Количество дней от даты рождения актера {actor[0]} {actor[1]} ({birth_date_str}) до текущей даты ({today}): {days_since_birth}")
+
+print ("7 задание")
+
+material_list = []
+
+while True:
+    material_name = input("Введите название строительного материала ('stop' для завершения): ")
+    if material_name.lower() == 'stop':
         break
-    else:
-        fifo_queue.put(queue_element)
+    material_list.append(material_name)
 
-# Задание 8
-print("Задание 8")
-number = (3 + 11**2 + 1921) % 39 + 1  # 18
-emperor_name = "Чжоу Хуэй-Ван"
+print("Список материалов:")
+for material in material_list:
+    print(material)
+print ("8 задание")
+name, surname, date_of_birth = actor
 
-print("Введите номер для замены:")
-i = int(input())
+day, month, year = map(int, date_of_birth.split('.'))
 
-popular_names[i] = emperor_name
+number = (day + month**2 + year) % 39 + 1
 
-print(popular_names)
+emperors_zhou = [
+    'Вэнь-ван', 'У-ван', 'Чжуан-ван', 'Си-ван', 'Хуэй-ван', 'Ин-ван', 'Сюань-ван',
+    'Юй-ван', 'Пин-ван', 'Хуань-ван', 'Чжуан-ван', 'Си-ван', 'Цзинь-ван', 'Лин-ван',
+    'Цзин-ван', 'Дао-ван', 'Сюань-ван', 'Чжао-ван', 'Му-ван', 'Гун-ван', 'И-ван',
+    'Ли-ван', 'Сюань-ван', 'Чэнь-ван', 'Куан-ван', 'Дин-ван', 'Цзянь-ван', 'Лин-ван',
+    'Цзин-ван', 'Сянь-ван', 'Шэнь-шэн-ван', 'Чжао-ван', 'Му-ван', 'Гун-ван', 'И-ван',
+    'Ли-ван', 'Сюань-ван', 'Чэнь-ван', 'Куан-ван'
+]
 
-print("Задание 9")
+index = int(input("Введите индекс: "))
+
+# Проверка на корректность введенного индекса
+if index < 1 or index > len(full_nam):
+    print("Индекс вне диапазона!")
+else:
+    day = int(input("Введите день рождения: "))
+    month = int(input("Введите месяц рождения: "))
+    year = int(input("Введите год рождения: "))
+    number = (day + month**2 + year) % 39 + 1
+
+    full_nam[index-1] = emperors_zhou[number-1]
+    print('     Готовый список:',full_nam)
+
+print ("\n9 задание")
 
 class Node:
-    def __init__(self, data=None):
-        self.data = data
+    def __init__(self, name):
+        self.name = name
         self.next = None
 
-class List:
-    def __init__(self):
-        self.head = None
+def remove_node(head, name):
+    if head is None:
+        return head
 
-    def append(self, data):
-        new_node = Node(data)
-        if self.head is None:
-            self.head = new_node
-        else:
-            current_node = self.head
-            while current_node.next:
-                current_node = current_node.next
-            current_node.next = new_node
+    if head.name == name:
+        return head.next
 
-    def remove(self, index):
-        step = 0
-        if index == 0:
-            self.head.data = "Конец"
-        else:
-            current_node = self.head
-            while step < index:
-                current_node = current_node.next
-                step += 1
-            current_node.data = "Конец"
+    current = head
+    prev = None
 
-    def insert(self, index):
-        step = 0
-        current_node = self.head
-        while current_node.next:
-            if step < index:
-                current_node = current_node.next
-                step += 1
-            elif step == index:
-                current_node.data = current_node.next.data
-                current_node = current_node.next
-                step += 1
-            else:
-                if step != self.len() - 1:
-                    data_new = current_node.next.data
-                    current_node.data = data_new
-                    current_node = current_node.next
-                    step += 1
-                else:
-                    data_new = current_node.next.data
-                    current_node.data = data_new
-                    current_node.next = None
-                    break
+    while current is not None and current.name != name:
+        prev = current
+        current = current.next
 
-    def len(self):
-        step = 0
-        current_node = self.head
-        while current_node.next:
-            current_node = current_node.next
-            step += 1
-        return step      
+    if current is not None:
+        prev.next = current.next
 
-    def display(self):
-        current_node = self.head
-        while current_node:
-            print(current_node.data)
-            current_node = current_node.next
+    return head
 
+def insert_node(head, index, name):
+    if index == 0:
+        new_node = Node(name)
+        new_node.next = head
+        return new_node
 
-list = List()
+    current = head
 
-list.append("0 Большая Пысса")
-list.append("1 Дешевки")
-list.append("2 Лохово")
-list.append("3 Новопозорново")
-list.append("4 Засосная")
-list.append("5 Цаца")
-list.append("6 Свиновье")
-list.append("7 Жабино")
-list.append("8 Голодранкино")
-list.append("9 Добрые Пчелы")
+    for _ in range(index - 1):
+        if current is None:
+            return head
+        current = current.next
 
-list.remove(int(input("Введите цифру, которую нужно заменить словом Конец: ")))
-list.insert(int(input("Введите номер для удаления: ")))
-list.display()
+    new_node = Node(name)
+    new_node.next = current.next
+    current.next = new_node
 
+    return head
 
+def create_linked_list(names):
+    head = Node(names[0])
+    current = head
+
+    for name in names[1:]:
+        new_node = Node(name)
+        current.next = new_node
+        current = new_node
+
+    return head
+
+names = ["Жабино","Свиновье","Цаца","Абракадабра", "Бумба-Яр", "Гадюкино", "Дрезны","Добрые Пчелы", "Голодранкино","Жалобные", "Небывальщина", "Кукуевка", "Новая Чертория"," Большая Пысса"," Дешевки" ]
+
+linked_list = create_linked_list(names)
+
+current = linked_list
+while current is not None:
+    print(current.name)
+    current = current.next
+
+to_remove = input("Введите название населенного пункта для удаления: ")
+linked_list = remove_node(linked_list, to_remove)
+
+to_insert = input("Введите индекс, куда вставить город 'Конец': ")
+to_insert_index = int(to_insert)
+linked_list = insert_node(linked_list, to_insert_index, "Конец")
+
+current = linked_list
+while current is not None:
+    print(current.name)
+    current = current.next
