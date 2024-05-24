@@ -1,6 +1,6 @@
 
-from datetime import date
 import random
+from datetime import date
 
 # Словарь, составленный из оценок
 certificate = {
@@ -235,6 +235,10 @@ to_insert = input("Введите индекс, куда вставить гор
 to_insert_index = int(to_insert)
 linked_list = insert_node(linked_list, to_insert_index, "Конец")
 
+current = linked_list
+while current is not None:
+    print(current.name)
+    current = current.next
 current = linked_list
 while current is not None:
     print(current.name)
