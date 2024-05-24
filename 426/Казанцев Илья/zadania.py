@@ -32,3 +32,17 @@ for line in file:
 	for word in line.split(' '):
 		if (word != '' and word != '\n' and word != '-'):
 			array_4.append(word.replace('\n', '').replace("\"", '').replace('.', '').replace(',', '').lower())
+
+			
+
+array_1 = sort.quick(array_1)
+print("1 Отсортирован")
+
+sort.heap(array_2)
+print("2 Отсортирован")
+
+array_3 = sort.merge(array_3)
+print("3 Отсортирован")
+
+array_4 = sort.most_significent_digit(array_4, 10)
+print("4 Отсортирован")
