@@ -147,7 +147,7 @@ class LinkedList:
         print(data, '\n')
 
 mer = LinkedList()
-for elem in middle_earth_realms:
+for elem in towns:
     mer.append(elem)
 mer.display()
 
