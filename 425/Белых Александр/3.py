@@ -1,118 +1,195 @@
-def read_maze_from_file(file_name):
-    maze = []
-    with open(file_name, 'r') as file:
-        for line in file:
-            row = list(line.strip())
-            maze.append(row)
+import numpy as np
+from collections import deque
+
+my_maze = []
+
+def maze_input(file_name,maze):
+
+    with open (file_name,'r', encoding="utf-8") as file_in_maze:
+        adding_line = file_in_maze.readline()
+        adding_line = adding_line[:-1]
+        while adding_line!='':
+            maze.append(list(adding_line))
+            adding_line = file_in_maze.readline()
+            adding_line = adding_line[:-1]
+
+maze_input('maze-for-u.txt',my_maze)
+
+
+x_0, y_0 = 0, 2
+
+x, y = x_0, y_0 
+
+x_key, y_key = 1000, 1867
+
+x_exit, y_exit = 1079, 1918
+
+my_maze[x_key][y_key]='*'
+
+
+def is_key(x,y,maze):
+    return x==x_key and y==y_key
+
+def is_in_boundaries(x, y, maze):
+    return 0 <= x < len(maze) and 0 <= y < len(maze[0])
+
+def is_empty(x, y, maze):
+    return maze[x][y] == ' ' or maze[x][y]=='*' 
+
+def is_available(x, y, d, maze):
+    x_new = x + d[0]
+    y_new = y + d[1]
+    return is_in_boundaries(x_new, y_new, maze) and is_empty(x_new, y_new, maze)
+
+def neighbours_current_list(x, y, maze=my_maze):
+    directions = ((-1, 0), (1, 0), (0, -1), (0, 1))
+    neighbours = []
+    for d in directions:
+        if is_available(x, y, d, maze):
+            neighbours.append((x + d[0], y + d[1]))
+    return neighbours
+
+def cell_selector(cells_to_visit):
+    min_cost_cell = min(cells_to_visit, key=cost_key)
+    return min_cost_cell
+
+def cost_key(cell):
+    return cell[2]
+
+def cost_deikstra(x, y, x_0=x_0, y_0=y_0, x_exit=x_exit, y_exit=y_exit):
+    g = abs(x - x_0) + abs(y - y_0)  
+    return g
+
+def path_draw_deikstra(maze,path):
+    for px, py in path:
+        maze[px][py] = '.'
     return maze
 
-maze = read_maze_from_file('maze-for-u.txt')
+def add_to_visit_list_deikstra(list_of_neighbours, path, visited, cells_to_visit):
+    for nx, ny in list_of_neighbours:
+        if (nx, ny) in visited:
+            continue
 
-avatar = (0, 0)
-key = (144, 234)
-exit = (1,1079)
-def employment_check(obj, maze):
-    x, y = obj
-    rows = len(maze)
-    cols = len(maze[0])
-    while maze[y][x] == "#":
-        if x + 1 < cols and maze[y][x + 1] != "#":
-            x += 1
-        elif y + 1 < rows and maze[y + 1][x] != "#":
-            y += 1
-        else:
-            x += 1
-            y += 1
-    return (x, y)
-def neighbor_check(x,y,Xmax,Ymax):
-    if (0 <= x < Xmax and 0 <= y < Ymax and maze[y][x] != "#"):
-        return True
-def heuristic(a, b):
-    return abs(a[0] - b[0]) + abs(a[1] - b[1])
-def get_min_f_score_node(open_set, f_score):
-    min_node = open_set[0]
-    min_f_score = f_score[min_node]
-    for node in open_set:
-        if f_score[node] < min_f_score:
-            min_f_score = f_score[node]
-            min_node = node
-    return min_node
-def deykstra(maze, start, end):
-    rows = len(maze)
-    cols = len(maze[0])
-    directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]
-    distances = []
-    path = [[None] * cols for _ in range(rows)]
+        new_path = path + [(nx, ny)]
+        new_g = cost_deikstra(nx, ny)
 
-    for _ in range(rows):
-        distances.append([float("inf")] * cols)
-    distances[start[1]][start[0]] = 0
+        cells_to_visit.append((nx, ny, new_g, new_path))
+                
+    return cells_to_visit
 
-    queue = [(0, start)]
-    while queue:
-        cur_dist, (x, y) = queue.pop(0)
-        if (x, y) == end:
-            while (x, y) != start:
-                x, y = path[y][x]
-                if (x, y) != end:
-                    maze[y][x] = "."
-            return cur_dist
 
-        for dx, dy in directions:
-            neighbor = (x + dx, y + dy)
-            if neighbor_check(neighbor[0],neighbor[1],cols,rows):
-                new_dist = cur_dist + 1
-                if new_dist < distances[neighbor[1]][neighbor[0]]:
-                    distances[neighbor[1]][neighbor[0]] = new_dist
-                    path[neighbor[1]][neighbor[0]] = (x, y)
-                    queue.append((new_dist, neighbor))
-    return float("inf")
-def a_star(maze, start, end, g_weight, h_weight):
-    rows = len(maze)
-    cols = len(maze[0])
-    directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]
-    open_set = [start]
-    came_from = {}
-    h_score = heuristic(start, end)
-    g_score = {start: 0}
-    f_score = {start: g_weight * g_score[start] + h_weight * h_score}
+def deikstra(x_0, y_0, maze):
+    cells_to_visit = deque([(x_0, y_0, cost_deikstra(x_0, y_0), [])])  
+    visited = set()
+    
+    maze[x_0][y_0] = 's'
 
-    while open_set:
-        current = get_min_f_score_node(open_set, f_score)
-        open_set.remove(current)
+    while cells_to_visit:
+        current_cell = cell_selector(cells_to_visit)
+        x, y, g, path = current_cell
 
-        if current == end:
-            while current in came_from:
-                x, y = current
-                if maze[y][x] == ".":
-                    maze[y][x] = ";"
-                else:
-                    maze[y][x] = ","
-                current = came_from[current]
-            maze[start[1]][start[0]] = ","
-            return g_score[end]
+        if is_key(x, y, maze):
+            path_draw_deikstra(maze,path)
+            maze[x][y] = '*'
+            return True
+        
+        cells_to_visit.remove(current_cell)
 
-        x, y = current
-        for dx, dy in directions:
-            neighbor = (x + dx, y + dy)
-            if neighbor_check(neighbor[0], neighbor[1], cols, rows):
-                test_g_score = g_score[current] + 1
-                if (neighbor not in g_score) or (test_g_score < g_score[neighbor]):
-                    came_from[neighbor] = current
-                    g_score[neighbor] = test_g_score
-                    f_score[neighbor] = g_weight * g_score[neighbor] + h_weight * h_score
-                    if neighbor not in open_set:
-                        open_set.append(neighbor)
-    return float("inf")
-avatar = employment_check(avatar,maze)
-key = employment_check(key,maze)
-print("Координаты вашего аватара:",avatar)
-print("Координаты вашего ключа:",key)
-maze[key[1]][key[0]] = "*"
-maze[exit[1]][exit[0]] = " "
-deykstra(maze, avatar, key)
-a_star(maze, key, exit, 1, 1)
-maze[key[1]][key[0]] = "*"
-with open("maze-for-me-done.txt", "w") as f:
-    for row in maze:
-        f.write(''.join(row) + '\n')
+        visited.add((x, y))
+
+        list_of_neighbours = neighbours_current_list(x, y, maze)
+
+        cells_to_visit = add_to_visit_list_deikstra(list_of_neighbours, path, visited, cells_to_visit)
+
+    return False
+    
+
+cells_to_visit = []
+
+visited = set()
+    
+def is_exit(x, y, maze):
+    return x == x_exit and y == y_exit
+
+def is_empty_a_key(x, y, maze):
+    return maze[x][y] == ' ' or maze[x][y] == '*' or maze[x][y] == '.'
+
+def is_available_a_key(x, y, d, maze):
+    x_new = x + d[0]
+    y_new = y + d[1]
+    return is_in_boundaries(x_new, y_new, maze) and is_empty_a_key(x_new, y_new, maze)
+
+
+def cost_a_star(x, y, x_0=x_0, y_0=y_0, x_exit=x_exit, y_exit=y_exit):
+    g = abs(x - x_0) + abs(y - y_0)  
+    h = 2 * round(np.sqrt((x_exit - x) ** 2 + (y_exit - y) ** 2), 3)
+    f = g + h
+    return f
+
+def path_draw_a_key(maze,path):
+    for px, py in path:
+        maze[px][py] = ','
+    return maze
+
+def add_to_visit_list_a_key(list_of_neighbours, path, visited, path_length, max_path_length, cells_to_visit = cells_to_visit):
+    for nx, ny in list_of_neighbours:
+        if (nx, ny) in visited:
+            continue
+
+        new_path = path + [(nx, ny)]
+        new_cost = cost_a_star(nx, ny)
+        new_path_length = path_length + 1  
+
+        if new_path_length <= max_path_length: 
+            if (nx, ny, new_cost, new_path, new_path_length) not in cells_to_visit:
+                cells_to_visit.append((nx, ny, new_cost, new_path, new_path_length))
+                
+    return cells_to_visit
+
+def find_exit(x_0, y_0, maze, max_path_length, visited=visited, cells_to_visit=cells_to_visit):
+    cells_to_visit = [(x_0, y_0, cost_a_star(x_0, y_0), [], 0)]
+    visited = set()
+
+    while cells_to_visit:
+        current_cell = cell_selector(cells_to_visit)
+        x, y, _, path, path_length = current_cell
+
+        if is_exit(x, y, maze):
+            maze = path_draw_a_key(maze,path)
+            return True
+
+        cells_to_visit.remove(current_cell)
+        
+        visited.add((x, y))
+
+        list_of_neighbours = neighbours_current_list(x, y, maze)
+
+        cells_to_visit = add_to_visit_list_a_key(list_of_neighbours, path, visited, path_length, max_path_length, cells_to_visit = cells_to_visit)
+
+    return False
+
+def maze_output(file_name, maze):
+    
+    with open(file_name, 'w', encoding="utf-8") as file_out_maze:
+        
+        file_out_maze.write('\n'.join(''.join(row) for row in maze))
+    
+    
+def exist_way_to_key(key_is_exist):
+    if key_is_exist == True:
+        print("Путь к ключу найден!")
+    else:
+        print("Путь к ключу не найден!")
+        
+def exist_way_to_exit(exit_is_exist):
+    if exit_is_exist == True:
+        print("Путь к выходу найден!")
+    else:
+        print("Путь к выходу не найден!")
+        
+
+key_existence = deikstra(x_0, y_0, my_maze)
+exist_way_to_key(key_existence)
+exit_existence = find_exit(x_key, y_key, my_maze, max_path_length=3300)
+exist_way_to_exit(exit_existence)
+maze_output('maze-for-me-done.txt', my_maze)
