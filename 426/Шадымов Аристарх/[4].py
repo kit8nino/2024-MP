@@ -34,3 +34,35 @@ class Coordinates:
 
 # Создание радара
 radar = Radar()
+
+# Запрос количества объектов у пользователя
+print("Введите количество летающих объектов: ")
+objects_amount = int(input())
+
+# Создание списка объектов с автоматическим заполнением данными
+objects = []
+for i in range(objects_amount):
+	cord_x = random.randint(-50, 50)
+	cord_y = random.randint(-50, 50)
+	cord_z = random.randint(-50, 50)
+	speed_x = random.randint(-10, 10)
+	speed_y = random.randint(-10, 10)
+	speed_z = random.randint(-10, 10)
+	objects.append(Object(Coordinates(cord_x, cord_y, cord_z), (speed_x, speed_y, speed_z)))
+
+# Вывод сферических координат объектов, сгенерированных ранее
+for object in objects:
+	r, azimuth, elevation = object.coordinates.to_spherical()
+	print("положение объекта: расстояние -", str(r), ", азимут -", str(azimuth), ", угол возвышения - ", str(elevation))
+
+# Ввод времени с клавиатуры
+time = int(input("Введите время в секундах: "))
+
+# Вывод сферических координат объектов через заданное время
+for object in objects:
+	new_x = object.coordinates.x + object.velocity[0] * time
+	new_y = object.coordinates.y + object.velocity[1] * time
+	new_z = object.coordinates.z + object.velocity[2] * time
+	new_coordinates = Coordinates(new_x, new_y, new_z)
+	r, azimuth, elevation = new_coordinates.to_spherical()
+	print("положение объекта через", str(time), "секунд : расстояние -", str(r), ", азимут -", str(azimuth), ", угол возвышения - ", str(elevation))
