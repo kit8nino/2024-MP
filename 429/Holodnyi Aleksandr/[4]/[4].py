@@ -32,7 +32,8 @@ class Radar:
             phi += np.pi
         elif y-y0 < 0 and x-x0 >0:
             phi += 2*np.pi
-        tetta = np.arctan((z-z0)/((x-x0)**2 + (y-y0)**2)**0.5)
+        phi *= (180/np.pi)
+        tetta = (180/np.pi)*np.arctan((z-z0)/((x-x0)**2 + (y-y0)**2)**0.5)
         ufo_spheric_coords = r, phi, tetta
         return ufo_spheric_coords
 
@@ -53,7 +54,8 @@ class UFO:
     def get_dec_coords(self,t):
         x,y,z = self.dec_coords
         x += self.speed[0]*t 
-        y += self.speed[1]*t 
+        y += self.speed[1]*t
+        z += self.speed[2]*t
         return x,y,z
       
 
@@ -61,30 +63,36 @@ N = 5 #количесво объектов класса UFO
 dt = 0.1 #время возврата радиоимпульса (0.1 по умолчанию)
 radar_coords = [0,0,0] #координаты радара ((0,0,0) по умолчанию)
 
+#радар
 radar = Radar() 
 radar.set_radar_coords(radar_coords) 
 radar.set_dt(dt)
 
+#летающие объекты
 ufo_list = []
 for i in range(N):
-    rand_x = random.randint(-10, 10)
+    rand_x = random.randint(-10, 10) #рандомные декартовы координаты в м
     rand_y = random.randint(-10, 10)
-    while rand_x == 0:
-        rand_x = random.randint(-10, 10)
-    while rand_y == 0:
-        rand_y = random.randint(-10, 10)
     rand_z = random.randint(1, 10)
+    while rand_x == radar_coords[0]:
+        rand_x = random.randint(-10, 10)
+    while rand_y == radar_coords[1]:
+        rand_y = random.randint(-10, 10)
     rand_coords = [rand_x, rand_y, rand_z]
     
-    rand_xspeed = random.randint(1, 8)
-    rand_yspeed = random.randint(1, 8)
-    rand_speed = [rand_xspeed,rand_yspeed]
+    rand_xspeed = random.randint(-8, 8)  #рандомные проекции скоростей в м/c
+    rand_yspeed = random.randint(-8, 8)
+    rand_zspeed = random.randint(0, 8)
+    while rand_xspeed == 0 and rand_yspeed == 0:
+        rand_xspeed = random.randint(-8, 8)
+        rand_yspeed = random.randint(-8, 8)
+    rand_speed = [rand_xspeed,rand_yspeed,rand_zspeed]
     ufo_list += [UFO(rand_coords,rand_speed)]
 
 print("\nInitial spheric coordinates regarding radar:")
 for i in range(N):    
     r, phi, tetta = radar.get_ufo_spheric_coords(ufo_list[i],-dt) #начальные сфер. координаты без учета времени возврата радиоимпульса
-    print(f'UFO {i}: r(0)={r:0.2f}м phi(0)={phi:0.2f}rad tetta(0)={tetta:0.2f}rad')
+    print(f'UFO {i}: r(0)={r:0.2f}м phi(0)={phi:0.2f}deg tetta(0)={tetta:0.2f}deg')
 
 while True:
     flag = input("\nSet time: ")
@@ -93,6 +101,6 @@ while True:
     
     for i in range(N):    
         r, phi, tetta = radar.get_ufo_spheric_coords(ufo_list[i],t) #сфер. координаты с учетом времени возврата радиоимпульса
-        print(f'UFO {i}: r({t})={r:0.2f}м phi({t})={phi:0.2f}rad tetta({t})={tetta:0.2f}rad')
+        print(f'UFO {i}: r({t})={r:0.2f}м phi({t})={phi:0.2f}deg tetta({t})={tetta:0.2f}deg')
     print("ENTER '!' TO FINISH")
     
