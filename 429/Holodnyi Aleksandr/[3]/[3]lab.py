@@ -229,6 +229,7 @@ def save_solved_maze(maze_list):
     f.write('\n'.join(''.join(elem) for elem in maze_list))
 
 #ищем путь
+# 'o' - аватар, '*' - ключ
 greedy(avatar_coords[0], avatar_coords[1], maze_list)
 a_star(key_coords[0], key_coords[1],maze_list,max_path_length=3000)
 save_solved_maze(maze_list)
