@@ -95,87 +95,25 @@ print(popular_names)
 
 print("Задание 9")
 
-class Node:
-    def __init__(self, data=None):
-        self.data = data
-        self.next = None
+# Создание списка городов
+cities = ["Ширяево", "Верхнее Зачатье", "Голодранкино", "Муходоево", "Синегубово", "Кундрючья", "Заячий пузырь", "Синие Лепяги", "Овнище", "Манды"]
 
-class List:
-    def __init__(self):
-        self.head = None
+# Вывод списка городов
+print("Список городов:")
+for index, city in enumerate(cities):
+    print(f"{index} {city}")
 
-    def append(self, data):
-        new_node = Node(data)
-        if self.head is None:
-            self.head = new_node
-        else:
-            current_node = self.head
-            while current_node.next:
-                current_node = current_node.next
-            current_node.next = new_node
+# Замена названия города на "Конец"
+index_to_replace = int(input("Введите цифру, которую нужно заменить словом Конец: "))
+if 0 <= index_to_replace < len(cities):
+    cities[index_to_replace] = "Конец"
 
-    def remove(self, index):
-        step = 0
-        if index == 0:
-            self.head.data = "Конец"
-        else:
-            current_node = self.head
-            while step < index:
-                current_node = current_node.next
-                step += 1
-            current_node.data = "Конец"
+# Удаление названия города по индексу
+index_to_remove = int(input("Введите номер для удаления: "))
+if 0 <= index_to_remove < len(cities):
+    del cities[index_to_remove]
 
-    def insert(self, index):
-        step = 0
-        current_node = self.head
-        while current_node.next:
-            if step < index:
-                current_node = current_node.next
-                step += 1
-            elif step == index:
-                current_node.data = current_node.next.data
-                current_node = current_node.next
-                step += 1
-            else:
-                if step != self.len() - 1:
-                    data_new = current_node.next.data
-                    current_node.data = data_new
-                    current_node = current_node.next
-                    step += 1
-                else:
-                    data_new = current_node.next.data
-                    current_node.data = data_new
-                    current_node.next = None
-                    break
-
-    def len(self):
-        step = 0
-        current_node = self.head
-        while current_node.next:
-            current_node = current_node.next
-            step += 1
-        return step      
-
-    def display(self):
-        current_node = self.head
-        while current_node:
-            print(current_node.data)
-            current_node = current_node.next
-
-
-list = List()
-
-list.append("0 Ширяево")
-list.append("1 Верхнее Зачатье")
-list.append("2 Голодранкино")
-list.append("3 Муходоево")
-list.append("4 Синегубово")
-list.append("5 Кундрючья")
-list.append("6 Заячий пузырь")
-list.append("7 Синие Лепяги")
-list.append("8 Овнище")
-list.append("9 Манды")
-
-list.remove(int(input("Введите цифру, которую нужно заменить словом Конец: ")))
-list.insert(int(input("Введите номер для удаления: ")))
-list.display()
+# Вывод обновленного списка городов
+print("Обновленный список городов:")
+for index, city in enumerate(cities):
+    print(f"{index} {city}")
