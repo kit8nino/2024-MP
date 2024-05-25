@@ -3,7 +3,7 @@ import numpy as np
 def Maze_Reader():
     y_max=0
     maze=[]
-   
+
     with open('maze-for-u.txt') as maze2:
         for line in maze2:
            maze.append(line.strip('\n'))
@@ -90,16 +90,16 @@ def cut_way_back(direction):
 
 def restore_path(coord):
     global maze_list, path_to_exit
-    
+
     for node in path_to_exit:
         set_point(coord, ',')
-       
+
         coord = step(coord, node)
 
 count_2l_ways = 0 
 def find_a_way(maze, coord, possible_ways):
     global path_to_exit, current_path, count_2l_ways
-    
+
     if is_coord_exit(coord):
         print('exit')
         return
@@ -111,7 +111,7 @@ def find_a_way(maze, coord, possible_ways):
 
     if len(current_path) > len(path_to_exit):
         count_2l_ways+=1
-        
+
         return
 
     for direction in possible_ways:
@@ -120,19 +120,19 @@ def find_a_way(maze, coord, possible_ways):
                find_a_way(maze, step(coord, direction), cut_way_back(direction))
                current_path.pop()
     return 
-    
+
 past_way = [[-1 for j in range(max_x)] for i in range(max_y)] # инициализация
 
 def find_the_exit(treasure, end):
- 
+
     queue = []
     queue.append(treasure)
 
     past_way[treasure[1]][treasure[0]] = 0 
-    
+
     while queue:
         node = queue.pop(0)
-        
+
         for i in [[-1, 0],[1, 0],[0, -1],[0, 1]]:
             x = node[0] + i[0]
             y = node[1] + i[1]
@@ -141,7 +141,7 @@ def find_the_exit(treasure, end):
             if (maze[y][x] == " " and past_way[y][x] == -1):
                 past_way[y][x] = [node[0],node[1]]
                 queue.append([x, y]) 
-    
+
     x = end[0]
     y = end[1] 
     while past_way[y][x] != 0:
