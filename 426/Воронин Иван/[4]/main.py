@@ -62,3 +62,8 @@ for _ in range(int(flying_entities_num)):
 	dz = random.randint(-100, 100)
 	world.add_object(Entity([x, y, z], [dx, dy, dz]))
 radar.pulse()
+time_past = int(input("Type time to wait before next pulse: "))
+for object in world.objects:
+	for i in range(3):
+		object.coordinates[i] += object.speed[i]*time_past
+radar.pulse()
