@@ -29,17 +29,24 @@ def t1_1(d: dict) -> float:
     return round(result, 2)
 
 #1.2
-def t_1_2(a: list) -> list:
+def t1_2(a: list) -> list:
     result = []
     for value in a:
         if value[len(value) - 1] != 'в':
             result.append(value)
     return list(set(result))
-
+#1.5
+def t1_5(name: str) -> bin:
+    for c in name:
+        name = name.replace(c, bin(ord(c)), 1)
+    return name
 
 
 # Res 1.1
-print(task_1_1(certificate))
+print(t1_1(certificate))
 
 # Res 1.2
-print(*task_1_2(data))
+print(*t1_2(data))
+
+#Res 1.5
+print(t1_5(tamandua_name))
