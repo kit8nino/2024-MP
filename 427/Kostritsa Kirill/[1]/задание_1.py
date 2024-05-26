@@ -193,4 +193,8 @@ enter_stroy_materials()
 print("Изменённый список имен:", renamed(fullnames), '\n')
 
 print("9.")
+<<<<<<< HEAD
 task_9()
+=======
+task_9()
+>>>>>>> 6dde24b4a722c7f22da792f143f540b283929be5

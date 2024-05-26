@@ -6,6 +6,10 @@ def read_maze(file_name):
 		maze = [list(line.strip()) for line in r_file]
 		return maze
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6dde24b4a722c7f22da792f143f540b283929be5
 def save_maze(maze, file_name):
     with open(file_name, 'w') as file:
         for row in maze:
@@ -53,6 +57,7 @@ def dfs(graph, start, symbol='*'):
         #print(y, x, "->", graph[y][x], stack)
     return visited
 
+<<<<<<< HEAD
 def nearest_exit(maze, start):
     exits = []
     
@@ -161,6 +166,9 @@ def A_star(maze, start, end):
     return U
 
 def find_way1(visited):
+=======
+def find_way(visited):
+>>>>>>> 6dde24b4a722c7f22da792f143f540b283929be5
     way = visited
     i = len(way) - 1
     while i != 1:
@@ -171,6 +179,7 @@ def find_way1(visited):
         i -= 1
     return way
 
+<<<<<<< HEAD
 def find_way2(visited):
     way = visited
     i = len(way) - 1
@@ -182,11 +191,16 @@ def find_way2(visited):
     return way
 
 maze = read_maze('maze-for-u.txt')
+=======
+
+maze = read_maze('maze-for-u_prob.txt')
+>>>>>>> 6dde24b4a722c7f22da792f143f540b283929be5
 avatar = get_coords()
 key = get_coords()
 maze[avatar[0]][avatar[1]] = '+'
 maze[key[0]][key[1]] = '*'
 
+<<<<<<< HEAD
 end = nearest_exit(maze, key)
 way_to_key = find_way1(dfs(maze, avatar))
 way_to_exit = find_way2(A_star(maze, key, end))
@@ -204,4 +218,23 @@ for i in range(0, len(way_to_exit)-1):
 
 save_maze(maze, "maze-for-u-done.txt")
 print("Лабиринт пройден")
+=======
+visited = dfs(maze, avatar)
+way = find_way(visited)
+
+for i in range(1, len(way)-2):
+    maze[way[i][0]][way[i][1]] = "."
+    #print(i, way[i])
+
+
+
+
+
+
+
+save_maze(maze, "maze-for-u-done_prob.txt")
+print("Лабиринт пройден (от старта до ключа")
+
+
+>>>>>>> 6dde24b4a722c7f22da792f143f540b283929be5
 
