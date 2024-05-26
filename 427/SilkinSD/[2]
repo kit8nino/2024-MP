@@ -76,3 +76,71 @@ def insertion_sort(arr):
             j -= 1
         arr[j + 1] = key
     return arr
+
+1.5
+def shell_sort(arr):
+    n = len(arr)
+    gap = n // 2
+    while gap > 0:
+        for i in range(gap, n):
+            temp = arr[i]
+            j = i
+            while j >= gap and arr[j - gap] > temp:
+                arr[j] = arr[j - gap]
+                j -= gap
+            arr[j] = temp
+        gap //= 2
+    return arr
+
+1.6
+class Node:
+    def __init__(self, key):
+        self.key = key
+        self.left = None
+        self.right = None
+
+def tree_insert(root, key):
+    if root is None:
+        return Node(key)
+    if key < root.key:
+        root.left = tree_insert(root.left, key)
+    else:
+        root.right = tree_insert(root.right, key)
+    return root
+
+def in_order_traversal(root, result):
+    if root:
+        in_order_traversal(root.left, result)
+        result.append(root.key)
+        in_order_traversal(root.right, result)
+
+def tree_sort(arr):
+    root = None
+    for key in arr:
+        root = tree_insert(root, key)
+    result = []
+    in_order_traversal(root, result)
+    return result
+1.7
+def gnome_sort(arr):
+    index = 0
+    while index < len(arr):
+        if index == 0:
+            index = index + 1
+        if arr[index] >= arr[index - 1]:
+            index = index + 1
+        else:
+            arr[index], arr[index - 1] = arr[index - 1], arr[index]
+            index = index - 1
+    return arr
+
+1.8
+def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        min_index = i
+        for j in range(i+1, n):
+            if arr[j] < arr[min_index]:
+                min_index = j
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+    return arr
