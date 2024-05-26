@@ -1,3 +1,6 @@
+from random import choice
+from datetime import date, datetime
+
 certificate = {'Всеобщая история': 4,
                'Английский язык': 5,
                'Искусство': 5,
