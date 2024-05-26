@@ -1,17 +1,7 @@
 import random
-from math import atan, degrees, atan2, pi, inf
+from math import degrees, atan2
 
-def rand_objects(radius, minimum=-inf):
-    answer=random.choice([random.uniform(radius/5, radius), random.uniform(-radius, -radius/5)])
-    if answer<minimum:
-        answer=random.uniform(minimum, radius)
-    return answer
 
-def rand(radius, minimum=-inf):
-    answer=random.choice([random.uniform(-radius, radius)])
-    if answer<minimum:
-        answer=random.uniform(minimum, radius)
-    return answer
 
 class Flying_obj:
     def __init__(self, place=0, speed=0):
@@ -60,15 +50,23 @@ class Radar:
 
 
 radar = Radar()
-x_radar, y_radar, z_radar=rand(5), rand(5), rand(5)
+x_radar=random.uniform(0, 5)
+y_radar=random.uniform(0, 5)
+z_radar=random.uniform(0, 5)
 radar.set_place((x_radar, y_radar, z_radar))
 
 number_of_objects=4
 flying_objects=[]
 for i in range(number_of_objects):
     temp=Flying_obj()
-    temp.set_place((rand_objects(30), rand_objects(30), rand_objects(30, z_radar)))
-    temp.set_speed((rand(30), rand(30), rand(30, 0)))
+    x=random.choice([random.uniform(30, 15), random.uniform(-30, -15)])
+    y=random.choice([random.uniform(30, 15), random.uniform(-30, -15)])
+    z=random.uniform(z_radar, 30)
+    temp.set_place((x, y, z))
+    vx=random.uniform(-30, 30)
+    vy=random.uniform(-30, 30)
+    vz=random.uniform(0, 30)
+    temp.set_speed((vx, vy, vz))
     flying_objects+=[temp]
 
 print("Координаты объектов относительно радара в начале: \n")
@@ -81,38 +79,3 @@ print("Координаты объектов относительно радар
 for i in range(number_of_objects):
     r, theta, phi=radar.get_obj_place_spheric_sys(flying_objects[i], time)
     print(" Объект "+str(i+1)+ ":  радиус - " , str(r), ", азимут - " , phi, ", угл места - "  , theta)
-
-# Я поставил ограничения в рандоме, чтобы сделать условия для углов. 
-# Получется, чтобы угол местности был от 0 до 90, нельзя чтобы объекты падали ниже радара в какой-либо момент времени и не могли там оказаться в самом начале.
-# без ограничений вот:
-
-"""
-def rand_objects(radius):
-    return random.choice([random.uniform(radius/5, radius), random.uniform(-radius, -radius/5)])
-
-def rand(radius):
-    return random.choice([random.uniform(-radius, radius)])
-
-radar = Radar()
-x_radar, y_radar, z_radar=rand(5), rand(5), rand(5)
-radar.set_place((x_radar, y_radar, z_radar))
-
-number_of_objects=4
-flying_objects=[]
-for i in range(number_of_objects):
-    temp=Flying_obj()
-    temp.set_place((rand_objects(30), rand_objects(30), rand_objects(30)))
-    temp.set_speed((rand(30), rand(30), rand(30)))
-    flying_objects+=[temp]
-
-print("Координаты объектов относительно радара в начале: \n")
-for i in range(number_of_objects):
-    r, theta, phi=radar.get_obj_place_spheric_sys(flying_objects[i], 0)
-    print(" Объект "+str(i+1)+ ":  радиус - " , str(r), ", азимут - " , phi, ", угл места - "  , theta)
-
-time=float(input("\nВведите время: "))
-print("Координаты объектов относительно радара в момент времени", time, ": \n")
-for i in range(number_of_objects):
-    r, theta, phi=radar.get_obj_place_spheric_sys(flying_objects[i], time)
-    print(" Объект "+str(i+1)+ ":  радиус - " , str(r), ", азимут - " , phi, ", угл места - "  , theta)
-"""
