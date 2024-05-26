@@ -106,12 +106,90 @@ Fullnames[index] = "Чжоу Шэнь Цзинь-ван"
 print(Fullnames)
 
 """-----------------------------------#9------------------------------------"""
-cities = ["Новиград", "Оксенфурт", "Вызима", "Боклер", "Третогор",
-               "Ард Каррайг", "Лан Эксетер", "Понт Ванис", "Нильфгаард",
-               "Венгерберг", "Ривия", "Цинтра", "Виковаро"]
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
-cities.remove(str(input("Выберите город, чтобы сравнять его с землей: ")))
-print(cities)
+class LinkedList:
+    def __init__(self):
+        self.head = None
 
-cities[int(input("Город умер! Да здравствует новый город!(номер города): "))] = "Конец"
-print(cities)
+    def append(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            return
+        last_node = self.head
+        while last_node.next:
+            last_node = last_node.next
+        last_node.next = new_node
+
+    def printlist(self):
+        current = self.head
+        while current:
+            print(current.data, end = ', ')
+            current = current.next
+        print()
+    
+    def delete(self, key):
+        current = self.head
+        if current and current.data == key:
+            self.head = current.next
+            current = None
+            return
+        previous = None
+        while current and current.data != key:
+            previous = current
+            current = current.next
+        if current is None:
+            print("Вы добрались до края света. Дальше живут драконы. Возвращайтесь.") #No such element in list
+            return
+        previous.next = current.next
+        current = None
+        
+    def add(self, index, data):
+        if index == 0:
+            new_node = Node(data)
+            new_node.next = self.head
+            self.head = new_node
+            return
+        current = self.head
+        for i in range(index - 1):
+            if current is None:
+                print("Шу-шу. Шу-шу. Сердце перекачивает жизнь...") #list index out of range
+                return
+            current = current.next
+        if current is None:
+            print("Шу-шу. Шу-шу. Сердце перекачивает жизнь...")
+            return
+        new_node = Node(data)
+        new_node.next = current.next
+        current.next = new_node
+            
+cities = LinkedList()
+cities.append("Новиград")
+cities.append("Оксенфурт")
+cities.append("Вызима")
+cities.append("Боклер")
+cities.append("Третогор")
+cities.append("Ард Каррайг")
+cities.append("Лан Эксетер")
+cities.append("Понт Ванис")
+cities.append("Нильфгаард")
+cities.append("Венгерберг")
+cities.append("Ривия")
+cities.append("Цинтра")
+cities.append("Виковаро")
+
+cities.printlist()
+print("---------------------------------------------------------------")
+key = input("Выберите город, чтобы сравнять его с землей: ")
+cities.delete(key)
+print("---------------------------------------------------------------")
+cities.printlist()
+print("---------------------------------------------------------------")
+ind = int(input("Город умер! Да здравствует новый город!(номер города): "))
+cities.add(ind, "Конец")
+print("---------------------------------------------------------------")
+cities.printlist()
