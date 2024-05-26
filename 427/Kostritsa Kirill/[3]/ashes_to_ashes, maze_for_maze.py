@@ -6,10 +6,6 @@ def read_maze(file_name):
 		maze = [list(line.strip()) for line in r_file]
 		return maze
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 6dde24b4a722c7f22da792f143f540b283929be5
 def save_maze(maze, file_name):
     with open(file_name, 'w') as file:
         for row in maze:
@@ -57,7 +53,6 @@ def dfs(graph, start, symbol='*'):
         #print(y, x, "->", graph[y][x], stack)
     return visited
 
-<<<<<<< HEAD
 def nearest_exit(maze, start):
     exits = []
     
@@ -136,7 +131,7 @@ def A_star(maze, start, end):
     
     U = []
     Q = [start]
-    g, f, parent = dict(), dict(), dict()
+    g, f, parents = dict(), dict(), dict()
     g[start] = 0
     f[start] = get_f(start)
     while len(Q) != 0:
@@ -144,9 +139,8 @@ def A_star(maze, start, end):
         if current == end:
             U.insert(0, current)
             f[current] = get_f(current)
-            sorted_f = dict(sorted(f.items(), key=lambda x: x[1]))
-            way = list(sorted_f.keys())
-            return U
+            #print(parents)
+            return parents
         
         Q.remove(current)
         U.insert(0, current)
@@ -157,7 +151,7 @@ def A_star(maze, start, end):
             if node in U and tentative_score > g[node]:
                 continue
             if node not in U or tentative_score <= g[node]:
-                #parent[node] = current
+                parents[node] = current
                 g[node] = tentative_score
                 f[node] = get_f(node)
                 if node not in Q:
@@ -166,50 +160,42 @@ def A_star(maze, start, end):
     return U
 
 def find_way1(visited):
-=======
-def find_way(visited):
->>>>>>> 6dde24b4a722c7f22da792f143f540b283929be5
     way = visited
-    i = len(way) - 1
-    while i != 1:
-        delta1 = abs(way[i][0]-way[i-1][0])
-        delta2 = abs(way[i][1]-way[i-1][1])
-        if delta1 + delta2 > 1:
+    i = len(visited)-1
+    while i > 1:
+        delta_y = abs(way[i][0] - way[i-1][0])
+        delta_x = abs(way[i][1] - way[i-1][1])
+        if delta_x + delta_y > 1:
             way.pop(i-1)
         i -= 1
     return way
 
-<<<<<<< HEAD
-def find_way2(visited):
-    way = visited
-    i = len(way) - 1
-    while i != 1:
-        dist = ((way[i][0] - way[i-1][0])**2 + (way[i][0] - way[i-1][0])**2) ** 0.5
-        if dist > 1.5:
-            way.pop(i-1)
-        i -= 1
+def find_way2(parents, start, end):
+    parent = end
+    child = parents[end]
+    way = [end]
+    while child != start:
+        parent = child
+        child = parents[parent]
+        way.append(parent) 
     return way
 
 maze = read_maze('maze-for-u.txt')
-=======
 
-maze = read_maze('maze-for-u_prob.txt')
->>>>>>> 6dde24b4a722c7f22da792f143f540b283929be5
 avatar = get_coords()
 key = get_coords()
 maze[avatar[0]][avatar[1]] = '+'
 maze[key[0]][key[1]] = '*'
 
-<<<<<<< HEAD
 end = nearest_exit(maze, key)
 way_to_key = find_way1(dfs(maze, avatar))
-way_to_exit = find_way2(A_star(maze, key, end))
+way_to_exit = find_way2(A_star(maze, key, end), key, end)
 
 for i in range(1, len(way_to_key)-2):
     maze[way_to_key[i][0]][way_to_key[i][1]] = '.'
     #print(i, way_to_key[i])
 
-for i in range(0, len(way_to_exit)-1):
+for i in range(0, len(way_to_exit)):
     if maze[way_to_exit[i][0]][way_to_exit[i][1]] == '.':
         maze[way_to_exit[i][0]][way_to_exit[i][1]] = ';'
     else:
@@ -218,23 +204,3 @@ for i in range(0, len(way_to_exit)-1):
 
 save_maze(maze, "maze-for-u-done.txt")
 print("Лабиринт пройден")
-=======
-visited = dfs(maze, avatar)
-way = find_way(visited)
-
-for i in range(1, len(way)-2):
-    maze[way[i][0]][way[i][1]] = "."
-    #print(i, way[i])
-
-
-
-
-
-
-
-save_maze(maze, "maze-for-u-done_prob.txt")
-print("Лабиринт пройден (от старта до ключа")
-
-
->>>>>>> 6dde24b4a722c7f22da792f143f540b283929be5
-
