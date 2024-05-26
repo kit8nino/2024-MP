@@ -1,1 +1,42 @@
+import numpy as np
+import random
 
+list1 = [num for num in range(999999)]
+random.shuffle(list1)
+
+list2 = list(np.arange(-1, 1, 99999))
+
+def list3():
+    def get_point():
+        r = 26 / 3
+        while True:
+            x = random.random() * r - r
+            y = random.random() * r - r
+            if x ** 2 + y ** 2 < r:
+                point = complex(x, y) 
+                return (point.real ** 2 + point.imag ** 2) ** 0.5
+    return [get_point() for _ in range(42000)]
+list_3 = get_list_3()
+
+
+def shaker_sort(arr):
+    n = len(arr)
+    swapped = True
+    start = 0
+    end = n - 1
+    while swapped:
+        swapped = False
+        for i in range(start, end):
+            if arr[i] > arr[i + 1]:
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+                swapped = True
+        if not swapped:
+            break
+        swapped = False
+        end -= 1
+        for i in range(end - 1, start - 1, -1):
+            if arr[i] > arr[i + 1]:
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+                swapped = True
+        start += 1
+    return arr
