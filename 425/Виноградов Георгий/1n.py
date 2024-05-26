@@ -2,47 +2,29 @@ import datetime
 import random
 import queue
 
-predmet = {
-    "русский язык": 4, 
-    "алгебра": 4,
-    "геометрия": 4,
+# Данные
+clint_eastwood = ("Клинт Иствуд", 31, 5, 1930)
+School_marks = {
+    "русский язык": 4,
     "литература": 5,
-    "химия": 5,
-    "география": 5,
-    "английский язык": 5,
+    "алгебра": 5,
+    "геометрия": 5,
+    "история": 4,
     "информатика": 5,
-    "ОБЖ":3,
-    "физика": 4,
-    "история": 5,
-    "обществознание": 3,
+    "ОБЖ": 5,
     "физкультура": 5,
-    "биология": 3
+    "обществознание": 4,
+    "химия": 4,
+    "физика": 5,
+    "география": 4,
+    "английский язык": 5,
+    "биология": 4
 }
-
-western_actor = ("Чарльз Бронсон", datetime.date(1921, 11, 3))
-
-
-men_names = [
-    'Иван', 'Александр', 'Сергей', 'Андрей', 'Дмитрий', 
-    'Алексей', 'Максим', 'Евгений', 'Антон', 'Владимир'
-]
-
-women_names = [
-    'Екатерина', 'Мария', 'Елена','Анна', 
-    'Ольга','Анастасия',  'Наталья', 'Ирина', 'Татьяна', 'Светлана'
-]
-
-men_surnames = [
-    'Иванов', 'Петров', 'Смирнов', 'Кузнецов', 'Попов', 'Сергеев', 
-    'Волков', 'Васильев'
-]
-
-women_surnames = [
-    'Иванова','Петрова', 'Кузнецова', 'Смирнова','Попова', 'Волкова', 
-    'Васильева', 'Романова'
-]
-
-
+men_names = ['Иван', 'Александр', 'Сергей', 'Андрей', 'Дмитрий', 'Алексей', 'Максим', 'Евгений', 'Антон', 'Владимир']
+women_names = ['Екатерина', 'Мария', 'Елена','Анна','Ольга', 'Анастасия',  'Наталья', 'Ирина', 'Татьяна', 'Светлана']
+men_surnames = ['Иванов', 'Петров', 'Смирнов', 'Кузнецов', 'Попов', 'Сергеев','Волков', 'Васильев']
+women_surnames = ['Иванова','Петрова', 'Кузнецова', 'Смирнова','Попова', 'Волкова', 'Васильева', 'Романова']
+Name_of_tamandua = "Таинственный Пират"
 popular_names = []
 
 for _ in range(10):
@@ -54,71 +36,30 @@ for _ in range(10):
     random_female_name = random.choice(women_names)
     random_female_surname = random.choice(women_surnames)
     popular_names.append(random_female_name + ' ' + random_female_surname)
+# №1
+avg_mark = sum(School_marks.values()) / len(School_marks)
+print("1) Средняя оценка в аттестате:", avg_mark)
 
+# №2
+unique_names = list(set(men_names + women_names))
+print("2) Уникальные имена среди родственников:", unique_names)
 
-pet_name = "Овальный Червонец"
+# №3
+total_subject_len = sum(len(subject) for subject in School_marks)
+print("3) Общая длина всех названий предметов:", total_subject_len)
 
-# Задание 1
-print("Задание 1")
-total_grades = 0
-subject_count = 0
+# №4
+unique_letters = set(''.join(School_marks.keys()))
+print("4) Уникальные буквы в названиях предметов:", unique_letters)
 
-for subject, grade in predmet.items():
-    total_grades += grade
-    subject_count += 1
+# №5
+tamandua_bin_name = ''.join(format(x, '08b') for x in bytearray(Name_of_tamandua, 'utf-8'))
+print("5) Имя вашего домашнего тамандуа в бинарном виде:", tamandua_bin_name)
 
-average_grade = total_grades / subject_count
-print("Средний балл =", average_grade)
-
-#Задание 2
-print("Задание 2")
-names = [None] * 20
-
-for i in range(20):
-    split_name = popular_names[i].split()
-    names[i] = split_name[0]
-
-for i in range(20):
-    count = 0
-    for j in range(0, 20, 1):
-        if (names[i] == names[j]) and (i != j):
-            count += 1
-    if count == 0:
-        print(names[i])
-
-# Задание 3
-print("Задание 3")
-total_letters = 0
-
-for subject, _ in predmet.items():
-    total_letters += len(subject)
-
-print("Общее количество букв в названиях предметов =", total_letters)
-
-#Задание 4
-print("Задание 4")
-concatenated_str = ""
-
-for subject, _ in predmet.items():
-    concatenated_str += str(subject)
-
-for i in range(len(concatenated_str)):
-    count = 0
-    for j in range(len(concatenated_str)):
-        if (concatenated_str[i] == concatenated_str[j]) and (i != j):
-            count += 1
-    if count == 0:
-        print(concatenated_str[i])
-
-#Задание 5
-print("Задание 5")
-bits = bin(int.from_bytes(pet_name.encode('utf-8', 'surrogatepass'), 'big'))[2:]
-print(bits.zfill(8 * ((len(bits) + 7) // 8)))
-
-# Задание 6
-print("Задание 6")
-сегодня = datetime.date.today()
-print(сегодня - western_actor[1])
+# №6
+actor_birthdate = datetime.datetime(clint_eastwood[3], clint_eastwood[2], clint_eastwood[1])
+days_since_birth = (datetime.datetime.now() - actor_birthdate).days
+print("6) Количество дней от даты рождения актера до текущей даты:", days_since_birth)
 
 # Задание 7
 print("Задание 7")
@@ -132,7 +73,7 @@ while flag:
 
     if queue_element == "stop":
         print("Список строительных материалов:")
-        for i in range(fifo_queue.qsize()):
+        while not fifo_queue.empty():
             res = fifo_queue.get()
             print(res)
         break
@@ -147,6 +88,7 @@ emperor_name = "Чжоу Хуэй-Ван"
 print("Введите номер для замены:")
 i = int(input())
 
+# Создаем список с названиями
 popular_names[i] = emperor_name
 
 print(popular_names)
@@ -223,19 +165,17 @@ class List:
 
 list = List()
 
-list.append("0 Большая Пысса")
-list.append("1 Дешевки")
-list.append("2 Лохово")
-list.append("3 Новопозорново")
-list.append("4 Засосная")
-list.append("5 Цаца")
-list.append("6 Свиновье")
-list.append("7 Жабино")
-list.append("8 Голодранкино")
-list.append("9 Добрые Пчелы")
+list.append("0 Ширяево")
+list.append("1 Верхнее Зачатье")
+list.append("2 Голодранкино")
+list.append("3 Муходоево")
+list.append("4 Синегубово")
+list.append("5 Кундрючья")
+list.append("6 Заячий пузырь")
+list.append("7 Синие Лепяги")
+list.append("8 Овнище")
+list.append("9 Манды")
 
 list.remove(int(input("Введите цифру, которую нужно заменить словом Конец: ")))
 list.insert(int(input("Введите номер для удаления: ")))
 list.display()
-
-
