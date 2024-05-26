@@ -19,3 +19,19 @@ data = [choice([ 'Андрей','Сергей','Максим', 'Кузнецов
                 'Петров', 'Сергеев','Иван', 'Васильев','Александр', 'Дмитрий', 'Алексей']) for _ in range30)]
 
 tamandua_name = 'Темный лорд'
+
+
+#1.1
+def t1_1(d: dict) -> float:
+    su = sum(d.values())
+    count = len(d.values())
+    result = su / count
+    return round(result, 2)
+
+#1.2
+def t_1_2(a: list) -> list:
+    result = []
+    for value in a:
+        if value[len(value) - 1] != 'в':
+            result.append(value)
+    return list(set(result))
