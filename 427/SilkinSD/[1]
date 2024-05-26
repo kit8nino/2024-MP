@@ -35,3 +35,11 @@ def t_1_2(a: list) -> list:
         if value[len(value) - 1] != 'в':
             result.append(value)
     return list(set(result))
+
+
+
+# Res 1.1
+print(task_1_1(certificate))
+
+# Res 1.2
+print(*task_1_2(data))
