@@ -1,9 +1,5 @@
 import numpy as np
 
-
-'''
-Здесь используется поиск в ширину
-'''
 '''
 Ввод лабиринта и расчет его размеров и содержимого
 '''
@@ -74,15 +70,19 @@ def step(krd, direction):
 
 #Шаг вверх
 def step_N(krd):
+    print("Вверх")
     return [krd[0], krd[1] - 1]
 #Шаг вправо
 def step_E(krd):
+    print("Вправо")
     return [krd[0] + 1, krd[1]]
 #Шаг вниз
 def step_S(krd):
+    print("Вниз")
     return [krd[0], krd[1] + 1]
 #Шаг влево
 def step_W(krd):
+    print("Влево")
     return [krd[0] - 1, krd[1]]
 
 #условие "ни шагу назад", запрещает ехать назад
@@ -111,9 +111,11 @@ def find_way(my_labyrinth, krd, possible_ways):
     
     if krd_are_exit(krd):
         print('Выход')
+        print('Нынешняя дорога:', current_road)
         return
     if krd_are_loot(krd):
-        print('Ищем новую дорогу')
+        print('Дополз до сокровищ. Ищем новую дорогу')
+        road_to_exit = current_road.copy()
         return
     if len(current_road) > len(road_to_exit):
         so_long_ways += 1
@@ -122,6 +124,8 @@ def find_way(my_labyrinth, krd, possible_ways):
     for direction in possible_ways:
         if road_clean(my_labyrinth, step(krd, direction)):
             current_road.append(direction)
+            print('Нынешнее направление:', direction)
+            print('Нынешняя дорога:', current_road)
             find_way(my_labyrinth, step(krd, direction),  no_wai(direction))
             current_road.pop()
             return
