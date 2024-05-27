@@ -34,3 +34,21 @@ def comb_sort(arr):
             i += 1
     return arr
 print(comb_sort(random_list))
+
+#Гномья сортировка 
+import random
+with open('alice_in_wonderland.txt', 'r') as f:
+    words = f.read().split()
+
+def gnome_sort(words):
+    n = len(words)
+    i = 0
+    while i < n:
+        if i > 0 and words[i] < words[i-1]:
+            words[i], words[i-1] = words[i-1], words[i]
+            i -= 1
+        else:
+            i += 1
+    return words
+sorted_words = gnome_sort(words)
+#Поразрядная сортировка
