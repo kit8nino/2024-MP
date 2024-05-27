@@ -3,10 +3,7 @@ import sys
 
 sys.setrecursionlimit(4000)
 f=open("maze-for-u.txt", "r")
-maze=[[char for char in line] for line in f]
-
-f1=open("maze-for-u2.txt", "r")
-#maze=[[char for char in line] for line in f1]
+main_maze=[[char for char in line] for line in f]
 
 
 #поиск в глубину
@@ -22,11 +19,9 @@ def element_of_maze(avatar, maze):
     x, y=avatar
     return maze[x][y]
 
-
 def chek_this_point(place, maze):
     x, y = place
     maze[x][y]="."
-
 
 def next_points_from_this_place(place, maze, key):
     x, y=place
@@ -39,11 +34,10 @@ def next_points_from_this_place(place, maze, key):
                 continue
             if [x+i, y+j]==key:
                 return [[x+i, y+j]]
-            if element_of_maze([x+i, y+j], maze)==" " or element_of_maze([x+i, y+j], maze)==",":
+            if element_of_maze([x+i, y+j], maze)==" ":
                 answer+=[[x+i, y+j]]
     return answer
             
-
 
 def dfs(avatars_place, key_place, maze):
     if avatars_place==key_place:
@@ -61,27 +55,30 @@ def dfs(avatars_place, key_place, maze):
                 return False
 
 
-avatar_place=create_object(maze)
-key_place=create_object(maze)
-# avatar_place=[24, 10]#create_object(maze)
-# key_place=[2, 40]#create_object(maze)
+avatar_place=create_object(main_maze)
+key_place=create_object(main_maze)
 
 print("Аватар: ", avatar_place,"\nКлюч: ", key_place)
-answer_maze=dfs(avatar_place, key_place, maze)
+answer_maze=dfs(avatar_place, key_place, main_maze)
 
-#[print(*elem) for elem in maze]
-maze[key_place[0]][key_place[1]]="*"
-maze[avatar_place[0]][avatar_place[1]]="$"
-f = open('maze-for-me-done.txt', 'w')
-for i in range(len(maze)):
-	for j in range(len(maze[0])):
-		f.write(maze[i][j])
+main_maze[key_place[0]][key_place[1]]="*"
+main_maze[avatar_place[0]][avatar_place[1]]="$"
+f = open('maze_for_me_done.txt', 'w')
+for i in range(len(main_maze)):
+	for j in range(len(main_maze[0])):
+		f.write(main_maze[i][j])
 f.close()
 print("Поиск в глубину выполнен")
 
 # A*
 
-""" """
+def line_dist(point1, point2):
+    x1, y1=point1
+    x2, y2=point2
+    dist=((x1-x2)**2+(y1-y2)**2)**0.5
+    return dist
+
+
 def exits(maze):
     exits=[]
     n=len(maze)
@@ -92,14 +89,24 @@ def exits(maze):
     for i in range(len(maze[-1])-1):
         if maze[-1][i]!="#":
             exits+=[[n-1, i]]
-
     return exits
 
+all_exits=exits(main_maze)
 
-def cost(place, avatar_place=avatar_place, maze=maze):
+def nearest_exit(maze, key_place=key_place, all_exits=all_exits):
+    exit= all_exits
+    nearest_ex=exit[1]
+    if line_dist(key_place, exit[0])<line_dist(key_place, exit[1]):
+        nearest_ex=exit[1]
+
+
+    return nearest_ex
+
+exit=nearest_exit(main_maze)
+def cost(place, avatar_place=avatar_place, maze=main_maze):
     x, y=place
     x_0, y_0=avatar_place
-    x_exit, y_exit=exits(maze)[0]
+    x_exit, y_exit=exit
     g = abs(x - x_0) + abs(y - y_0)
     h = ((x_exit - x) ** 2 + (y_exit - y) ** 2)**0.5
     f = g + h
@@ -112,7 +119,7 @@ def cell_selector(cells_to_visit):
 def cost_key(cell):
     return cell[2]
 
-def way_drawer_a_star(way, maze=maze):
+def way_drawer_a_star(way, maze=main_maze):
     for px, py in way:
         if maze[px][py]==".":
             maze[px][py]="|"
@@ -130,16 +137,15 @@ def add_to_visit_list_a_star(list_of_neighbours, way, visited, way_length, max_w
         new_way_length = way_length + 1  
 
         if new_way_length <= max_way_length: 
-            if (nx, ny, new_cost, new_way, new_way_length) not in cells_to_visit:
+            if [nx, ny, new_cost, new_way, new_way_length] not in cells_to_visit:
                 cells_to_visit.append([nx, ny, new_cost, new_way, new_way_length])
                 
     return cells_to_visit
 
-def is_exit(place, maze):
+def is_exit(place, maze, all_exits=all_exits):
+    return place in all_exits
 
-    return place in exits(maze)
-
-def maze_output(file_name, maze=maze):
+def maze_output(file_name, maze=main_maze):
     
     with open(file_name, 'w', encoding="utf-8") as file_out_maze:
         
@@ -147,14 +153,14 @@ def maze_output(file_name, maze=maze):
     
     print("Поиск А* выполнен")
 
-def a_star(place, maze, max_way_length, avatar_place):
+def a_star(place, maze, max_way_length, avatar_place=avatar_place, exit=exit):
     x_0, y_0=place
     cells_to_visit = [(x_0, y_0, cost(place, avatar_place, maze), [], 0)]
     visited = set()
     while cells_to_visit:
         current_cell = cell_selector(cells_to_visit)
         x, y, _, way, way_length = current_cell
-
+        #print(way)
         if is_exit([x, y], maze):
             maze = way_drawer_a_star(way)
             print("Выход найден")
@@ -162,25 +168,21 @@ def a_star(place, maze, max_way_length, avatar_place):
         cells_to_visit.remove(current_cell)
         visited.add((x, y))
 
-        list_of_neighbours = next_points_from_this_place([x, y], maze, exits(maze)[0])
+        list_of_neighbours = next_points_from_this_place([x, y], maze, exit)
 
         cells_to_visit = add_to_visit_list_a_star(list_of_neighbours, way, visited, way_length, max_way_length, cells_to_visit)
 
-    print("Выход не найден")
+    if is_exit(way[-1], maze):
+        maze = way_drawer_a_star(way)
+        print("Выход найден")
+        return True
+    maze = way_drawer_a_star(way)
+    print("Выход не найден",)
     return False
 
 f=open("maze-for-u.txt", "r")
-maze2=[[char for char in line] for line in f]
-
-f1=open("maze-for-u2.txt", "r")
-#maze2=[[char for char in line] for line in f1]
-
-maze2[key_place[0]][key_place[1]]="*"
-maze2[avatar_place[0]][avatar_place[1]]="$"
+empty_maze=[[char for char in line] for line in f]
 
 max_way_length=5000
-a_star(key_place, maze2, max_way_length, avatar_place)
-
-
-
-maze_output('maze_for_me_done.txt', maze)
+a_star(key_place, empty_maze, max_way_length)
+maze_output('maze_for_me_done.txt', main_maze)
