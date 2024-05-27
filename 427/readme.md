@@ -18,7 +18,7 @@
 |   10	| Nikita Plechkov|           	|            	|            	|            	|
 |   11	| Popov_Evgenii	|           	|            	|            	|            	|
 |   12	| Pozdnakov Vladislav	|           	|            	|            	|            	|
-|   13	| Shatalin_Vladimir	| 2 |            	|            	|            	|
+|   13	| Shatalin_Vladimir	| 2 |            	|            	|     .       	|
 |   14	| UrsatiyAE	| 2 |            	|            	|            	|
 |   15	|  	|           	|            	|            	|            	|
 |   16	|  	|           	|            	|            	|            	|
