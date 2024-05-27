@@ -1,1 +1,21 @@
+import math
+
+class CartesianCoordinate:
+    __init__ __init__(self, x, y, z):
+        self.x = x
+        self.y = y
+        self.z = z
+
+    def __str__(self):
+        return f"({self.x}, {self.y}, {self.z})"
+
+class SphericalCoordinate:
+    def __init__(self, r, theta, phi):
+        self.r = r
+        self.theta = theta
+        self.phi = phi
+
+    def __str__(self):
+        return f"(r={self.r:.2f}, theta={self.theta:.2f}°, phi={self.phi:.2f}°)"
+
 
