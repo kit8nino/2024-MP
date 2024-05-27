@@ -18,4 +18,38 @@ class SphericalCoordinate:
     def __str__(self):
         return f"(r={self.r:.2f}, theta={self.theta:.2f}°, phi={self.phi:.2f}°)"
 
+class FlyingObject:
+    def __init__(self, id, cartesian_coordinate, velocity):
+        self.id = id
+        self.cartesian_coordinate = cartesian_coordinate
+        self.velocity = velocity
+        self.spherical_coordinate = None
+
+    def __str__(self):
+        return f"ID: {self.id}, Cartesian: {self.cartesian_coordinate}, Velocity: {self.velocity}, Spherical: {self.spherical_coordinate}"
+
+class Radar:
+    __instance = None
+
+    def __new__(cls, cartesian_coordinate):
+        if cls.__instance is None:
+            cls.__instance = super().__new__(cls)
+            cls.cartesian_coordinate = cartesian_coordinatecartesian_coordinate
+        return cls.__instance
+
+    def __str__(self):
+        return f"Cartesian: {self.cartesian_coordinate}"
+
+def cartesian_to_spherical(cartesian_coordinate):
+    r = math.sqrt(cartesian_coordinate.x**2 + cartesian_coordinate.y**2 + cartesian_coordinate.z**2)
+    theta = math.atan2(cartesian_coordinate.y, cartesian_coordinate.x) * 180 / math.pi
+    phi = math.acos(cartesian_coordinate.z / r) * 180 / math.pi
+    return SphericalCoordinate(r, theta, phi)
+
+def move_object(object, time):
+    object.cartesian_coordinate.x += object.velocity[0] * time
+    object.cartesian_coordinate.y += object.velocity[1] * time
+    object.cartesian_coordinate.z += object.velocity[2] * time
+    object.spherical_coordinate = cartesian_to_spherical(object.cartesian_coordinate)
+
 
