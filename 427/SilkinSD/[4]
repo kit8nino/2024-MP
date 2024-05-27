@@ -52,4 +52,27 @@ def move_object(object, time):
     object.cartesian_coordinate.z += object.velocity[2] * time
     object.spherical_coordinate = cartesian_to_spherical(object.cartesian_coordinate)
 
+radar_cartesian_coordinate = CartesianCoordinate(float(input("Введите x-координату радара (м): ")), float(input("Введите y-координату радара (м): ")), float(input("Введите z-координату радара (м): ")))
+num_objects = int(input("Введите количество летающих объектов: "))
+objects = []
+for i in range(num_objects):
+    x, y, z, vx, vy, vz = map(float, input(f"Введите декартовы координаты и проекции скорости {i+1}-го объекта (м/с): ").split())
+    objects.append(FlyingObject(i+1, CartesianCoordinate(x, y, z), (vx, vy, vz)))
 
+radar = Radar(radar_cartesian_coordinate)
+
+for object in objects:
+    object.spherical_coordinate = cartesian_to_spherical(object.cartesian_coordinate)
+
+print("Текущие сферические координаты объектов:")
+for object in objects:
+    print(object)
+
+time = float(input("Введите время в секундах: "))
+
+for object in objects:
+    move_object(object, time)
+
+print(f"Сферические координаты объектов через {time} секунд:")
+for object in objects:
+    print(object)
