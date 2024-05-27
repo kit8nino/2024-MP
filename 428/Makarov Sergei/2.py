@@ -1,3 +1,4 @@
+#Сортировка пузырьком
 import random
 L = []
 for x in range(1, 1000):
@@ -16,3 +17,20 @@ def bubble_sort(arr):
             break
     return arr
 print(bubble_sort(L))
+
+#Сортировка расческой
+random_list = [random.uniform(-1, 1) for _ in range(99999)]
+def comb_sort(arr):
+    n = len(arr)
+    gap = n
+    while gap > 1 or False:
+        gap = int(gap / 1.3)
+        if gap < 1:
+            gap = 1
+        i = 0
+        while i + gap < n:
+            if arr[i] > arr[i + gap]:
+                arr[i], arr[i + gap] = arr[i + gap], arr[i]
+            i += 1
+    return arr
+print(comb_sort(random_list))
