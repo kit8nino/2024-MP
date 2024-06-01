@@ -22,5 +22,5 @@
 |   14	| UrsatiyAE	| 2 |            	|            	|            	|
 |   15	|  SereginDN	|        1   	|         1   	|            	|        1    	|
 |   16	|Shatalin_Vladimir  	|     1      	|            	|            	|    1        	|
-|   17	|UrsatiyAE 	|       	|            	|            	|            	|
+|   17	|UrsatiyAE 	|      1 	|            	|            	|            	|
 </div>
