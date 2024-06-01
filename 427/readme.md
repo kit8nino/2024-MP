@@ -10,16 +10,17 @@
 |    2 	| Fadeev Danil	|           	|            	|            	|            	|
 |    3 	| Galkin Nikita	| файл неизвестного расширения |            	|            	|            	|
 |   4	| Gerankin Evgeniy 	|           	|            	|            	|            	|
-|    5 	| Ivan Alekseev	| 2 | 2 | . |            	|
-|   6 	| Kostritsa Kirill	| 2 | 2 |            	|            	|
+|    5 	| Ivan Alekseev	| 2 | 2 | . |         1   	|        1
+|   6 	| Kostritsa Kirill	| 2 | 2 |      1      	|            	|
 |   7	| Magdenko Daria Alekseevna	| 2 |            	|            	|            	|
 |   8 	| ManidovRM | 2 | 2 |      1      	|     2     	|
-|   9	| MartyshkimDM	| 2 |            	|            	|            	|
+|   9	| MartyshkimDM	| 2 |         	|            	|            	|
 |   10	| Nikita Plechkov|           	|            	|            	|            	|
 |   11	| Popov_Evgenii	|           	|            	|            	|            	|
 |   12	| Pozdnakov Vladislav	|           	|            	|            	|            	|
 |   13	| Shatalin_Vladimir	| 2 |            	|            	|     .       	|
 |   14	| UrsatiyAE	| 2 |            	|            	|            	|
-|   15	|  	|           	|            	|            	|            	|
-|   16	|  	|           	|            	|            	|            	|
+|   15	|  SereginDN	|        1   	|         1   	|            	|        1    	|
+|   16	|Shatalin_Vladimir  	|     1      	|            	|            	|    1        	|
+|   17	|UrsatiyAE 	|       	|            	|            	|            	|
 </div>
