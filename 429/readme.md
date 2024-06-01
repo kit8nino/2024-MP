@@ -10,6 +10,6 @@
 |    4 	|Holodnyi Aleksandr| 2 | 1.5 (вывод закомменчен) |            	|            	|
 |    5 	|Surin Vasiliy| 2 | 2 | 2  |       1.2    	|
 |    6 	|Tulyakov Konstantin| 1.5 (предостерегал от использования чужих классов) | 2 |            	|            	|
-|    7 	| |           	|            	|            	|            	|
-|   8 	| |           	|            	|            	|            	|
+|    7 	| Ivanov Egor|         1  	|    1       	|         1   	|   1         	|
+|   8 	| Pelikhov Vasili|           	|            	|            	|            	|
 </div>
