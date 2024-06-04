@@ -43,7 +43,7 @@ def filling_list_4():
         words = [word.strip(".,!?;:'\"()[]") for word in words]  
         words = [word.lower() for word in words if word.isalpha()]  
         return words
-    with open('text3.txt', 'r', encoding='utf-8') as file:
+    with open('text.txt', 'r', encoding='utf-8') as file:
         text = file.read()
     list_4 = clean_words(text)
     list_4 = list_4[:10000]
