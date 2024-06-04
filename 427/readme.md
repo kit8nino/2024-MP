@@ -19,7 +19,7 @@
 |   11	| Popov_Evgenii	|         1  	|         1   	|            	|         1  	|
 |   12	| Pozdnakov Vladislav	|         1  	|          1  	|          1  	|       1     	|
 |   13	| Shatalin_Vladimir	| 2 |            	|            	|     .       	|
-|   14	| UrsatiyAE	| 2 |            	|            	|            	|
+|   14	| UrsatiyAE	| 2 |          1  	|         1   	|       1     	|
 |   15	|  SereginDN	|        1   	|         1   	|            	|        1    	|
 |   16	|Shatalin_Vladimir  	|     1      	|         1   	|        1    	|    1        	|
 |   17	|	Ivan Anisimov|      1 	|      1      	|            	|          1  	|
