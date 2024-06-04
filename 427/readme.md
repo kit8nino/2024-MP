@@ -6,11 +6,11 @@
   
 | **№**	| **Фамилия**  	| **Лаба 1** 	| **Лаба 2** 	| **Лаба 3** 	| **Лаба 4** 	|
 |------:	|:--------------|:----------:	|:----------:	|:----------:	|:----------:	|
-|     1 	|   Artem Derum |           	|           	|            	|            	|  
-|    2 	| Fadeev Danil	|           	|            	|            	|            	|
-|    3 	| Galkin Nikita	| файл неизвестного расширения |            	|            	|            	|
+|     1 	|   Artem Derum |      1     	|      1     	|          1  	|       1     	|  
+|    2 	| Fadeev Danil	|    1       	|         1   	|     1       	|        1    	|
+|    3 	| Galkin Nikita	| файл неизвестного расширения |         1   	|     1       	|     1       	|
 |   4	| Gerankin Evgeniy 	|           	|            	|            	|            	|
-|    5 	| Ivan Alekseev	| 2 | 2 | . |         1   	|        1
+|    5 	| Ivan Alekseev	| 2 | 2 | . |         1   	|        1 	|
 |   6 	| Kostritsa Kirill	| 2 | 2 |      1      	|            	|
 |   7	| Magdenko Daria Alekseevna	| 2 |            	|            	|            	|
 |   8 	| ManidovRM | 2 | 2 |      1      	|     2     	|
