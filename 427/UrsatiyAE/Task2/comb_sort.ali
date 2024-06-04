@@ -1,0 +1,97 @@
+V "GNAT Lib v7"
+M P W=b
+P ZX
+
+RN
+RV NO_FLOATING_POINT
+RV NO_IO
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV SPARK_05
+
+U comb_sort%b		comb_sort.adb		35c51813 NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.float_text_io%s	a-flteio.ads		a-flteio.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.complex_types%s  a-nucoty.ads	a-nucoty.ali
+W ada.numerics.float_random%s  a-nuflra.adb	a-nuflra.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W interfaces%s		interfac.ads		interfac.ali
+W system.concat_6%s	s-conca6.adb		s-conca6.ali
+W system.img_real%s	s-imgrea.adb		s-imgrea.ali
+
+D ada.ads		20170109082349 76789da1 ada%s
+D a-except.ads		20161214142939 291912d5 ada.exceptions%s
+D a-flteio.ads		20161214142939 e18a47a0 ada.float_text_io%s
+D a-ioexce.ads		20161214142948 e4a01f64 ada.io_exceptions%s
+D a-numeri.ads		20161214142926 bb51c45a ada.numerics%s
+D a-nucoty.ads		20161214142939 b8c59445 ada.numerics.complex_types%s
+D a-nuflra.ads		20161214142926 4056ab7a ada.numerics.float_random%s
+D a-ngcoty.ads		20161214142948 e7845fd0 ada.numerics.generic_complex_types%s
+D a-stream.ads		20161214142926 119b8fb3 ada.streams%s
+D a-tags.ads		20161214142926 01f5e3ef ada.tags%s
+D a-textio.ads		20161214142926 386df5d4 ada.text_io%s
+D a-tiflio.ads		20161214142939 56fbda09 ada.text_io.float_io%s
+D a-unccon.ads		20170109082349 31484697 ada.unchecked_conversion%s
+D comb_sort.adb		20240510125615 14b19558 comb_sort%b
+D interfac.ads		20161214142939 5ab55268 interfaces%s
+D i-cstrea.ads		20161214142926 e53d8b8e interfaces.c_streams%s
+D system.ads		20170512081901 4635ec04 system%s
+D s-conca6.ads		20161214142939 d2c72db2 system.concat_6%s
+D s-crtl.ads		20161214142926 0ebbdb71 system.crtl%s
+D s-exctab.ads		20161214142948 54135002 system.exception_table%s
+D s-ficobl.ads		20161214142948 078245e4 system.file_control_block%s
+D s-imgrea.ads		20161214142939 c7a851e2 system.img_real%s
+D s-parame.ads		20161214142939 7e2a0d7f system.parameters%s
+D s-rannum.ads		20161214142939 99ade2f2 system.random_numbers%s
+D s-soflin.ads		20161214142939 14e1eb6c system.soft_links%s
+D s-stache.ads		20161214142939 a37c21ec system.stack_checking%s
+D s-stalib.ads		20161214142948 09bd3940 system.standard_library%s
+D s-stoele.ads		20161214142939 2dc34a04 system.storage_elements%s
+D s-traent.ads		20161214142939 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20161214142939 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20161214142939 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 20e8 14|1r6 1r23 2r6 2r29 3r6 3r37 4r6 7r9 8r9 47r10
+X 3 a-flteio.ads
+20K13*Float_Text_IO[12|46] 14|2w10 2r33
+X 5 a-numeri.ads
+16K13*Numerics 32e17 14|3r10 3r41 4r10 8r13 47r14
+X 6 a-nucoty.ads
+18K22*Complex_Types[8|39] 14|4w19 8r22
+X 7 a-nuflra.ads
+41K22*Float_Random 74e30 14|3w19 3r50 47r23
+47R9*Generator<24|63R9> 14|47r36
+49F12*Uniformly_Distributed{float}
+51V13*Random{49F12}<24|71p13> 14|52s23 52s49
+53U14*Reset<24|100p14> 14|50s5
+X 8 a-ngcoty.ads
+42R9*Complex 14|11r52[6|18] 15r15[6|18] 46r7[6|18] 52r14[6|18] 54r33[6|18]
+54V13*Re{float} 14|54s46[6|18] 65s89[6|18]
+55V13*Im{float} 14|54s61[6|18] 65s138[6|18]
+67V14*"abs"=67:64{float} 14|36s20[6|18] 36s34[6|18] 53s13[6|18] 65s44[6|18]
+X 11 a-textio.ads
+49K13*Text_IO 471e16 14|1w10 1r27 7r13
+263U14*Put_Line 14|65s9
+X 14 comb_sort.adb
+6U11*Comb_Sort 6b11 67l5 67t14
+10I13 Modulus_Index{integer} 11r34 14r68 26r12 34r22 34r45 35r26 51r14 64r14
+11A10 Complex_Array(8|42R9[6|18])<integer> 14r34 23r37 45r10
+14U15 Swap 14b15 14=20 14>49 14>57 20l9 20t13 37s21
+14a20 Elems{11A10} 17r17 18m9 18r26 19m9
+14i49 Index1{10I13} 17r23 18r15
+14i57 Index2{10I13} 18r32 19r15
+15r9 Temp{8|42R9[6|18]} 17m9 19r26
+23U15 Comb_Sort 23b15 23=25 42l9 42t18 61s5
+23a25 Arr{11A10} 24r25 36r24 36r38 37m26
+24i9 Gap{integer} 28r31 29m13 29r20 30r16 31m17 34r66 35r40
+25b9 Swapped{boolean} 28r15 33m13 38m21
+26i9 J{10I13} 35m17 36r42 37r34
+34i17 I{integer} 35r22 36r28 37r31
+45a5 Arr{11A10} 54m25 56m25 61m15 61r15 65r48 65r92 65r141
+46r5 a{8|42R9[6|18]} 52m9 53r17 54r49 54r64 56r33
+47r5 gen{7|47R9} 50r11 52r30 52r56
+51i9 I{10I13} 54r29 56r29
+64i9 I{10I13} 65r52 65r96 65r145
+

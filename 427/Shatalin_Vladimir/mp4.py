@@ -13,19 +13,34 @@ class Radar():
             self.y = radar_coord[1]
             self.z = radar_coord[2]
             return self.instance
+
+    def sfer_coord(self, obj):
+        x = obj.x - self.x
+        y = obj.y - self.y
+        z = obj.z - self.z
+        
+        r = np.sqrt(x**2+y**2+z**2)
+        fi = np.arctan2(y,x)
+        if fi<0:
+            fi += np.pi*2
+        teta = np.arctan2(z, abs(x))
+    
+        if angle_grad:
+            fi = int(fi*180/np.pi)
+            teta = int(teta*180/np.pi)
             
-    def get_y(self):
-        return self.y
-    def get_x(self):
-        return self.x
-    def get_z(self):
-        return self.z
+        return np.array([r,fi,teta])
+        
+    def movement(self,obj,t):
+        obj.x += obj.vx*t
+        obj.y += obj.vy*t
+        obj.z += obj.vz*t
 
 class FlyObj():
     def __init__(self):
-        self.x = np.random.randint(-10,10) - radar.get_x()
-        self.y = np.random.randint(-10,10) - radar.get_x()
-        self.z = np.random.randint(1,10) - radar.get_z()
+        self.x = np.random.randint(-10,10)
+        self.y = np.random.randint(-10,10)
+        self.z = np.random.randint(1,10)
         self.vx = 1 - np.random.random()*2
         self.vy = 1 - np.random.random()*2
         self.vz = np.random.random()
@@ -33,27 +48,7 @@ class FlyObj():
         return np.array([self.x,self.y,self.z])
     def get_speed(self):
         return np.array([self.vx,self.vy,self.vz])
-    def movement(self,t):
-        self.x += self.vx*t
-        self.y += self.vy*t
-        self.z += self.vz*t
         
-def sfer_coord(obj):
-    x = obj[0]
-    y = obj[1]
-    z = obj[2]
-    
-    r = np.sqrt(x**2+y**2+z**2)
-    fi = np.arctan2(y,x)
-    if fi<0:
-        fi += np.pi*2
-    teta = np.arctan2(z, abs(x))
-
-    if angle_grad:
-        fi = int(fi*180/np.pi)
-        teta = int(teta*180/np.pi)
-        
-    return np.array([r,fi,teta])
     
 radar = Radar()
 fly_objects = []
@@ -61,13 +56,13 @@ fly_objects = []
 print('Coordinates(t = 0)(ro,fi,teta):\n')
 for i in range(N):
     fly_objects.append(FlyObj())
-    coords = sfer_coord(fly_objects[i].get_coord())
+    coords = radar.sfer_coord(fly_objects[i])
     print(f'Object {i+1}: {coords[0]} | {coords[1]} | {coords[2]}')
 
 time = float(input('------------\nEnter time: '))
 
 print(f'------------\nCoordinates(t = {time} sec)(ro,fi,teta):\n')
 for i in range(N):
-    fly_objects[i].movement(time)
-    coords = sfer_coord(fly_objects[i].get_coord())
+    radar.movement(fly_objects[i], time)
+    coords = radar.sfer_coord(fly_objects[i])
     print(f'Object {i+1}: {coords[0]} | {coords[1]} | {coords[2]}')

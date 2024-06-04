@@ -1,5 +1,6 @@
 import random
 #import numpy as np
+import string
 
 #print(random.sample(range(1, 18), 4)) # вернет список из 4 случайных значений в заданном диапазоне
 
@@ -7,19 +8,45 @@ import random
 
 n1 = 100000
 n2 = 99999
+file = 'literally_text.txt'
 
 #list1 = [i for i in range(0, n)]
 list1 = [random.randint(0, 999999) for i in range(n1)]
 list2 = [random.uniform(-1, 1) for i in range (n2)]
 list3 = []
+list4 = []
 
-"""
+
 r = 28/1
-for i in range(1, 4200):
+for i in range(1, 42000):
     complex_score = complex(random.uniform(-r, r), random.uniform(-r, r))
     if abs(complex_score) < r**2 or abs(complex_score) == r**2:
         list3.append(complex_score)
-"""
+
+
+def complex_convert(list_of_complex, length):
+    
+    for i in range(length):
+        current_value = list_of_complex[i].real
+        list_of_complex[i] = current_value
+        
+    return list_of_complex
+
+list3 = complex_convert(list3, len(list3))
+
+# Открываем файл для чтения
+def reader():
+    with open('literally_text.txt', 'r') as file:
+        # Читаем содержимое файла
+        text = file.read()
+        # Удаляем знаки препинания из текста
+        text = text.translate(str.maketrans('', '', string.punctuation))
+        # Разбиваем текст на слова
+        words = text.split()
+        # Выводим список слов
+    return words
+
+list4 = reader()
 
 """
 Пузырьковая сортировка:
@@ -35,7 +62,7 @@ def bubble(a):
             if a[j] > a[j+1]:
                 a[j], a[j+1] = a[j+1], a[j]
     return a
-print("Первый список: ", list1, "\n")
+#print("Первый список: ", list1, "\n")
 print("Сортировка 1 списка пузырьком: ", bubble(list1[::100]), "\n")
 
 
@@ -65,7 +92,7 @@ def dwarf(a):
     print("For Rock and Stone! \n")
     return a
 
-print("Второй список: ", list2, "\n")     
+#print("Второй список: ", list2, "\n")     
 print("Сортировка 2 списка гномами: ", dwarf(list2[::100]), "\n")
 
 
@@ -90,5 +117,39 @@ def counting(a):
     return sorted_a
 
 #print("Третий список: ", list3)     
-#print(counting(list3)) не работает
+print("Сортировка 3 списка подсчетом: ", counting(list3[::100]))
 
+"""
+Сортировка перемешиванием
+"""
+
+def cocktail(a):
+    n = len(a)
+    swapped = True
+    start = 0
+    end = n - 1
+    
+    while swapped:
+        swapped = False
+        
+        for i in range(start, end):
+            if a[i] > a[i + 1]:
+                a[i], a[i + 1] = a[i + 1], a[i]
+                swapped = True
+            if not swapped:
+                break
+        
+        swapped = False
+        end = end - 1
+        
+        for i in range(end - 1, start - 1, -1):
+            if a[i] > a[i + 1]:
+                a[i], a[i + 1] = a[i + 1], a[i]
+                swapped = True
+        
+        start = start + 1
+    
+    return a
+
+#print("Четвертый список: ", list4)     
+print("Сортировка 4 списка перемешиванием: ", cocktail(list4[::100]))

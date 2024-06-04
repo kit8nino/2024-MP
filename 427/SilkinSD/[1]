@@ -1,0 +1,55 @@
+from random import choice
+from datetime import date, datetime
+
+certificate = {'Всеобщая история': 4,
+               'Английский язык': 5,
+               'Искусство': 5,
+               'Физика': 5,
+               'Алгебра': 5,
+               'Геометрия': 5,
+               'Русский язык': 4,
+               'Литература': 5,
+               'История России': 4,
+               'Музыка': 5,
+               'Технология': 5,
+               'Биология': 5,
+               'География': 5,
+               'Обществознание': 5}
+
+actor = ('Clint ', 'Eastwood', '31.05.1930')
+
+data = [choice([ 'Андрей','Сергей','Максим', 'Кузнецов','Волков', 'Попов',
+                'Петров', 'Сергеев','Иван', 'Васильев','Александр', 'Дмитрий', 'Алексей']) for _ in range30)]
+
+tamandua_name = 'Темный лорд'
+
+
+#1.1
+def t1_1(d: dict) -> float:
+    su = sum(d.values())
+    count = len(d.values())
+    result = su / count
+    return round(result, 2)
+
+#1.2
+def t1_2(a: list) -> list:
+    result = []
+    for value in a:
+        if value[len(value) - 1] != 'в':
+            result.append(value)
+    return list(set(result))
+#1.5
+def t1_5(name: str) -> bin:
+    for c in name:
+        name = name.replace(c, bin(ord(c)), 1)
+    return name
+
+
+# Res 1.1
+print(t1_1(certificate))
+
+# Res 1.2
+print(*t1_2(data))
+
+#Res 1.5
+print(t1_5(tamandua_name))

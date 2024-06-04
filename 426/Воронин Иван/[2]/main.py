@@ -8,7 +8,8 @@ import sorter_lib
 array_1 = []
 for i in range(10000):
 	array_1.append(random.randint(0, 999999))
-	sorter_lib.sort_bubble(array_1)
+sorter_lib.sort_bubble(array_1)
+# print(array_1)
 print("sorted 1")
 
 
@@ -17,10 +18,12 @@ array_2 = []
 for i in range(99999):
 	array_2.append(random.uniform(-1, 1))
 sorter_lib.sort_comp(array_2)
+# print(array_2)
 print("sorted 2")
 
 
-array_3 = [[]]
+
+array_3 = []
 r = 9/2
 x_list = []
 y_list = []
@@ -32,6 +35,10 @@ for i in range(42000):
 	# y_list.append(y)
 # plt.scatter(x_list, y_list)
 # plt.show()
+sorter_lib.sort_gnome(array_3)
+print("sorted 3")
+# for i in range(len(array_3)):
+# 	print(sorter_lib.module(array_3[i]))
 
 
 
@@ -45,3 +52,7 @@ for line in file:
 				word.replace(symbol, '')
 			array_4.append(word.replace('\n', ''))
 # print(len(array_4))
+print(array_4)
+array_4 = sorter_lib.sort_bitonic(array_4)
+# print(array_4)
+print("sorted 4")

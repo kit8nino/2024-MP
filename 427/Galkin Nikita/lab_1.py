@@ -1,0 +1,114 @@
+import random
+from datetime import datetime
+
+
+#Исходные данные:
+
+subjects = {'алгебра': 5, 'геометрия': 4, 'литература': 4, 'русский язык': 3, 'биология': 5, 'химия': 3, 'физика': 4,
+             'ОБЖ': 5, 'труды': 5, 'экономика': 4, 'обществознание': 5, 'история': 5, 'география': 4, 'английский язык': 4}
+actor = ('Клинт', 'Иcтвуд', '31.05.1930')
+#Красноярск
+names = ["Иван", "Александр", "Сергей", "Андрей", "Дмитрий", "Алексей", "Максим", "Евгений", "Владимир", "Денис"]
+surnames = [" Петров", " Смирнов", " Сергеев", " Васильев", " Кузнецов", " Андреев", " Попов"]
+people = []
+for _ in range(30):
+    name = random.choice(names)
+    surname = random.choice(surnames)
+    people.append(name + surname)
+
+tamandua_name = 'Лохматый Лохмач'
+
+
+#Действия:
+
+def zadanie_one():
+    sum = 0
+    for ocenka in subjects.values():
+        sum += ocenka
+    print('средний балл', sum / len(subjects.values()))
+
+def zadanie_two():
+    unique_names = {}
+    for full_name in people:
+        unique_names[full_name] = True
+    unique_names = list(unique_names.keys())
+    for name in unique_names:
+        print(name)
+
+   
+def zadanie_three():
+    lenth=0
+    for key in subjects:
+        lenth += len(key)
+    print('общая длина всех названий предметов:', lenth)
+
+def zadanie_four():
+    unique_letters = set()
+    for subject in subjects:
+        for letter in subject:
+            unique_letters.add(letter)
+    print('уникальные буквы в названиях предметов:', unique_letters)
+        
+def zadanie_five():
+    bin_name = ''.join(format(i,'08b') for i in bytearray(tamandua_name,'utf-8')) 
+    print('имя домашнего тамандуа в бинарном виде', bin_name)
+
+def zadanie_six():
+    birthdate_str = actor[2]
+    birthdate = datetime.strptime(birthdate_str, '%d.%m.%Y')
+    today = datetime.now()
+    date_diff = today - birthdate
+    print('количество дней, прошедших с момента рождения актера вестерна:', actor[0], actor[1], date_diff.days)
+
+def zadanie_seven():
+    queue = []
+    while True:
+        item = input("введите название стройматериала (или введите 'стоп' для остановки): ")
+        if item == "стоп":
+            break
+        queue.append(item)
+    print('все элементы очереди:')
+    for item in queue:
+        print(item)
+
+def zadanie_eight():
+    day, month, year = map(int, actor[2].split('.'))
+    number = (day + month**2 + year - 1900) % 39 + 1
+    print('номер императора:', number)
+    index = int(input('введите индекс для замены имени: '))
+    people[index] = 'Цзи Гао Синь' 
+    print("Измененный список:")
+    for person in people:
+        print(person)
+    
+def zadanie_nine(): 
+    towns = ["Мама", "Правдинск", "Зажопинск", "Мухосранск", "Кишлак"]
+    print("Список населенных пунктов:")
+    for index, town in enumerate(towns):
+        print(f"{town}")
+    town_to_remove = input("Введите название населенного пункта для удаления: ")
+    if town_to_remove in towns:
+        index = towns.index(town_to_remove)
+        del towns[index]
+        print(f"{town_to_remove} удален.")
+    else:
+        print(f"{town_to_remove} не найден.")
+    index = int(input("Введите индекс для вставки Конца: "))
+    towns.insert(index, "Конец")
+    print("Конец вставлен.")
+    print("Измененный список:")
+    for index, town in enumerate(towns):
+        print(f"{town}")
+
+
+#Выходные данные:
+
+print(zadanie_one())
+print(zadanie_two())
+print(zadanie_three())
+print(zadanie_four())
+print(zadanie_five())
+print(zadanie_six())
+print(zadanie_seven())
+print(zadanie_eight())
+print(zadanie_nine())
