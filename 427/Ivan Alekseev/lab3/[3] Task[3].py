@@ -23,9 +23,7 @@ def generate_objects_coordinates(maze):
 	while avatar_coordinates == key_coordinates:
 		key_coordinates = generate_position_coordinates()
 
-	exit_x = randint(0, len(maze[0]) - 1)
-
-	return [avatar_coordinates, key_coordinates, [exit_x, 0]]
+	return [avatar_coordinates, key_coordinates]
 
 
 def bfs(maze, avatar_cords, key_cords):
@@ -70,30 +68,81 @@ def reconstruct_path(came_from, start, goal):
 	return path
 
 
-def a_star_search(g, h, max_length):
-	pass
+def heuristic(a, b):
+	return abs(a[0] - b[0]) + abs(a[1] - b[1])
+
+
+def get_min_f_score_node(open_set, f_score):
+	min_node = open_set[0]
+	min_f_score = f_score[min_node]
+	for node in open_set:
+		if f_score[node] < min_f_score:
+			min_f_score = f_score[node]
+			min_node = node
+	return min_node
+
+
+def neighbor_check(maze, neigh, cols, rows):
+	if 0 <= neigh[0] < cols and 0 <= neigh[1] < rows and maze[neigh[1]][neigh[0]] != "#":
+		return True
+
+
+def a_star(maze, start, end):
+	y_max = len(maze)
+	x_max = len(maze[0])
+	directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]
+	open_set = [start]
+	came_from = {}
+	g_score = {start: 0}
+	f_score = {start: heuristic(start, end)}
+	while open_set:
+		current = get_min_f_score_node(open_set, f_score)
+		open_set.remove(current)
+		if current == end:
+			while current in came_from:
+				x, y = current
+				if maze[y][x] == ".":
+					maze[y][x] = ";"
+				else:
+					maze[y][x] = ","
+				current = came_from[current]
+			maze[start[1]][start[0]] = ","
+			return g_score[end]
+
+		x, y = current
+		for dx, dy in directions:
+			neighbor = (x + dx, y + dy)
+			if neighbor_check(maze, neighbor, x_max, y_max):
+				tentative_g_score = g_score[current] + 1
+				if neighbor not in g_score or tentative_g_score < g_score[neighbor]:
+					came_from[neighbor] = current
+					g_score[neighbor] = tentative_g_score
+					f_score[neighbor] = tentative_g_score + heuristic(neighbor, end)
+					if neighbor not in open_set:
+						open_set.append(neighbor)
+	return float("inf")
 
 
 my_maze = read_maze()
-avatar, key, exit_from_maze = generate_objects_coordinates(my_maze)
-
+avatar, key = generate_objects_coordinates(my_maze)
+exit_from_maze = [0, randint(0, len(my_maze))]
 path_to_key = bfs(my_maze, (avatar[0], avatar[1], []), key)
-max_cost = len(path_to_key) * 2
-print(path_to_key[0], key, avatar)
+
+my_maze[key[0]][key[1]] = '*'
+my_maze[exit_from_maze[0]][exit_from_maze[1]] = 'O'
+
+for i, point in enumerate(path_to_key):
+	if i != len(path_to_key) - 1:
+		my_maze[point[0]][point[1]] = '.'
 
 
-def write_path_to_exit(maze, path, key_cords):
-	new_maze = maze
-	new_maze[key_cords[0]][key_cords[1]] = '*'
-	for i, point in enumerate(path):
-		if i != len(path) - 1:
-			new_maze[point[0]][point[1]] = '.'
-
+def write_new_maze(maze):
 	with open('maze-for-me-done.txt', 'w') as w_file:
-		for line in new_maze:
+		for line in maze:
 			for c in line:
 				w_file.write(c)
 			w_file.write('\n')
 
 
-write_path_to_exit(my_maze, path_to_key, key)
+a_star(my_maze, key, exit_from_maze)
+write_new_maze(my_maze)
