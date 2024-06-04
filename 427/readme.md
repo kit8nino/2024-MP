@@ -22,5 +22,12 @@
 |   14	| UrsatiyAE	| 2 |            	|            	|            	|
 |   15	|  SereginDN	|        1   	|         1   	|            	|        1    	|
 |   16	|Shatalin_Vladimir  	|     1      	|            	|            	|    1        	|
-|   17	|UrsatiyAE 	|      1 	|            	|            	|            	|
+|   17	|	Ivan Anisimov|      1 	|      1      	|            	|          1  	|
+|   18	|Kataev Ivan	|      1 	|        1   	|            	|         1   	|
+|   19	| MartyshkinDM	|   	|    1        	|            	|      1      	|
+|   20	| Mylnikova Svetlana	|      1 	|        1    	|      1      	|            	|
+|   21	|RaskolovNikolay	|      1 	|      1      	|      1      	|      1      	|
+|   22	|	ShashkovAE|      1 	|         1   	|      1      	|            	|
+|   23	|SilkinSD	|      1 	|      1      	|         1   	|        1    	|
+|   24	|Ermakova Tatiana	|      1 	|      1      	|     1       	|     1       	|
 </div>
