@@ -15,13 +15,13 @@
 |   7	| Magdenko Daria Alekseevna	| 2 |            	|            	|            	|
 |   8 	| ManidovRM | 2 | 2 |      1      	|     2     	|
 |   9	| MartyshkimDM	| 2 |         	|            	|            	|
-|   10	| Nikita Plechkov|           	|            	|            	|            	|
-|   11	| Popov_Evgenii	|           	|            	|            	|            	|
-|   12	| Pozdnakov Vladislav	|           	|            	|            	|            	|
+|   10	| Nikita Plechkov|     1      	|        1    	|            	|          1  	|
+|   11	| Popov_Evgenii	|         1  	|         1   	|            	|         1  	|
+|   12	| Pozdnakov Vladislav	|         1  	|          1  	|          1  	|       1     	|
 |   13	| Shatalin_Vladimir	| 2 |            	|            	|     .       	|
 |   14	| UrsatiyAE	| 2 |            	|            	|            	|
 |   15	|  SereginDN	|        1   	|         1   	|            	|        1    	|
-|   16	|Shatalin_Vladimir  	|     1      	|            	|            	|    1        	|
+|   16	|Shatalin_Vladimir  	|     1      	|         1   	|        1    	|    1        	|
 |   17	|	Ivan Anisimov|      1 	|      1      	|            	|          1  	|
 |   18	|Kataev Ivan	|      1 	|        1   	|            	|         1   	|
 |   19	| MartyshkinDM	|   	|    1        	|            	|      1      	|
