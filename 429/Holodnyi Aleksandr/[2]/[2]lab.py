@@ -51,6 +51,21 @@ def quick_sort(list):
     else:
         return summ(quick_sort(loc_list[n//2:]), quick_sort(loc_list[:n//2]))
 
+def summ(m1, m2):
+    m1i, m2i=0, 0
+    res=[]
+    while len(res)<len(m1)+len(m2):
+        if m1i<len(m1) and m2i<len(m2):
+            res+=[min(m1[m1i], m2[m2i])]
+            if m1[m1i] < m2[m2i]:
+                m1i+=1
+            else: m2i+=1
+        elif m1i<len(m1):
+            res+=m1[m1i:]
+        else:
+            res+=m2[m2i:]
+    return res
+    
 #4
 def insertion_sort(list):
     loc_list = list
@@ -63,22 +78,6 @@ def insertion_sort(list):
             loc_list[j] = temp
             j -= 1
     return loc_list
-
-def summ(m1, m2):
-    m1i, m2i=0, 0
-    ans=[]
-    while len(ans)<len(m1)+len(m2):
-        if m1i<len(m1) and m2i<len(m2):
-            ans+=[min(m1[m1i], m2[m2i])]
-            if m1[m1i] < m2[m2i]:
-                m1i+=1
-            else: m2i+=1
-        elif m1i<len(m1):
-            ans+=m1[m1i:]
-        else:
-            ans+=m2[m2i:]
-    return ans
-
 
 #7
 def gnome_sort(list):
@@ -95,7 +94,7 @@ def gnome_sort(list):
     return loc_list
 
 #код
-#print(merge_sort(integer_list))
-#print(quick_sort(real_list))
-#print(insertion_sort(complexity_list))
-#print(gnome_sort(word_list))
+print(merge_sort(integer_list))
+print(quick_sort(real_list))
+print(insertion_sort(complexity_list))
+print(gnome_sort(word_list))
