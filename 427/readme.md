@@ -8,7 +8,7 @@
 |------:	|:--------------|:----------:	|:----------:	|:----------:	|:----------:	|
 |    ok 	|   Artem Derum |      2     	|      2    	|          2  	|       1.8     	|  
 |    ok 	| Fadeev Danil	|    2      	|         2   	|     2      	|        1.8   	|
-|    ok 	| Galkin Nikita	| 1.8 |         2   	|     1.5 ([;||:])       	|     1.8       	|
+|    ok 	| Galkin Nikita	| 1.8 |         2   	|     1.5 ([;:])       	|     1.8       	|
 |   4	| Gerankin Evgeniy 	|    0       	|        0    	|       0     	|     0       	|
 |    ok	| Ivan Alekseev	| 2 | 2 | 2 |         1.8   	| 
 |   ok	| Kostritsa Kirill	| 2 | 2 |      2      	|      1.8      	|
