@@ -6,28 +6,27 @@
   
 | **№**	| **Фамилия**  	| **Лаба 1** 	| **Лаба 2** 	| **Лаба 3** 	| **Лаба 4** 	|
 |------:	|:--------------|:----------:	|:----------:	|:----------:	|:----------:	|
-|     1 	|   Artem Derum |      1     	|      1     	|          1  	|       1     	|  
-|    2 	| Fadeev Danil	|    1       	|         1   	|     1       	|        1    	|
-|    3 	| Galkin Nikita	| файл неизвестного расширения |         1   	|     1       	|     1       	|
-|   4	| Gerankin Evgeniy 	|           	|            	|            	|            	|
-|    5 	| Ivan Alekseev	| 2 | 2 | . |         1   	|        1 	|
-|   6 	| Kostritsa Kirill	| 2 | 2 |      1      	|            	|
-|   7	| Magdenko Daria Alekseevna	| 2 |            	|            	|            	|
-|   8 	| ManidovRM | 2 | 2 |      1      	|     2     	|
-|   9	| MartyshkimDM	| 2 |         	|            	|            	|
-|   10	| Nikita Plechkov|     1      	|        1    	|            	|          1  	|
-|   11	| Popov_Evgenii	|         1  	|         1   	|            	|         1  	|
-|   12	| Pozdnakov Vladislav	|         1  	|          1  	|          1  	|       1     	|
+|    ok 	|   Artem Derum |      2     	|      2    	|          2  	|       1.8     	|  
+|    ok 	| Fadeev Danil	|    2      	|         2   	|     2      	|        1.8   	|
+|    ok 	| Galkin Nikita	| 1.8 |         2   	|     1.5 ([;||:])       	|     1.8       	|
+|   4	| Gerankin Evgeniy 	|    0       	|        0    	|       0     	|     0       	|
+|    ok	| Ivan Alekseev	| 2 | 2 | 2 |         1.8   	| 
+|   ok	| Kostritsa Kirill	| 2 | 2 |      2      	|      1.8      	|
+|   ok | Magdenko Daria Alekseevna	| 2 |     2      	|        1.2  (смешение парадигм)      	|        1.5    	|
+|   ok 	| ManidovRM | 2 | 2 |      1      	|     2     	|
+|   ok	| MartyshkinDM	| 2 |     2   	|            	|      2     	|
+|   ok | Nikita Plechkov|     2      	|        2    	|            	|          2  	|
+|   ok | Popov_Evgenii	|         2 	|         2   	|            	|         2  	|
+|   ok | Pozdnakov Vladislav	|         2 	|          2 	|          2 	|       2     	|
 |   13	| Shatalin_Vladimir	| 2 |            	|            	|     .       	|
-|   14	| UrsatiyAE	| 2 |          1  	|         1   	|       1     	|
-|   15	|  SereginDN	|        1   	|         1   	|            	|        1    	|
-|   16	|Shatalin_Vladimir  	|     1      	|         1   	|        1    	|    1        	|
-|   17	|	Ivan Anisimov|      1 	|      1      	|            	|          1  	|
-|   18	|Kataev Ivan	|      1 	|        1   	|            	|         1   	|
-|   19	| MartyshkinDM	|   	|    1        	|            	|      1      	|
-|   20	| Mylnikova Svetlana	|      1 	|        1    	|      1      	|            	|
-|   21	|RaskolovNikolay	|      1 	|      1      	|      1      	|      1      	|
-|   22	|	ShashkovAE|      1 	|         1   	|      1      	|            	|
-|   23	|SilkinSD	|      1 	|      1      	|         1   	|        1    	|
-|   24	|Ermakova Tatiana	|      1 	|      1      	|     1       	|     1       	|
+|   ok	| UrsatiyAE	| 2 |          2  	|         2   	|       2     	|
+|   15	|  SereginDN	|    1  (расширение)	|      1  (расширение) 	|            	|     1   (расширение) 	|
+|   ok	|Shatalin_Vladimir  	|     2      	|        2   	|        2   	|    2       	|
+|   ok  |	Ivan Anisimov|      2 	|      2      	|       0     	|          2  	|
+|   ok	|Kataev Ivan	|      2 	|        2   	|        0    	|         2   	|
+|   ok | Mylnikova Svetlana	|      2 	|        2    	|      2      	|            	|
+|   ok	|RaskolovNikolay	|      2 	|      2     	|      2      	|      2      	|
+|   21	|	ShashkovAE|      1 (расширение)	 	|        1 (расширение)	   	|     1 (расширение)	      	|      1 (расширение)	    	|
+|   22	|SilkinSD	|      1 (расширение)	 	|      1   (расширение)	   	|         0.5 (пустой) 	|        1   (расширение)	 	|
+|   23	|Ermakova Tatiana	|      2 	|      0.5 (код не запускается)      	|     1.2  (смешение парадигм)     	|     1.8 (смешение парадигм)       	|
 </div>
