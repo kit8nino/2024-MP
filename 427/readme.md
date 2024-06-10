@@ -20,7 +20,7 @@
 |   ok | Pozdnakov Vladislav	|         2 	|          2 	|          2 	|       2     	|
 |   13	| Shatalin_Vladimir	| 2 |      0      	|       0     	|     .       	|
 |   ok	| UrsatiyAE	| 2 |          2  	|         2   	|       2     	|
-|   15	|  SereginDN	|    1  (расширение)	|      1  (расширение) 	|            	|     1   (расширение) 	|
+|   15	|  SereginDN	|    1  (расширение)	|      1  (расширение) 	|      0      	|     1   (расширение) 	|
 |   ok	|Shatalin_Vladimir  	|     2      	|        2   	|        2   	|    2       	|
 |   ok  |	Ivan Anisimov|      2 	|      2      	|       0     	|          2  	|
 |   ok	|Kataev Ivan	|      2 	|        2   	|        0    	|         2   	|
