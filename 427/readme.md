@@ -14,11 +14,11 @@
 |   ok	| Kostritsa Kirill	| 2 | 2 |      2      	|      1.8      	|
 |   ok | Magdenko Daria Alekseevna	| 2 |     2      	|        1.2  (смешение парадигм)      	|        1.5    	|
 |   ok 	| ManidovRM | 2 | 2 |      1      	|     2     	|
-|   ok	| MartyshkinDM	| 2 |     2   	|            	|      2     	|
-|   ok | Nikita Plechkov|     2      	|        2    	|            	|          2  	|
-|   ok | Popov_Evgenii	|         2 	|         2   	|            	|         2  	|
+|   ok	| MartyshkinDM	| 2 |     2   	|       0     	|      2     	|
+|   ok | Nikita Plechkov|     2      	|        2    	|     0       	|          2  	|
+|   ok | Popov_Evgenii	|         2 	|         2   	|       0     	|         2  	|
 |   ok | Pozdnakov Vladislav	|         2 	|          2 	|          2 	|       2     	|
-|   13	| Shatalin_Vladimir	| 2 |            	|            	|     .       	|
+|   13	| Shatalin_Vladimir	| 2 |      0      	|       0     	|     .       	|
 |   ok	| UrsatiyAE	| 2 |          2  	|         2   	|       2     	|
 |   15	|  SereginDN	|    1  (расширение)	|      1  (расширение) 	|            	|     1   (расширение) 	|
 |   ok	|Shatalin_Vladimir  	|     2      	|        2   	|        2   	|    2       	|
