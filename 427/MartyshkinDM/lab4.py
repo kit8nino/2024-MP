@@ -70,5 +70,3 @@ fl_objs_speed = [fl_obj.get_speed() for fl_obj in flying_objects]
 [print(f'Object_{i + 1} координаты: r = {fl_obj[0]} m, fi = {fl_obj[1]} deg, tetta = {fl_obj[2]} deg,'
        f'Vx = {fl_objs_speed[i][0]}, Vy = {fl_objs_speed[i][1]}, Vz = {fl_objs_speed[i][2]}')
  for i, fl_obj in enumerate(objects_cords_2)]
-
-
