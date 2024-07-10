@@ -1,0 +1,153 @@
+V "GNAT Lib v7"
+M P W=b
+P SS ZX
+
+RN
+RV NO_DISPATCHING_CALLS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_FLOATING_POINT
+RV NO_IO
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLICIT_LOOPS
+RV SPARK_05
+
+U radar_simulation%b	radar_simulation.adb	9c930d99 NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.float_text_io%s	a-flteio.ads		a-flteio.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.elementary_functions%s  a-nuelfu.ads  a-nuelfu.ali
+W ada.numerics.generic_elementary_functions%s
+W ada.streams%s		a-stream.adb		a-stream.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W system%s		system.ads		system.ali
+W system.address_image%s  s-addima.adb		s-addima.ali
+W system.concat_2%s	s-conca2.adb		s-conca2.ali
+W system.concat_3%s	s-conca3.adb		s-conca3.ali
+W system.concat_7%s	s-conca7.adb		s-conca7.ali
+W system.img_int%s	s-imgint.adb		s-imgint.ali
+W system.img_real%s	s-imgrea.adb		s-imgrea.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+
+D ada.ads		20170109082349 76789da1 ada%s
+D a-except.ads		20161214142939 291912d5 ada.exceptions%s
+D a-flteio.ads		20161214142939 e18a47a0 ada.float_text_io%s
+D a-inteio.ads		20161214142948 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20161214142948 e4a01f64 ada.io_exceptions%s
+D a-numeri.ads		20161214142926 bb51c45a ada.numerics%s
+D a-numaux.ads		20161214142926 243fe0b7 ada.numerics.aux%s
+D a-nuelfu.ads		20161214142926 03e83d1c ada.numerics.elementary_functions%s
+D a-ngelfu.ads		20161214142926 b8fdcb46 ada.numerics.generic_elementary_functions%s
+D a-ngelfu.adb		20161214142926 5e96a931 ada.numerics.generic_elementary_functions%b
+D a-stream.ads		20161214142926 119b8fb3 ada.streams%s
+D a-tags.ads		20161214142926 01f5e3ef ada.tags%s
+D a-textio.ads		20161214142926 386df5d4 ada.text_io%s
+D a-tiflio.ads		20161214142939 56fbda09 ada.text_io.float_io%s
+D a-tiinio.ads		20161214142926 aa04e5d6 ada.text_io.integer_io%s
+D a-unccon.ads		20170109082349 31484697 ada.unchecked_conversion%s
+D interfac.ads		20161214142939 5ab55268 interfaces%s
+D i-cstrea.ads		20161214142926 e53d8b8e interfaces.c_streams%s
+D radar_simulation.adb	20240522092038 b37b0449 radar_simulation%b
+D system.ads		20170512081901 4635ec04 system%s
+D s-addima.ads		20161214142939 a1ec9d3a system.address_image%s
+D s-conca2.ads		20161214142926 02a0d7d0 system.concat_2%s
+D s-conca3.ads		20161214142948 0b705ca5 system.concat_3%s
+D s-conca7.ads		20161214142926 fcc75b1f system.concat_7%s
+D s-crtl.ads		20161214142926 0ebbdb71 system.crtl%s
+D s-exctab.ads		20161214142948 54135002 system.exception_table%s
+D s-ficobl.ads		20161214142948 078245e4 system.file_control_block%s
+D s-imgint.ads		20161214142926 02dbe0c2 system.img_int%s
+D s-imgrea.ads		20161214142939 c7a851e2 system.img_real%s
+D s-parame.ads		20161214142939 7e2a0d7f system.parameters%s
+D s-secsta.ads		20170113082808 9751b57e system.secondary_stack%s
+D s-soflin.ads		20161214142939 14e1eb6c system.soft_links%s
+D s-stache.ads		20161214142939 a37c21ec system.stack_checking%s
+D s-stalib.ads		20161214142948 09bd3940 system.standard_library%s
+D s-stoele.ads		20161214142939 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20161214142939 ed88f8fb system.storage_elements%b
+D s-stratt.ads		20161214142948 aedef97e system.stream_attributes%s
+D s-traent.ads		20161214142939 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20161214142939 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20161214142939 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 20e8 19|1r6 1r22 2r6 2r28 3r6 3r30 4r6 4r44 5r6 6r6 6r23
+X 3 a-flteio.ads
+20K13*Float_Text_IO[14|46] 19|2w10 2r32
+X 4 a-inteio.ads
+18K13*Integer_Text_IO[15|46] 19|3w10 3r34
+X 6 a-numeri.ads
+16K13*Numerics 32e17 19|4r10 4r48 5r10 6w10 6r27
+21N4*Pi 19|59r42 60r57
+X 8 a-nuelfu.ads
+18K22*Elementary_Functions[9|39] 19|4w19 4r57
+X 9 a-ngelfu.ads
+39k22*Generic_Elementary_Functions 170e46 19|5w19
+42V13*Sqrt{float} 19|58s12[8|18] 60s25[8|18]
+118V13*Arctan{float} 19|59s16[8|18] 60s14[8|18]
+X 13 a-textio.ads
+49K13*Text_IO 471e16 19|1w10 1r26
+242U14*Put 19|75s7 82s13 96s10
+263U14*Put_Line 19|66s7 91s10 103s10
+X 14 a-tiflio.ads
+57U14*Get 19|83s13[3|20] 84s13[3|20] 85s13[3|20] 86s13[3|20] 87s13[3|20]
+. 88s13[3|20] 97s10[3|20]
+58f7 Item{float} 19|83r17[3|20] 84r17[3|20] 85r17[3|20] 86r17[3|20] 87r17[3|20]
+. 88r17[3|20] 97r14[3|20]
+X 15 a-tiinio.ads
+56U14*Get 19|76s7[4|18]
+57i7 Item{integer} 19|76r11[4|18]
+X 19 radar_simulation.adb
+7U11*Radar_Simulation 7b11 111l5 111t21
+9R9 Coordinate 13e14 28r32 30r15 34r32 41r18 52r35 52r53 69r21
+10f7 X{float} 47m20 47r38 55r17 55r27 83m52
+11f7 Y{float} 48m20 48r38 56r17 56r27 84m52
+12f7 Z{float} 49m20 49r38 57r17 57r27 85m52
+15R9 Velocity 19e14 42r14
+16f7 Vx{float} 47r51 86m48
+17f7 Vy{float} 48r51 87m48
+18f7 Vz{float} 49r51 88m48
+21R9 Spherical_Coordinate 25e14 52r72 64r50
+22f7 R{float} 66r42
+23f7 Theta{float} 66r81
+24f7 Phi{float} 66r128
+27K12 Singleton_Radar 30E7 31l8 31e23 33b17 38l8 38t23 69r35
+28V16 Instance{9R9} 34b16 37l11 37t19 69s51
+30r7 Radar{9R9} 36r17
+40R9 FlyingObject 43e14 45r44 79r44
+41r7 Position{9R9} 47m11 47r29 48m11 48r29 49m11 49r29 83m43 84m43 85m43
+. 93r87 105r87
+42r7 Velo{15R9} 47r46 48r46 49r46 86m43 87m43 88m43
+45U14 Update_Position 45b14 45=31 45>58 50l8 50t23 100s13
+45r31 Obj{40R9} 47m7 47r25 47r42 48m7 48r25 48r42 49m7 49r25 49r42
+45f58 Time{float} 47r56 48r56 49r56
+52V13 To_Spherical{21R9} 52b13 52>27 52>47 62l8 62t20 93s40 105s40
+52r27 Radar{9R9} 55r21 56r21 57r21
+52r47 Obj{9R9} 55r13 56r13 57r13
+53f7 Dx{float} 55m7 58r17 58r20 59r27 60r30 60r33
+53f11 Dy{float} 56m7 58r25 58r28 59r23 60r38 60r41
+53f15 Dz{float} 57m7 58r33 58r36 60r21
+53f19 R{float} 58m7 61r15
+53f22 Theta{float} 59m7 61r18
+53f29 Phi{float} 60m7 61r25
+64U14 Print_Spherical_Coordinate 64b14 64>42 67l8 67t34 93s13 105s13
+64r42 Coord{21R9} 66r36 66r75 66r122
+69r4 Radar_Position{9R9} 93r53 105r53
+71U14 Main 71b14 108l8 108t12 110s4
+72i7 N{integer} 76m18 79r38 81r24 92r24 99r24 104r24
+73f7 Time{float} 97m22 100r48 103r93
+79a10 Flying_Objects(40R9) 83m25 83r25 84m25 84r25 85m25 85r25 86m25 86r25
+. 87m25 87r25 88m25 88r25 93r69 100m29 100r29 105r69
+81i14 I{integer} 82r103 83r40 84r40 85r40 86r40 87r40 88r40
+92i14 I{integer} 93r84
+99i14 I{integer} 100r44
+104i14 I{integer} 105r84
+
