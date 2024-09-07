@@ -1,119 +1,98 @@
-from random import randint
-import datetime
+import random
+from datetime import datetime
 
-# Входные данные
-subjects={
-    "Algebra": 5,
-    "Geometry": 4,
-    "Physics": 5,
-    "Biology": 3,
-    "Psychology": 4,
-    "Theology": 3,
-    "English": 5,
-    "Russian": 4,
-    "French": 3,
-    "Alchemy": 5,
-    "Demonology": 5,
-    "3D-modeling": 5,
-    "Radioelectronics": 5,
-    "Physical education": 5
-    }
+# Исходные данные
+subjects = {              
+    "алгебра": 5,
+    "химия": 4,
+    "литература": 5,
+    "биология": 4,
+    "история": 5,
+    "физика": 5,
+    "геометрия": 5,
+    "физкультура": 5,
+    "обж": 5,
+    "обществознание": 5,
+    "информатика": 4,
+}     # Предметы в аттестате
 
-western_actor_birthday=datetime.datetime(1925,1,9)
-western_actor=tuple(["Lee Van Cleef",western_actor_birthday.day, western_actor_birthday.month, western_actor_birthday.year])
+actor_birthday = datetime(1901, 5,7 )
+actor = ("Gary ", "Cooper", (actor_birthday.day, actor_birthday.month, actor_birthday.year)) #Актёр вестернов Гэрри Купер 7.05.1901 г.р.
 
-popular_fnames_Voronezh=["Елена","Екатерина","Ольга","Мария","Анастасия","Ирина","Наталья","Татьяна","Юлия","Светлана"]
-popular_mnames_Voronezh=["Иван","Александр","Сергей","Дмитрий","Андрей","Алексей","Максим","Евгений","Владимир","Роман"]
-popular_surnames_Voronezh=["Иванов","Попов","Петров","Кузнецов","Сергеев","Смирнов","Новиков","Васильев"]
+#Популярные имена и фамилии в городе Санк-Петербург
+men_names = ['Александр', 'Иван', 'Сергей', 'Андрей', 'Алексей', 'Дмитрий', 'Максим', 'Михаил', 'Владимир', 'Игорь']
+men_surnames = ['Иванов', 'Петров', 'Смирнов', 'Васильев', 'Андреев', 'Алексеев', 'Кузнецов', 'Соколов']
+names_list = [(name, surname) for name in men_names for surname in men_surnames]
+random.shuffle(names_list)
 
-popular_combos=[]
+# Имя для тамандуа
+pet_name = "Прожорливый лис" 
 
-for i in range(15):
-    popular_combos.append(popular_surnames_Voronezh[randint(0,7)]+" "+popular_mnames_Voronezh[randint(0,9)])
-    
-for i in range(15):
-    popular_combos.append(popular_surnames_Voronezh[randint(0,7)]+"а"+" "+popular_fnames_Voronezh[randint(0,9)])
-    
-tamandua_name="Ушастая Булка"
+# Действия 
+average_grade = sum(subjects.values()) / len(subjects) 
+print(f"Средняя оценка в аттестате: {average_grade}")
 
-# Действия с данными
-average_mark=0
-for i in subjects.values():
-    average_mark+=i
-print("\nСредняя оценка в аттестате:",average_mark/len(subjects))
+print("Список из имени и фамилии:", names_list)
+unique_names = list(set([name for name, _ in names_list]))
+print(f"Уникальные имена: {unique_names}")
 
-unique_names=[]
-for i in popular_combos:
-    unique_names.append(i.split()[1])
-print("\nУникальные имена:",set(unique_names))
+total_length = sum(len(subject) for subject in subjects)
+print(f"Общая длина всех названий предметов: {total_length}")
 
-length_of_subjects=0
-for i in subjects.keys():
-    length_of_subjects+=len(i)
-print("\nОбщая длина всех названий предметов:",length_of_subjects)
+unique_letters = set("".join(subjects.keys()))
+print(f"Уникальные буквы в названиях предметов: {unique_letters}")
 
-unique_simbols=[]
-for i in subjects.keys():
-    for j in range(len(i)):
-        unique_simbols.append(i[j])
-unique_simbols.remove(" ")
-unique_simbols.remove("-")
-unique_simbols.remove("3")
-print("\nУникальные буквы в названиях предметов:",set(unique_simbols))
+binary_pet_name = "".join(format(ord(char), '08b') for char in pet_name)
+print(f"Имя домашнего тамандуа в бинарном виде: {binary_pet_name}")
 
-bin_tamandua=""
-bin_tamandua = ''.join(format(ord(x), '08b') for x in tamandua_name)
-print("\nИмя домашнего тамандуа в бинарном виде:",bin_tamandua)
+days_since_birth = (datetime.now() - actor_birthday).days
+print(f"Количество дней от даты рождения актера до текущей даты: {days_since_birth}")
 
-difference_in_days = (datetime.datetime.now()-western_actor_birthday).days
-print("\nЧисло дней с момента рождения актёра вестерна до текущей даты:", difference_in_days)
-
-building_materials=[]
-print("\nВведите наименование стройматериалов(q для вывода):")
-k=1
+# FIFO очередь для стройматериалов
+material_queue = []
 while True:
-    data=input("№{}:".format(k))
-    if data=="q":
-        for i in building_materials:
-            print(i)
+    material = input("Введите стройматериал (для завершения введите 'стоп'): ")
+    if material.lower() == 'стоп':
         break
-    else:
-        k+=1
-        building_materials.append(data)
+    material_queue.append(material)
+print("Список стройматериалов:")
+print(material_queue)
 
-popular_combos.sort()
-emperor_number=(western_actor[1]+western_actor[2]**2+western_actor[3])%39+1
-emperor_name="Чжоу Цзин-ван Гуй"
-name_index=int(input("\nВведите индекс элемента для замены (от 0 до 19):"))
-popular_combos[name_index]=emperor_name
-print(popular_combos)
+#Замена имени на императора династии Чжоу
+index = int(input("Введите индекс для изменения имени в списке популярных имен и фамилий: "))
+print("Имя которое будет заменено:", names_list[index])
+names_list.sort()
+names_list[index] = ("Чжоу", "Лин-ван")
+print(f"Имя китайского императора династии Чжоу для замены в списке имён: {names_list[index]}")
+print("Список имён с вставленным именем китайскго императора", names_list)
 
-strange_settlement_names={
-    "Большой Куяш": 1,
-    "Иннах": 2,
-    "Да-да": 3,
-    "Чуваки": 4,
-    "Дно": 5,
-    }
-print("\nСписок странных названий населённых пунктов:", strange_settlement_names)
+#Словарик со странными городами
+strange_cities = {
+    "Большая Пысса": 1,
+    "Большие Пупсы": 2,
+    "ул. Минструактивная": 3,
+    "г. Манды": 4,
+    "Дешевки": 5,
+    "ул. Новый русский спуск": 6,
+    "Такое": 7
+}
+print("Список странных названий населенных пунктов:", strange_cities)
+
 while True:
-    text_entry=input("\nВведите название из списка для удаления либо индекс (от 0 до 4), по которому в список будет вставлен город Конец (q для выхода):")
-    if text_entry=='q':
+    city_name = input("Введите название города для удаления или введите 'Конец' для вставки этого города в список(для завершения введите 'стоп'): ")
+    if city_name.lower() == 'стоп':
         break
-    elif text_entry.isdigit():
-        strange_settlement_names['Конец']=int(text_entry)+1
-        for i in strange_settlement_names:
-            if strange_settlement_names[i] > int(text_entry) and i!="Конец":
-                strange_settlement_names[i]+=1
-        print("\nСписок странных названий населённых пунктов с Концом:", strange_settlement_names)
-        break
-    elif not text_entry in strange_settlement_names.keys():
-        print("\nНет такого города")
+    if city_name in strange_cities:
+        del strange_cities[city_name]
+        print(f"Город '{city_name}' удален.")
+    elif city_name == 'Конец':
+        insert_index = int(input("Введите индекс для вставки города 'Конец': "))
+        strange_cities["Конец"] = insert_index
+        strange_cities=sorted(strange_cities.items(),key=lambda x: x[1])
+        strange_cities=dict(strange_cities)
+       
+        print(f"Город 'Конец' вставлен по индексу {insert_index}.")
     else:
-        for k,v in strange_settlement_names.items():
-            if v==strange_settlement_names[text_entry]-1:
-                strange_settlement_names[k]+=1
-        del strange_settlement_names[text_entry]
-        print("\nСтранный населённый пункт {} удалён".format(text_entry))
-        print("\nСписок странных названий населённых пунктов без {}:\n{}".format(text_entry,strange_settlement_names))
-        break
+        print("Такого города нет в списке.")
+
+print("Изменённый список странных названий населенных пунктов:" , strange_cities)
