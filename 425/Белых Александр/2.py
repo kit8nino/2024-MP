@@ -1,0 +1,138 @@
+import numpy as np
+ints=[]
+for i in range(20):
+    ints.append(np.random.randint(0,99999))
+print(ints)
+
+#floats=[np.random.random(99999)]
+floats=[]
+for i in range(99999):
+    el=float(np.random.random(1))
+    floats.append(el)
+    #floats.append(np.random.random(1))
+print(floats[0:10])
+
+complexes=[]
+for i in range(42000):
+    x = np.random.randint(0, 1000)
+    y = np.random.randint(0, 1000)
+    complexes.append(complex(x, y))
+print(complexes[0:10])
+
+import string 
+text=[]
+
+with open("отрывок из книги.txt", encoding="utf-8") as f:
+    for line in f:
+        text += line.translate(str.maketrans(dict.fromkeys(string.punctuation))).split()
+f.close()
+print(text) #книга: Мертвые души
+
+#сравнение строк
+def compare_str(w1,w2):
+    i=0
+    list(w1)
+    list(w2)
+    if len(w1)<len(w2):return True
+    elif len(w1)==len(w2):
+        for c1,c2 in zip (w1,w2):
+            if ord(c1)<ord(c2): return True
+#сравнение комплексных чисел
+def compare_complexes(comp1,comp2):
+    from math import atan
+    m1=np.sqrt((comp1.real)**2+(comp1.imag)**2)
+    m2=np.sqrt((comp2.real)**2+(comp2.imag)**2)
+
+    if m1<m2: return True
+
+#сортировка вставкой
+
+def insertion_sort(list1):
+    alist=list1.copy()
+    for i in range(1, len(alist)):
+        temp = alist[i]
+        j = i - 1
+        while (j >= 0 and temp < alist[j]):
+            alist[j + 1] = alist[j]
+            j = j - 1
+        alist[j + 1] = temp
+    return alist
+#sorted_ints=insertion_sort(ints)
+#print(ints,'\n')
+#print(sorted_ints)
+
+#блочная сортировка
+from math import floor
+def bucket_sort(list1):
+    alist=list1.copy()
+    optimal_segment_size=max(alist)/len(alist)
+    blocks=[]
+    for i in range(len(alist)):
+        segment=[]
+        blocks.append(segment)
+    for i in alist:
+        index=int(i//optimal_segment_size)
+        if index>=len(alist): index=int(i//optimal_segment_size)-1
+        blocks[index].append(i)
+    i=0
+    res=[]
+    for b in blocks:
+        #print(len(b))
+        if len(b)!=0:
+            b=insertion_sort(b)
+            for el in b:
+                #print(el)
+                res.append(float(el))
+    return res
+example=floats[0:20]
+print(example,'\n')
+sorted_floats=bucket_sort(example)
+print(bucket_sort(example))
+        
+#сортировка слиянием
+def merge_sort(nums): 
+  if len(nums) > 1: 
+    mid = len(nums)//2 
+    left = nums[:mid] 
+    right = nums[mid:]
+    merge_sort(left) 
+    merge_sort(right) 
+  i = j = k = 0 
+  while i < len(left) and j < len(right):
+    if compare_str(left[i],right[j]):
+      nums[k] = left[i]
+      i+=1 
+    else: 
+      nums[k] = right[j] 
+      j+=1
+    k+=1
+
+  while i < len(left):
+     nums[k] = left[i] 
+     i+=1 
+     k+=1 
+  while j < len(right): 
+     nums[k] = right[j] 
+     j+=1 
+     k+=1
+#sorted_text=merge_sort(text)
+#print(sorted_text)
+
+#сортировка пузырьком
+def bubbles_sort(arr):
+    A=arr
+    n=len(arr)
+    for i in range(0,n-1):
+        for j in range(0,n-1-i):
+            #if A[j+1]<A[j]:
+            if compare_complexes(A[j+1],A[j]):
+                t=A[j]
+                A[j]=A[j+1]
+                A[j+1]=t
+                
+    print(A,'\n')
+    return A
+
+#print(complexes[:26])
+#sorted_complexes=bubbles_sort(complexes)
+#print(sorted_complexes)

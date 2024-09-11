@@ -1,0 +1,689 @@
+PART 1 — The Tragedy of Birlstone
+
+Chapter 1 — The Warning
+
+“I am inclined to think—” said I.
+
+“I should do so,” Sherlock Holmes remarked impatiently.
+
+I believe that I am one of the most long-suffering of mortals; but I'lladmit that I was annoyed at the sardonic interruption. “Really, Holmes,”said I severely, “you are a little trying at times.”
+
+He was too much absorbed with his own thoughts to give any immediateanswer to my remonstrance. He leaned upon his hand, with his untastedbreakfast before him, and he stared at the slip of paper which he had justdrawn from its envelope. Then he took the envelope itself, held it up tothe light, and very carefully studied both the exterior and the flap.
+
+“It is Porlock's writing,” said he thoughtfully. “I can hardly doubt thatit is Porlock's writing, though I have seen it only twice before. TheGreek e with the peculiar top flourish is distinctive. But if it isPorlock, then it must be something of the very first importance.”
+
+He was speaking to himself rather than to me; but my vexation disappearedin the interest which the words awakened.
+
+“Who then is Porlock?” I asked.
+
+“Porlock, Watson, is a nom-de-plume, a mere identification mark; butbehind it lies a shifty and evasive personality. In a former letter hefrankly informed me that the name was not his own, and defied me ever totrace him among the teeming millions of this great city. Porlock isimportant, not for himself, but for the great man with whom he is intouch. Picture to yourself the pilot fish with the shark, the jackal withthe lion—anything that is insignificant in companionship with whatis formidable: not only formidable, Watson, but sinister—in thehighest degree sinister. That is where he comes within my purview. Youhave heard me speak of Professor Moriarty?”
+
+“The famous scientific criminal, as famous among crooks as—”
+
+“My blushes, Watson!” Holmes murmured in a deprecating voice.
+
+“I was about to say, as he is unknown to the public.”
+
+“A touch! A distinct touch!” cried Holmes. “You are developing a certainunexpected vein of pawky humour, Watson, against which I must learn toguard myself. But in calling Moriarty a criminal you are uttering libel inthe eyes of the law—and there lie the glory and the wonder of it!The greatest schemer of all time, the organizer of every deviltry, thecontrolling brain of the underworld, a brain which might have made ormarred the destiny of nations—that's the man! But so aloof is hefrom general suspicion, so immune from criticism, so admirable in hismanagement and self-effacement, that for those very words that you haveuttered he could hale you to a court and emerge with your year's pensionas a solatium for his wounded character. Is he not the celebrated authorof The Dynamics of an Asteroid, a book which ascends to such rarefiedheights of pure mathematics that it is said that there was no man in thescientific press capable of criticizing it? Is this a man to traduce?Foul-mouthed doctor and slandered professor—such would be yourrespective roles! That's genius, Watson. But if I am spared by lesser men,our day will surely come.”
+
+“May I be there to see!” I exclaimed devoutly. “But you were speaking ofthis man Porlock.”
+
+“Ah, yes—the so-called Porlock is a link in the chain some littleway from its great attachment. Porlock is not quite a sound link—betweenourselves. He is the only flaw in that chain so far as I have been able totest it.”
+
+“But no chain is stronger than its weakest link.”
+
+“Exactly, my dear Watson! Hence the extreme importance of Porlock. Led onby some rudimentary aspirations towards right, and encouraged by thejudicious stimulation of an occasional ten-pound note sent to him bydevious methods, he has once or twice given me advance information whichhas been of value—that highest value which anticipates and preventsrather than avenges crime. I cannot doubt that, if we had the cipher, weshould find that this communication is of the nature that I indicate.”
+
+Again Holmes flattened out the paper upon his unused plate. I rose and,leaning over him, stared down at the curious inscription, which ran asfollows:
+
+534 C2 13 127 36 31 4 17 21 41 DOUGLAS 109 293 5 37 BIRLSTONE 26 BIRLSTONE9 47 171
+
+“What do you make of it, Holmes?”
+
+“It is obviously an attempt to convey secret information.”
+
+“But what is the use of a cipher message without the cipher?”
+
+“In this instance, none at all.”
+
+“Why do you say 'in this instance'?”
+
+“Because there are many ciphers which I would read as easily as I do theapocrypha of the agony column: such crude devices amuse the intelligencewithout fatiguing it. But this is different. It is clearly a reference tothe words in a page of some book. Until I am told which page and whichbook I am powerless.”
+
+“But why 'Douglas' and 'Birlstone'?”
+
+“Clearly because those are words which were not contained in the page inquestion.”
+
+“Then why has he not indicated the book?”
+
+“Your native shrewdness, my dear Watson, that innate cunning which is thedelight of your friends, would surely prevent you from inclosing cipherand message in the same envelope. Should it miscarry, you are undone. Asit is, both have to go wrong before any harm comes from it. Our secondpost is now overdue, and I shall be surprised if it does not bring useither a further letter of explanation, or, as is more probable, the veryvolume to which these figures refer.”
+
+Holmes's calculation was fulfilled within a very few minutes by theappearance of Billy, the page, with the very letter which we wereexpecting.
+
+“The same writing,” remarked Holmes, as he opened the envelope, “andactually signed,” he added in an exultant voice as he unfolded theepistle. “Come, we are getting on, Watson.” His brow clouded, however, ashe glanced over the contents.
+
+“Dear me, this is very disappointing! I fear, Watson, that all ourexpectations come to nothing. I trust that the man Porlock will come to noharm.
+
+“DEAR MR. HOLMES [he says]:
+
+“I will go no further in this matter. It is too dangerous—hesuspects me. I can see that he suspects me. He came to me quiteunexpectedly after I had actually addressed this envelope with theintention of sending you the key to the cipher. I was able to cover it up.If he had seen it, it would have gone hard with me. But I read suspicionin his eyes. Please burn the cipher message, which can now be of no use toyou.
+
+“FRED PORLOCK.”
+
+Holmes sat for some little time twisting this letter between his fingers,and frowning, as he stared into the fire.
+
+“After all,” he said at last, “there may be nothing in it. It may be onlyhis guilty conscience. Knowing himself to be a traitor, he may have readthe accusation in the other's eyes.”
+
+“The other being, I presume, Professor Moriarty.”
+
+“No less! When any of that party talk about 'He' you know whom they mean.There is one predominant 'He' for all of them.”
+
+“But what can he do?”
+
+“Hum! That's a large question. When you have one of the first brains ofEurope up against you, and all the powers of darkness at his back, thereare infinite possibilities. Anyhow, Friend Porlock is evidently scared outof his senses—kindly compare the writing in the note to that uponits envelope; which was done, he tells us, before this ill-omened visit.The one is clear and firm. The other hardly legible.”
+
+“Why did he write at all? Why did he not simply drop it?”
+
+“Because he feared I would make some inquiry after him in that case, andpossibly bring trouble on him.”
+
+“No doubt,” said I. “Of course.” I had picked up the original ciphermessage and was bending my brows over it. “It's pretty maddening to thinkthat an important secret may lie here on this slip of paper, and that itis beyond human power to penetrate it.”
+
+Sherlock Holmes had pushed away his untasted breakfast and lit theunsavoury pipe which was the companion of his deepest meditations. “Iwonder!” said he, leaning back and staring at the ceiling. “Perhaps thereare points which have escaped your Machiavellian intellect. Let usconsider the problem in the light of pure reason. This man's reference isto a book. That is our point of departure.”
+
+“A somewhat vague one.”
+
+“Let us see then if we can narrow it down. As I focus my mind upon it, itseems rather less impenetrable. What indications have we as to this book?”
+
+“None.”
+
+“Well, well, it is surely not quite so bad as that. The cipher messagebegins with a large 534, does it not? We may take it as a workinghypothesis that 534 is the particular page to which the cipher refers. Soour book has already become a LARGE book, which is surely somethinggained. What other indications have we as to the nature of this largebook? The next sign is C2. What do you make of that, Watson?”
+
+“Chapter the second, no doubt.”
+
+“Hardly that, Watson. You will, I am sure, agree with me that if the pagebe given, the number of the chapter is immaterial. Also that if page 534finds us only in the second chapter, the length of the first one must havebeen really intolerable.”
+
+“Column!” I cried.
+
+“Brilliant, Watson. You are scintillating this morning. If it is notcolumn, then I am very much deceived. So now, you see, we begin tovisualize a large book printed in double columns which are each of aconsiderable length, since one of the words is numbered in the document asthe two hundred and ninety-third. Have we reached the limits of whatreason can supply?”
+
+“I fear that we have.”
+
+“Surely you do yourself an injustice. One more coruscation, my dear Watson—yetanother brain-wave! Had the volume been an unusual one, he would have sentit to me. Instead of that, he had intended, before his plans were nipped,to send me the clue in this envelope. He says so in his note. This wouldseem to indicate that the book is one which he thought I would have nodifficulty in finding for myself. He had it—and he imagined that Iwould have it, too. In short, Watson, it is a very common book.”
+
+“What you say certainly sounds plausible.”
+
+“So we have contracted our field of search to a large book, printed indouble columns and in common use.”
+
+“The Bible!” I cried triumphantly.
+
+“Good, Watson, good! But not, if I may say so, quite good enough! Even ifI accepted the compliment for myself I could hardly name any volume whichwould be less likely to lie at the elbow of one of Moriarty's associates.Besides, the editions of Holy Writ are so numerous that he could hardlysuppose that two copies would have the same pagination. This is clearly abook which is standardized. He knows for certain that his page 534 willexactly agree with my page 534.”
+
+“But very few books would correspond with that.”
+
+“Exactly. Therein lies our salvation. Our search is narrowed down tostandardized books which anyone may be supposed to possess.”
+
+“Bradshaw!”
+
+“There are difficulties, Watson. The vocabulary of Bradshaw is nervous andterse, but limited. The selection of words would hardly lend itself to thesending of general messages. We will eliminate Bradshaw. The dictionaryis, I fear, inadmissible for the same reason. What then is left?”
+
+“An almanac!”
+
+“Excellent, Watson! I am very much mistaken if you have not touched thespot. An almanac! Let us consider the claims of Whitaker's Almanac. It isin common use. It has the requisite number of pages. It is in doublecolumn. Though reserved in its earlier vocabulary, it becomes, if Iremember right, quite garrulous towards the end.” He picked the volumefrom his desk. “Here is page 534, column two, a substantial block of printdealing, I perceive, with the trade and resources of British India. Jotdown the words, Watson! Number thirteen is 'Mahratta.' Not, I fear, a veryauspicious beginning. Number one hundred and twenty-seven is 'Government';which at least makes sense, though somewhat irrelevant to ourselves andProfessor Moriarty. Now let us try again. What does the Mahrattagovernment do? Alas! the next word is 'pig's-bristles.' We are undone, mygood Watson! It is finished!”
+
+He had spoken in jesting vein, but the twitching of his bushy eyebrowsbespoke his disappointment and irritation. I sat helpless and unhappy,staring into the fire. A long silence was broken by a sudden exclamationfrom Holmes, who dashed at a cupboard, from which he emerged with a secondyellow-covered volume in his hand.
+
+“We pay the price, Watson, for being too up-to-date!” he cried. “We arebefore our time, and suffer the usual penalties. Being the seventh ofJanuary, we have very properly laid in the new almanac. It is more thanlikely that Porlock took his message from the old one. No doubt he wouldhave told us so had his letter of explanation been written. Now let us seewhat page 534 has in store for us. Number thirteen is 'There,' which ismuch more promising. Number one hundred and twenty-seven is 'is'—'Thereis' “—Holmes's eyes were gleaming with excitement, and his thin,nervous fingers twitched as he counted the words—“'danger.' Ha! Ha!Capital! Put that down, Watson. 'There is danger—may—come—verysoon—one.' Then we have the name 'Douglas'—'rich—country—now—atBirlstone—House—Birlstone—confidence—is—pressing.'There, Watson! What do you think of pure reason and its fruit? If thegreen-grocer had such a thing as a laurel wreath, I should send Billyround for it.”
+
+I was staring at the strange message which I had scrawled, as hedeciphered it, upon a sheet of foolscap on my knee.
+
+“What a queer, scrambling way of expressing his meaning!” said I.
+
+“On the contrary, he has done quite remarkably well,” said Holmes. “Whenyou search a single column for words with which to express your meaning,you can hardly expect to get everything you want. You are bound to leavesomething to the intelligence of your correspondent. The purport isperfectly clear. Some deviltry is intended against one Douglas, whoever hemay be, residing as stated, a rich country gentleman. He is sure—'confidence'was as near as he could get to 'confident'—that it is pressing.There is our result—and a very workmanlike little bit of analysis itwas!”
+
+Holmes had the impersonal joy of the true artist in his better work, evenas he mourned darkly when it fell below the high level to which heaspired. He was still chuckling over his success when Billy swung open thedoor and Inspector MacDonald of Scotland Yard was ushered into the room.
+
+Those were the early days at the end of the '80's, when Alec MacDonald wasfar from having attained the national fame which he has now achieved. Hewas a young but trusted member of the detective force, who haddistinguished himself in several cases which had been intrusted to him.His tall, bony figure gave promise of exceptional physical strength, whilehis great cranium and deep-set, lustrous eyes spoke no less clearly of thekeen intelligence which twinkled out from behind his bushy eyebrows. Hewas a silent, precise man with a dour nature and a hard Aberdonian accent.
+
+Twice already in his career had Holmes helped him to attain success, hisown sole reward being the intellectual joy of the problem. For this reasonthe affection and respect of the Scotchman for his amateur colleague wereprofound, and he showed them by the frankness with which he consultedHolmes in every difficulty. Mediocrity knows nothing higher than itself;but talent instantly recognizes genius, and MacDonald had talent enoughfor his profession to enable him to perceive that there was no humiliationin seeking the assistance of one who already stood alone in Europe, bothin his gifts and in his experience. Holmes was not prone to friendship,but he was tolerant of the big Scotchman, and smiled at the sight of him.
+
+“You are an early bird, Mr. Mac,” said he. “I wish you luck with yourworm. I fear this means that there is some mischief afoot.”
+
+“If you said 'hope' instead of 'fear,' it would be nearer the truth, I'mthinking, Mr. Holmes,” the inspector answered, with a knowing grin. “Well,maybe a wee nip would keep out the raw morning chill. No, I won't smoke, Ithank you. I'll have to be pushing on my way; for the early hours of acase are the precious ones, as no man knows better than your own self. But—but—”
+
+The inspector had stopped suddenly, and was staring with a look ofabsolute amazement at a paper upon the table. It was the sheet upon whichI had scrawled the enigmatic message.
+
+“Douglas!” he stammered. “Birlstone! What's this, Mr. Holmes? Man, it'switchcraft! Where in the name of all that is wonderful did you get thosenames?”
+
+“It is a cipher that Dr. Watson and I have had occasion to solve. But why—what'samiss with the names?”
+
+The inspector looked from one to the other of us in dazed astonishment.“Just this,” said he, “that Mr. Douglas of Birlstone Manor House washorribly murdered last night!”
+
+Chapter 2 — Sherlock Holmes Discourses
+
+It was one of those dramatic moments for which my friend existed. It wouldbe an overstatement to say that he was shocked or even excited by theamazing announcement. Without having a tinge of cruelty in his singularcomposition, he was undoubtedly callous from long overstimulation. Yet, ifhis emotions were dulled, his intellectual perceptions were exceedinglyactive. There was no trace then of the horror which I had myself felt atthis curt declaration; but his face showed rather the quiet and interestedcomposure of the chemist who sees the crystals falling into position fromhis oversaturated solution.
+
+“Remarkable!” said he. “Remarkable!”
+
+“You don't seem surprised.”
+
+“Interested, Mr. Mac, but hardly surprised. Why should I be surprised? Ireceive an anonymous communication from a quarter which I know to beimportant, warning me that danger threatens a certain person. Within anhour I learn that this danger has actually materialized and that theperson is dead. I am interested; but, as you observe, I am not surprised.”
+
+In a few short sentences he explained to the inspector the facts about theletter and the cipher. MacDonald sat with his chin on his hands and hisgreat sandy eyebrows bunched into a yellow tangle.
+
+“I was going down to Birlstone this morning,” said he. “I had come to askyou if you cared to come with me—you and your friend here. But fromwhat you say we might perhaps be doing better work in London.”
+
+“I rather think not,” said Holmes.
+
+“Hang it all, Mr. Holmes!” cried the inspector. “The papers will be fullof the Birlstone mystery in a day or two; but where's the mystery if thereis a man in London who prophesied the crime before ever it occurred? Wehave only to lay our hands on that man, and the rest will follow.”
+
+“No doubt, Mr. Mac. But how do you propose to lay your hands on theso-called Porlock?”
+
+MacDonald turned over the letter which Holmes had handed him. “Posted inCamberwell—that doesn't help us much. Name, you say, is assumed. Notmuch to go on, certainly. Didn't you say that you have sent him money?”
+
+“Twice.”
+
+“And how?”
+
+“In notes to Camberwell post office.”
+
+“Did you ever trouble to see who called for them?”
+
+“No.”
+
+The inspector looked surprised and a little shocked. “Why not?”
+
+“Because I always keep faith. I had promised when he first wrote that Iwould not try to trace him.”
+
+“You think there is someone behind him?”
+
+“I know there is.”
+
+“This professor that I've heard you mention?”
+
+“Exactly!”
+
+Inspector MacDonald smiled, and his eyelid quivered as he glanced towardsme. “I won't conceal from you, Mr. Holmes, that we think in the C.I.D.that you have a wee bit of a bee in your bonnet over this professor. Imade some inquiries myself about the matter. He seems to be a veryrespectable, learned, and talented sort of man.”
+
+“I'm glad you've got so far as to recognize the talent.”
+
+“Man, you can't but recognize it! After I heard your view I made it mybusiness to see him. I had a chat with him on eclipses. How the talk gotthat way I canna think; but he had out a reflector lantern and a globe,and made it all clear in a minute. He lent me a book; but I don't mindsaying that it was a bit above my head, though I had a good Aberdeenupbringing. He'd have made a grand meenister with his thin face and grayhair and solemn-like way of talking. When he put his hand on my shoulderas we were parting, it was like a father's blessing before you go out intothe cold, cruel world.”
+
+Holmes chuckled and rubbed his hands. “Great!” he said. “Great! Tell me,Friend MacDonald, this pleasing and touching interview was, I suppose, inthe professor's study?”
+
+“That's so.”
+
+“A fine room, is it not?”
+
+“Very fine—very handsome indeed, Mr. Holmes.”
+
+“You sat in front of his writing desk?”
+
+“Just so.”
+
+“Sun in your eyes and his face in the shadow?”
+
+“Well, it was evening; but I mind that the lamp was turned on my face.”
+
+“It would be. Did you happen to observe a picture over the professor'shead?”
+
+“I don't miss much, Mr. Holmes. Maybe I learned that from you. Yes, I sawthe picture—a young woman with her head on her hands, peeping at yousideways.”
+
+“That painting was by Jean Baptiste Greuze.”
+
+The inspector endeavoured to look interested.
+
+“Jean Baptiste Greuze,” Holmes continued, joining his finger tips andleaning well back in his chair, “was a French artist who flourishedbetween the years 1750 and 1800. I allude, of course to his workingcareer. Modern criticism has more than indorsed the high opinion formed ofhim by his contemporaries.”
+
+The inspector's eyes grew abstracted. “Hadn't we better—” he said.
+
+“We are doing so,” Holmes interrupted. “All that I am saying has a verydirect and vital bearing upon what you have called the Birlstone Mystery.In fact, it may in a sense be called the very centre of it.”
+
+MacDonald smiled feebly, and looked appealingly to me. “Your thoughts movea bit too quick for me, Mr. Holmes. You leave out a link or two, and Ican't get over the gap. What in the whole wide world can be the connectionbetween this dead painting man and the affair at Birlstone?”
+
+“All knowledge comes useful to the detective,” remarked Holmes. “Even thetrivial fact that in the year 1865 a picture by Greuze entitled La JeuneFille a l'Agneau fetched one million two hundred thousand francs—morethan forty thousand pounds—at the Portalis sale may start a train ofreflection in your mind.”
+
+It was clear that it did. The inspector looked honestly interested.
+
+“I may remind you,” Holmes continued, “that the professor's salary can beascertained in several trustworthy books of reference. It is seven hundreda year.”
+
+“Then how could he buy—”
+
+“Quite so! How could he?”
+
+“Ay, that's remarkable,” said the inspector thoughtfully. “Talk away, Mr.Holmes. I'm just loving it. It's fine!”
+
+Holmes smiled. He was always warmed by genuine admiration—thecharacteristic of the real artist. “What about Birlstone?” he asked.
+
+“We've time yet,” said the inspector, glancing at his watch. “I've a cabat the door, and it won't take us twenty minutes to Victoria. But aboutthis picture: I thought you told me once, Mr. Holmes, that you had nevermet Professor Moriarty.”
+
+“No, I never have.”
+
+“Then how do you know about his rooms?”
+
+“Ah, that's another matter. I have been three times in his rooms, twicewaiting for him under different pretexts and leaving before he came. Once—well,I can hardly tell about the once to an official detective. It was on thelast occasion that I took the liberty of running over his papers—withthe most unexpected results.”
+
+“You found something compromising?”
+
+“Absolutely nothing. That was what amazed me. However, you have now seenthe point of the picture. It shows him to be a very wealthy man. How didhe acquire wealth? He is unmarried. His younger brother is a stationmaster in the west of England. His chair is worth seven hundred a year.And he owns a Greuze.”
+
+“Well?”
+
+“Surely the inference is plain.”
+
+“You mean that he has a great income and that he must earn it in anillegal fashion?”
+
+“Exactly. Of course I have other reasons for thinking so—dozens ofexiguous threads which lead vaguely up towards the centre of the web wherethe poisonous, motionless creature is lurking. I only mention the Greuzebecause it brings the matter within the range of your own observation.”
+
+“Well, Mr. Holmes, I admit that what you say is interesting: it's morethan interesting—it's just wonderful. But let us have it a littleclearer if you can. Is it forgery, coining, burglary—where does themoney come from?”
+
+“Have you ever read of Jonathan Wild?”
+
+“Well, the name has a familiar sound. Someone in a novel, was he not? Idon't take much stock of detectives in novels—chaps that do thingsand never let you see how they do them. That's just inspiration: notbusiness.”
+
+“Jonathan Wild wasn't a detective, and he wasn't in a novel. He was amaster criminal, and he lived last century—1750 or thereabouts.”
+
+“Then he's no use to me. I'm a practical man.”
+
+“Mr. Mac, the most practical thing that you ever did in your life would beto shut yourself up for three months and read twelve hours a day at theannals of crime. Everything comes in circles—even ProfessorMoriarty. Jonathan Wild was the hidden force of the London criminals, towhom he sold his brains and his organization on a fifteen per cent.commission. The old wheel turns, and the same spoke comes up. It's allbeen done before, and will be again. I'll tell you one or two things aboutMoriarty which may interest you.”
+
+“You'll interest me, right enough.”
+
+“I happen to know who is the first link in his chain—a chain withthis Napoleon-gone-wrong at one end, and a hundred broken fighting men,pickpockets, blackmailers, and card sharpers at the other, with every sortof crime in between. His chief of staff is Colonel Sebastian Moran, asaloof and guarded and inaccessible to the law as himself. What do youthink he pays him?”
+
+“I'd like to hear.”
+
+“Six thousand a year. That's paying for brains, you see—the Americanbusiness principle. I learned that detail quite by chance. It's more thanthe Prime Minister gets. That gives you an idea of Moriarty's gains and ofthe scale on which he works. Another point: I made it my business to huntdown some of Moriarty's checks lately—just common innocent checksthat he pays his household bills with. They were drawn on six differentbanks. Does that make any impression on your mind?”
+
+“Queer, certainly! But what do you gather from it?”
+
+“That he wanted no gossip about his wealth. No single man should know whathe had. I have no doubt that he has twenty banking accounts; the bulk ofhis fortune abroad in the Deutsche Bank or the Credit Lyonnais as likelyas not. Sometime when you have a year or two to spare I commend to you thestudy of Professor Moriarty.”
+
+Inspector MacDonald had grown steadily more impressed as the conversationproceeded. He had lost himself in his interest. Now his practical Scotchintelligence brought him back with a snap to the matter in hand.
+
+“He can keep, anyhow,” said he. “You've got us side-tracked with yourinteresting anecdotes, Mr. Holmes. What really counts is your remark thatthere is some connection between the professor and the crime. That you getfrom the warning received through the man Porlock. Can we for our presentpractical needs get any further than that?”
+
+“We may form some conception as to the motives of the crime. It is, as Igather from your original remarks, an inexplicable, or at least anunexplained, murder. Now, presuming that the source of the crime is as wesuspect it to be, there might be two different motives. In the firstplace, I may tell you that Moriarty rules with a rod of iron over hispeople. His discipline is tremendous. There is only one punishment in hiscode. It is death. Now we might suppose that this murdered man—thisDouglas whose approaching fate was known by one of the arch-criminal'ssubordinates—had in some way betrayed the chief. His punishmentfollowed, and would be known to all—if only to put the fear of deathinto them.”
+
+“Well, that is one suggestion, Mr. Holmes.”
+
+“The other is that it has been engineered by Moriarty in the ordinarycourse of business. Was there any robbery?”
+
+“I have not heard.”
+
+“If so, it would, of course, be against the first hypothesis and in favourof the second. Moriarty may have been engaged to engineer it on a promiseof part spoils, or he may have been paid so much down to manage it. Eitheris possible. But whichever it may be, or if it is some third combination,it is down at Birlstone that we must seek the solution. I know our man toowell to suppose that he has left anything up here which may lead us tohim.”
+
+“Then to Birlstone we must go!” cried MacDonald, jumping from his chair.“My word! it's later than I thought. I can give you, gentlemen, fiveminutes for preparation, and that is all.”
+
+“And ample for us both,” said Holmes, as he sprang up and hastened tochange from his dressing gown to his coat. “While we are on our way, Mr.Mac, I will ask you to be good enough to tell me all about it.”
+
+“All about it” proved to be disappointingly little, and yet there wasenough to assure us that the case before us might well be worthy of theexpert's closest attention. He brightened and rubbed his thin handstogether as he listened to the meagre but remarkable details. A longseries of sterile weeks lay behind us, and here at last there was afitting object for those remarkable powers which, like all special gifts,become irksome to their owner when they are not in use. That razor brainblunted and rusted with inaction.
+
+Sherlock Holmes's eyes glistened, his pale cheeks took a warmer hue, andhis whole eager face shone with an inward light when the call for workreached him. Leaning forward in the cab, he listened intently toMacDonald's short sketch of the problem which awaited us in Sussex. Theinspector was himself dependent, as he explained to us, upon a scribbledaccount forwarded to him by the milk train in the early hours of themorning. White Mason, the local officer, was a personal friend, and henceMacDonald had been notified much more promptly than is usual at ScotlandYard when provincials need their assistance. It is a very cold scent uponwhich the Metropolitan expert is generally asked to run.
+
+“DEAR INSPECTOR MACDONALD [said the letter which he read to us]:
+
+“Official requisition for your services is in separate envelope. This isfor your private eye. Wire me what train in the morning you can get forBirlstone, and I will meet it—or have it met if I am too occupied.This case is a snorter. Don't waste a moment in getting started. If youcan bring Mr. Holmes, please do so; for he will find something after hisown heart. We would think the whole had been fixed up for theatricaleffect if there wasn't a dead man in the middle of it. My word! it IS asnorter.”
+
+“Your friend seems to be no fool,” remarked Holmes.
+
+“No, sir, White Mason is a very live man, if I am any judge.”
+
+“Well, have you anything more?”
+
+“Only that he will give us every detail when we meet.”
+
+“Then how did you get at Mr. Douglas and the fact that he had beenhorribly murdered?”
+
+“That was in the inclosed official report. It didn't say 'horrible':that's not a recognized official term. It gave the name John Douglas. Itmentioned that his injuries had been in the head, from the discharge of ashotgun. It also mentioned the hour of the alarm, which was close on tomidnight last night. It added that the case was undoubtedly one of murder,but that no arrest had been made, and that the case was one whichpresented some very perplexing and extraordinary features. That'sabsolutely all we have at present, Mr. Holmes.”
+
+“Then, with your permission, we will leave it at that, Mr. Mac. Thetemptation to form premature theories upon insufficient data is the baneof our profession. I can see only two things for certain at present—agreat brain in London, and a dead man in Sussex. It's the chain betweenthat we are going to trace.”
+
+Chapter 3 — The Tragedy of Birlstone
+
+Now for a moment I will ask leave to remove my own insignificantpersonality and to describe events which occurred before we arrived uponthe scene by the light of knowledge which came to us afterwards. Only inthis way can I make the reader appreciate the people concerned and thestrange setting in which their fate was cast.
+
+The village of Birlstone is a small and very ancient cluster ofhalf-timbered cottages on the northern border of the county of Sussex. Forcenturies it had remained unchanged; but within the last few years itspicturesque appearance and situation have attracted a number of well-to-doresidents, whose villas peep out from the woods around. These woods arelocally supposed to be the extreme fringe of the great Weald forest, whichthins away until it reaches the northern chalk downs. A number of smallshops have come into being to meet the wants of the increased population;so there seems some prospect that Birlstone may soon grow from an ancientvillage into a modern town. It is the centre for a considerable area ofcountry, since Tunbridge Wells, the nearest place of importance, is ten ortwelve miles to the eastward, over the borders of Kent.
+
+About half a mile from the town, standing in an old park famous for itshuge beech trees, is the ancient Manor House of Birlstone. Part of thisvenerable building dates back to the time of the first crusade, when Hugode Capus built a fortalice in the centre of the estate, which had beengranted to him by the Red King. This was destroyed by fire in 1543, andsome of its smoke-blackened corner stones were used when, in Jacobeantimes, a brick country house rose upon the ruins of the feudal castle.
+
+The Manor House, with its many gables and its small diamond-paned windows,was still much as the builder had left it in the early seventeenthcentury. Of the double moats which had guarded its more warlikepredecessor, the outer had been allowed to dry up, and served the humblefunction of a kitchen garden. The inner one was still there, and lay fortyfeet in breadth, though now only a few feet in depth, round the wholehouse. A small stream fed it and continued beyond it, so that the sheet ofwater, though turbid, was never ditchlike or unhealthy. The ground floorwindows were within a foot of the surface of the water.
+
+The only approach to the house was over a drawbridge, the chains andwindlass of which had long been rusted and broken. The latest tenants ofthe Manor House had, however, with characteristic energy, set this right,and the drawbridge was not only capable of being raised, but actually wasraised every evening and lowered every morning. By thus renewing thecustom of the old feudal days the Manor House was converted into an islandduring the night—a fact which had a very direct bearing upon themystery which was soon to engage the attention of all England.
+
+The house had been untenanted for some years and was threatening tomoulder into a picturesque decay when the Douglases took possession of it.This family consisted of only two individuals—John Douglas and hiswife. Douglas was a remarkable man, both in character and in person. Inage he may have been about fifty, with a strong-jawed, rugged face, agrizzling moustache, peculiarly keen gray eyes, and a wiry, vigorousfigure which had lost nothing of the strength and activity of youth. Hewas cheery and genial to all, but somewhat offhand in his manners, givingthe impression that he had seen life in social strata on some far lowerhorizon than the county society of Sussex.
+
+Yet, though looked at with some curiosity and reserve by his morecultivated neighbours, he soon acquired a great popularity among thevillagers, subscribing handsomely to all local objects, and attendingtheir smoking concerts and other functions, where, having a remarkablyrich tenor voice, he was always ready to oblige with an excellent song. Heappeared to have plenty of money, which was said to have been gained inthe California gold fields, and it was clear from his own talk and that ofhis wife that he had spent a part of his life in America.
+
+The good impression which had been produced by his generosity and by hisdemocratic manners was increased by a reputation gained for utterindifference to danger. Though a wretched rider, he turned out at everymeet, and took the most amazing falls in his determination to hold his ownwith the best. When the vicarage caught fire he distinguished himself alsoby the fearlessness with which he reentered the building to save property,after the local fire brigade had given it up as impossible. Thus it cameabout that John Douglas of the Manor House had within five years wonhimself quite a reputation in Birlstone.
+
+His wife, too, was popular with those who had made her acquaintance;though, after the English fashion, the callers upon a stranger who settledin the county without introductions were few and far between. Thismattered the less to her, as she was retiring by disposition, and verymuch absorbed, to all appearance, in her husband and her domestic duties.It was known that she was an English lady who had met Mr. Douglas inLondon, he being at that time a widower. She was a beautiful woman, tall,dark, and slender, some twenty years younger than her husband; a disparitywhich seemed in no wise to mar the contentment of their family life.
+
+It was remarked sometimes, however, by those who knew them best, that theconfidence between the two did not appear to be complete, since the wifewas either very reticent about her husband's past life, or else, as seemedmore likely, was imperfectly informed about it. It had also been noted andcommented upon by a few observant people that there were signs sometimesof some nerve-strain upon the part of Mrs. Douglas, and that she woulddisplay acute uneasiness if her absent husband should ever be particularlylate in his return. On a quiet countryside, where all gossip is welcome,this weakness of the lady of the Manor House did not pass without remark,and it bulked larger upon people's memory when the events arose which gaveit a very special significance.
+
+There was yet another individual whose residence under that roof was, itis true, only an intermittent one, but whose presence at the time of thestrange happenings which will now be narrated brought his name prominentlybefore the public. This was Cecil James Barker, of Hales Lodge, Hampstead.
+
+Cecil Barker's tall, loose-jointed figure was a familiar one in the mainstreet of Birlstone village; for he was a frequent and welcome visitor atthe Manor House. He was the more noticed as being the only friend of thepast unknown life of Mr. Douglas who was ever seen in his new Englishsurroundings. Barker was himself an undoubted Englishman; but by hisremarks it was clear that he had first known Douglas in America and hadthere lived on intimate terms with him. He appeared to be a man ofconsiderable wealth, and was reputed to be a bachelor.
+
+In age he was rather younger than Douglas—forty-five at the most—atall, straight, broad-chested fellow with a clean-shaved, prize-fighterface, thick, strong, black eyebrows, and a pair of masterful black eyeswhich might, even without the aid of his very capable hands, clear a wayfor him through a hostile crowd. He neither rode nor shot, but spent hisdays in wandering round the old village with his pipe in his mouth, or indriving with his host, or in his absence with his hostess, over thebeautiful countryside. “An easy-going, free-handed gentleman,” said Ames,the butler. “But, my word! I had rather not be the man that crossed him!”He was cordial and intimate with Douglas, and he was no less friendly withhis wife—a friendship which more than once seemed to cause someirritation to the husband, so that even the servants were able to perceivehis annoyance. Such was the third person who was one of the family whenthe catastrophe occurred.
+
+As to the other denizens of the old building, it will suffice out of alarge household to mention the prim, respectable, and capable Ames, andMrs. Allen, a buxom and cheerful person, who relieved the lady of some ofher household cares. The other six servants in the house bear no relationto the events of the night of January 6th.
+
+It was at eleven forty-five that the first alarm reached the small localpolice station, in charge of Sergeant Wilson of the Sussex Constabulary.Cecil Barker, much excited, had rushed up to the door and pealed furiouslyupon the bell. A terrible tragedy had occurred at the Manor House, andJohn Douglas had been murdered. That was the breathless burden of hismessage. He had hurried back to the house, followed within a few minutesby the police sergeant, who arrived at the scene of the crime a littleafter twelve o'clock, after taking prompt steps to warn the countyauthorities that something serious was afoot.
+
+On reaching the Manor House, the sergeant had found the drawbridge down,the windows lighted up, and the whole household in a state of wildconfusion and alarm. The white-faced servants were huddling together inthe hall, with the frightened butler wringing his hands in the doorway.Only Cecil Barker seemed to be master of himself and his emotions; he hadopened the door which was nearest to the entrance and he had beckoned tothe sergeant to follow him. At that moment there arrived Dr. Wood, a briskand capable general practitioner from the village. The three men enteredthe fatal room together, while the horror-stricken butler followed attheir heels, closing the door behind him to shut out the terrible scenefrom the maid servants.
+
+The dead man lay on his back, sprawling with outstretched limbs in thecentre of the room. He was clad only in a pink dressing gown, whichcovered his night clothes. There were carpet slippers on his bare feet.The doctor knelt beside him and held down the hand lamp which had stood onthe table. One glance at the victim was enough to show the healer that hispresence could be dispensed with. The man had been horribly injured. Lyingacross his chest was a curious weapon, a shotgun with the barrel sawed offa foot in front of the triggers. It was clear that this had been fired atclose range and that he had received the whole charge in the face, blowinghis head almost to pieces. The triggers had been wired together, so as tomake the simultaneous discharge more destructive.
+
+The country policeman was unnerved and troubled by the tremendousresponsibility which had come so suddenly upon him. “We will touch nothinguntil my superiors arrive,” he said in a hushed voice, staring in horrorat the dreadful head.
+
+“Nothing has been touched up to now,” said Cecil Barker. “I'll answer forthat. You see it all exactly as I found it.”
+
+“When was that?” The sergeant had drawn out his notebook.
+
+“It was just half-past eleven. I had not begun to undress, and I wassitting by the fire in my bedroom when I heard the report. It was not veryloud—it seemed to be muffled. I rushed down—I don't suppose itwas thirty seconds before I was in the room.”
+
+“Was the door open?”
+
+“Yes, it was open. Poor Douglas was lying as you see him. His bedroomcandle was burning on the table. It was I who lit the lamp some minutesafterward.”
+
+“Did you see no one?”
+
+“No. I heard Mrs. Douglas coming down the stair behind me, and I rushedout to prevent her from seeing this dreadful sight. Mrs. Allen, thehousekeeper, came and took her away. Ames had arrived, and we ran backinto the room once more.”
+
+“But surely I have heard that the drawbridge is kept up all night.”
+
+“Yes, it was up until I lowered it.”
+
+“Then how could any murderer have got away? It is out of the question! Mr.Douglas must have shot himself.”
+
+“That was our first idea. But see!” Barker drew aside the curtain, andshowed that the long, diamond-paned window was open to its full extent.“And look at this!” He held the lamp down and illuminated a smudge ofblood like the mark of a boot-sole upon the wooden sill. “Someone hasstood there in getting out.”
+
+“You mean that someone waded across the moat?”
+
+“Exactly!”
+
+“Then if you were in the room within half a minute of the crime, he musthave been in the water at that very moment.”
+
+“I have not a doubt of it. I wish to heaven that I had rushed to thewindow! But the curtain screened it, as you can see, and so it neveroccurred to me. Then I heard the step of Mrs. Douglas, and I could not lether enter the room. It would have been too horrible.”
+
+“Horrible enough!” said the doctor, looking at the shattered head and theterrible marks which surrounded it. “I've never seen such injuries sincethe Birlstone railway smash.”
+
+“But, I say,” remarked the police sergeant, whose slow, bucolic commonsense was still pondering the open window. “It's all very well your sayingthat a man escaped by wading this moat, but what I ask you is, how did heever get into the house at all if the bridge was up?”
+
+“Ah, that's the question,” said Barker.
+
+“At what o'clock was it raised?”
+
+“It was nearly six o'clock,” said Ames, the butler.
+
+“I've heard,” said the sergeant, “that it was usually raised at sunset.That would be nearer half-past four than six at this time of year.”
+
+“Mrs. Douglas had visitors to tea,” said Ames. “I couldn't raise it untilthey went. Then I wound it up myself.”
+
+“Then it comes to this,” said the sergeant: “If anyone came from outside—IFthey did—they must have got in across the bridge before six and beenin hiding ever since, until Mr. Douglas came into the room after eleven.”
+
+“That is so! Mr. Douglas went round the house every night the last thingbefore he turned in to see that the lights were right. That brought him inhere. The man was waiting and shot him. Then he got away through thewindow and left his gun behind him. That's how I read it; for nothing elsewill fit the facts.”
+
+The sergeant picked up a card which lay beside the dead man on the floor.The initials V.V. and under them the number 341 were rudely scrawled inink upon it.
+
+“What's this?” he asked, holding it up.
+
+Barker looked at it with curiosity. “I never noticed it before,” he said.“The murderer must have left it behind him.”
+
+“V.V.—341. I can make no sense of that.”
+
+The sergeant kept turning it over in his big fingers. “What's V.V.?Somebody's initials, maybe. What have you got there, Dr. Wood?”
+
+It was a good-sized hammer which had been lying on the rug in front of thefireplace—a substantial, workmanlike hammer. Cecil Barker pointed toa box of brass-headed nails upon the mantelpiece.
+
+“Mr. Douglas was altering the pictures yesterday,” he said. “I saw himmyself, standing upon that chair and fixing the big picture above it. Thataccounts for the hammer.”
+
+“We'd best put it back on the rug where we found it,” said the sergeant,scratching his puzzled head in his perplexity. “It will want the bestbrains in the force to get to the bottom of this thing. It will be aLondon job before it is finished.” He raised the hand lamp and walkedslowly round the room. “Hullo!” he cried, excitedly, drawing the windowcurtain to one side. “What o'clock were those curtains drawn?”
+
+“When the lamps were lit,” said the butler. “It would be shortly afterfour.”
+
+“Someone had been hiding here, sure enough.” He held down the light, andthe marks of muddy boots were very visible in the corner. “I'm bound tosay this bears out your theory, Mr. Barker. It looks as if the man gotinto the house after four when the curtains were drawn, and before sixwhen the bridge was raised. He slipped into this room, because it was thefirst that he saw. There was no other place where he could hide, so hepopped in behind this curtain. That all seems clear enough. It is likelythat his main idea was to burgle the house; but Mr. Douglas chanced tocome upon him, so he murdered him and escaped.”
+
+“That's how I read it,” said Barker. “But, I say, aren't we wastingprecious time? Couldn't we start out and scout the country before thefellow gets away?”
+
+The sergeant considered for a moment.
+
+“There are no trains before six in the morning; so he can't get away byrail. If he goes by road with his legs all dripping, it's odds thatsomeone will notice him. Anyhow, I can't leave here myself until I amrelieved. But I think none of you should go until we see more clearly howwe all stand.”
+
+The doctor had taken the lamp and was narrowly scrutinizing the body.“What's this mark?” he asked. “Could this have any connection with thecrime?”
+
+The dead man's right arm was thrust out from his dressing gown, andexposed as high as the elbow. About halfway up the forearm was a curiousbrown design, a triangle inside a circle, standing out in vivid reliefupon the lard-coloured skin.
+
+“It's not tattooed,” said the doctor, peering through his glasses. “Inever saw anything like it. The man has been branded at some time as theybrand cattle. What is the meaning of this?”
+
+“I don't profess to know the meaning of it,” said Cecil Barker; “but Ihave seen the mark on Douglas many times this last ten years.”
+
+“And so have I,” said the butler. “Many a time when the master has rolledup his sleeves I have noticed that very mark. I've often wondered what itcould be.”
+
+“Then it has nothing to do with the crime, anyhow,” said the sergeant.“But it's a rum thing all the same. Everything about this case is rum.Well, what is it now?”
+
+The butler had given an exclamation of astonishment and was pointing atthe dead man's outstretched hand.
+
+“They've taken his wedding ring!” he gasped.
+
+“What!”
+
+“Yes, indeed. Master always wore his plain gold wedding ring on the littlefinger of his left hand. That ring with the rough nugget on it was aboveit, and the twisted snake ring on the third finger. There's the nugget andthere's the snake, but the wedding ring is gone.”
+
+“He's right,” said Barker.
+
+“Do you tell me,” said the sergeant, “that the wedding ring was BELOW theother?”
+
+“Always!”
+
+“Then the murderer, or whoever it was, first took off this ring you callthe nugget ring, then the wedding ring, and afterwards put the nugget ringback again.”
+
+“That is so!”
+
+The worthy country policeman shook his head. “Seems to me the sooner weget London on to this case the better,” said he. “White Mason is a smartman. No local job has ever been too much for White Mason. It won't be longnow before he is here to help us. But I expect we'll have to look toLondon before we are through. Anyhow, I'm not ashamed to say that it is adeal too thick for the likes of me.”
+
+Chapter 4 — Darkness
+
+At three in the morning the chief Sussex detective, obeying the urgentcall from Sergeant Wilson of Birlstone, arrived from headquarters in alight dog-cart behind a breathless trotter. By the five-forty train in themorning he had sent his message to Scotland Yard, and he was at theBirlstone station at twelve o'clock to welcome us. White Mason was aquiet, comfortable-looking person in a loose tweed suit, with aclean-shaved, ruddy face, a stoutish body, and powerful bandy legs adornedwith gaiters, looking like a small farmer, a retired gamekeeper, oranything upon earth except a very favourable specimen of the provincialcriminal officer.
+
+“A real downright snorter, Mr. MacDonald!” he kept repeating. “We'll havethe pressmen down like flies when they understand it. I'm hoping we willget our work done before they get poking their noses into it and messingup all the trails. There has been nothing like this that I can remember.There are some bits that will come home to you, Mr. Holmes, or I ammistaken. And you also, Dr. Watson; for the medicos will have a word tosay before we finish. Your room is at the Westville Arms. There's no otherplace; but I hear that it is clean and good. The man will carry your bags.This way, gentlemen, if you please.”
+
+He was a very bustling and genial person, this Sussex detective. In tenminutes we had all found our quarters. In ten more we were seated in theparlour of the inn and being treated to a rapid sketch of those eventswhich have been outlined in the previous chapter. MacDonald made anoccasional note; while Holmes sat absorbed, with the expression ofsurprised and reverent admiration with which the botanist surveys the rareand precious bloom.
+
+“Remarkable!” he said, when the story was unfolded, “most remarkable! Ican hardly recall any case where the features have been more peculiar.”
+
+“I thought you would say so, Mr. Holmes,” said White Mason in greatdelight. “We're well up with the times in Sussex. I've told you now howmatters were, up to the time when I took over from Sergeant Wilson betweenthree and four this morning. My word! I made the old mare go! But I neednot have been in such a hurry, as it turned out; for there was nothingimmediate that I could do. Sergeant Wilson had all the facts. I checkedthem and considered them and maybe added a few of my own.”
+
+“What were they?” asked Holmes eagerly.
+
+“Well, I first had the hammer examined. There was Dr. Wood there to helpme. We found no signs of violence upon it. I was hoping that if Mr.Douglas defended himself with the hammer, he might have left his mark uponthe murderer before he dropped it on the mat. But there was no stain.”
+
+“That, of course, proves nothing at all,” remarked Inspector MacDonald.“There has been many a hammer murder and no trace on the hammer.”
+
+“Quite so. It doesn't prove it wasn't used. But there might have beenstains, and that would have helped us. As a matter of fact there werenone. Then I examined the gun. They were buckshot cartridges, and, asSergeant Wilson pointed out, the triggers were wired together so that, ifyou pulled on the hinder one, both barrels were discharged. Whoever fixedthat up had made up his mind that he was going to take no chances ofmissing his man. The sawed gun was not more than two foot long—onecould carry it easily under one's coat. There was no complete maker'sname; but the printed letters P-E-N were on the fluting between thebarrels, and the rest of the name had been cut off by the saw.”
+
+“A big P with a flourish above it, E and N smaller?” asked Holmes.
+
+“Exactly.”
+
+“Pennsylvania Small Arms Company—well-known American firm,” saidHolmes.
+
+White Mason gazed at my friend as the little village practitioner looks atthe Harley Street specialist who by a word can solve the difficulties thatperplex him.
+
+“That is very helpful, Mr. Holmes. No doubt you are right. Wonderful!Wonderful! Do you carry the names of all the gun makers in the world inyour memory?”
+
+Holmes dismissed the subject with a wave.
+
+“No doubt it is an American shotgun,” White Mason continued. “I seem tohave read that a sawed-off shotgun is a weapon used in some parts ofAmerica. Apart from the name upon the barrel, the idea had occurred to me.There is some evidence then, that this man who entered the house andkilled its master was an American.”
+
+MacDonald shook his head. “Man, you are surely travelling overfast,” saidhe. “I have heard no evidence yet that any stranger was ever in the houseat all.”
+
+“The open window, the blood on the sill, the queer card, the marks ofboots in the corner, the gun!”
+
+“Nothing there that could not have been arranged. Mr. Douglas was anAmerican, or had lived long in America. So had Mr. Barker. You don't needto import an American from outside in order to account for Americandoings.”
+
+“Ames, the butler—”
+
+“What about him? Is he reliable?”
+
+“Ten years with Sir Charles Chandos—as solid as a rock. He has beenwith Douglas ever since he took the Manor House five years ago. He hasnever seen a gun of this sort in the house.”
+
+“The gun was made to conceal. That's why the barrels were sawed. It wouldfit into any box. How could he swear there was no such gun in the house?”
+
+“Well, anyhow, he had never seen one.”
+
+MacDonald shook his obstinate Scotch head. “I'm not convinced yet thatthere was ever anyone in the house,” said he. “I'm asking you toconseedar” (his accent became more Aberdonian as he lost himself in hisargument) “I'm asking you to conseedar what it involves if you supposethat this gun was ever brought into the house, and that all these strangethings were done by a person from outside. Oh, man, it's justinconceivable! It's clean against common sense! I put it to you, Mr.Holmes, judging it by what we have heard.”
+
+“Well, state your case, Mr. Mac,” said Holmes in his most judicial style.
+
+“The man is not a burglar, supposing that he ever existed. The ringbusiness and the card point to premeditated murder for some privatereason. Very good. Here is a man who slips into a house with thedeliberate intention of committing murder. He knows, if he knows anything,that he will have a deeficulty in making his escape, as the house issurrounded with water. What weapon would he choose? You would say the mostsilent in the world. Then he could hope when the deed was done to slipquickly from the window, to wade the moat, and to get away at his leisure.That's understandable. But is it understandable that he should go out ofhis way to bring with him the most noisy weapon he could select, knowingwell that it will fetch every human being in the house to the spot asquick as they can run, and that it is all odds that he will be seen beforehe can get across the moat? Is that credible, Mr. Holmes?”
+
+“Well, you put the case strongly,” my friend replied thoughtfully. “Itcertainly needs a good deal of justification. May I ask, Mr. White Mason,whether you examined the farther side of the moat at once to see if therewere any signs of the man having climbed out from the water?”
+
+“There were no signs, Mr. Holmes. But it is a stone ledge, and one couldhardly expect them.”
+
+“No tracks or marks?”
+
+“None.”
+
+“Ha! Would there be any objection, Mr. White Mason, to our going down tothe house at once? There may possibly be some small point which might besuggestive.”
+
+“I was going to propose it, Mr. Holmes; but I thought it well to put youin touch with all the facts before we go. I suppose if anything shouldstrike you—” White Mason looked doubtfully at the amateur.
+
+“I have worked with Mr. Holmes before,” said Inspector MacDonald. “Heplays the game.”
+
+“My own idea of the game, at any rate,” said Holmes, with a smile. “I gointo a case to help the ends of justice and the work of the police. If Ihave ever separated myself from the official force, it is because theyhave first separated themselves from me. I have no wish ever to score attheir expense. At the same time, Mr. White Mason, I claim the right towork in my own way and give my results at my own time—completerather than in stages.”
+
+“I am sure we are honoured by your presence and to show you all we know,”said White Mason cordially. “Come along, Dr. Watson, and when the timecomes we'll all hope for a place in your book.”
+
+We walked down the quaint village street with a row of pollarded elms oneach side of it. Just beyond were two ancient stone pillars,weather-stained and lichen-blotched, bearing upon their summits ashapeless something which had once been the rampant lion of Capus ofBirlstone. A short walk along the winding drive with such sward and oaksaround it as one only sees in rural England, then a sudden turn, and thelong, low Jacobean house of dingy, liver-coloured brick lay before us,with an old-fashioned garden of cut yews on each side of it. As weapproached it, there was the wooden drawbridge and the beautiful broadmoat as still and luminous as quicksilver in the cold, winter sunshine.
+
+Three centuries had flowed past the old Manor House, centuries of birthsand of homecomings, of country dances and of the meetings of fox hunters.Strange that now in its old age this dark business should have cast itsshadow upon the venerable walls! And yet those strange, peaked roofs andquaint, overhung gables were a fitting covering to grim and terribleintrigue. As I looked at the deep-set windows and the long sweep of thedull-coloured, water-lapped front, I felt that no more fitting scene couldbe set for such a tragedy.
+
+“That's the window,” said White Mason, “that one on the immediate right ofthe drawbridge. It's open just as it was found last night.”
+
+“It looks rather narrow for a man to pass.”
+
+“Well, it wasn't a fat man, anyhow. We don't need your deductions, Mr.Holmes, to tell us that. But you or I could squeeze through all right.”
+
+Holmes walked to the edge of the moat and looked across. Then he examinedthe stone ledge and the grass border beyond it.
+
+“I've had a good look, Mr. Holmes,” said White Mason. “There is nothingthere, no sign that anyone has landed—but why should he leave anysign?”
+
+“Exactly. Why should he? Is the water always turbid?”
+
+“Generally about this colour. The stream brings down the clay.”
+
+“How deep is it?”
+
+“About two feet at each side and three in the middle.”
+
+“So we can put aside all idea of the man having been drowned in crossing.”
+
+“No, a child could not be drowned in it.”
+
+We walked across the drawbridge, and were admitted by a quaint, gnarled,dried-up person, who was the butler, Ames. The poor old fellow was whiteand quivering from the shock. The village sergeant, a tall, formal,melancholy man, still held his vigil in the room of Fate. The doctor haddeparted.
+
+“Anything fresh, Sergeant Wilson?” asked White Mason.
+
+“No, sir.”
+
+“Then you can go home. You've had enough. We can send for you if we wantyou. The butler had better wait outside. Tell him to warn Mr. CecilBarker, Mrs. Douglas, and the housekeeper that we may want a word withthem presently. Now, gentlemen, perhaps you will allow me to give you theviews I have formed first, and then you will be able to arrive at yourown.”
+
+He impressed me, this country specialist. He had a solid grip of fact anda cool, clear, common-sense brain, which should take him some way in hisprofession. Holmes listened to him intently, with no sign of thatimpatience which the official exponent too often produced.
+
+“Is it suicide, or is it murder—that's our first question,gentlemen, is it not? If it were suicide, then we have to believe thatthis man began by taking off his wedding ring and concealing it; that hethen came down here in his dressing gown, trampled mud into a cornerbehind the curtain in order to give the idea someone had waited for him,opened the window, put blood on the—”
+
+“We can surely dismiss that,” said MacDonald.
+
+“So I think. Suicide is out of the question. Then a murder has been done.What we have to determine is, whether it was done by someone outside orinside the house.”
+
+“Well, let's hear the argument.”
+
+“There are considerable difficulties both ways, and yet one or the otherit must be. We will suppose first that some person or persons inside thehouse did the crime. They got this man down here at a time when everythingwas still and yet no one was asleep. They then did the deed with thequeerest and noisiest weapon in the world so as to tell everyone what hadhappened—a weapon that was never seen in the house before. That doesnot seem a very likely start, does it?”
+
+“No, it does not.”
+
+“Well, then, everyone is agreed that after the alarm was given only aminute at the most had passed before the whole household—not Mr.Cecil Barker alone, though he claims to have been the first, but Ames andall of them were on the spot. Do you tell me that in that time the guiltyperson managed to make footmarks in the corner, open the window, mark thesill with blood, take the wedding ring off the dead man's finger, and allthe rest of it? It's impossible!”
+
+“You put it very clearly,” said Holmes. “I am inclined to agree with you.”
+
+“Well, then, we are driven back to the theory that it was done by someonefrom outside. We are still faced with some big difficulties; but anyhowthey have ceased to be impossibilities. The man got into the house betweenfour-thirty and six; that is to say, between dusk and the time when thebridge was raised. There had been some visitors, and the door was open; sothere was nothing to prevent him. He may have been a common burglar, or hemay have had some private grudge against Mr. Douglas. Since Mr. Douglashas spent most of his life in America, and this shotgun seems to be anAmerican weapon, it would seem that the private grudge is the more likelytheory. He slipped into this room because it was the first he came to, andhe hid behind the curtain. There he remained until past eleven at night.At that time Mr. Douglas entered the room. It was a short interview, ifthere were any interview at all; for Mrs. Douglas declares that herhusband had not left her more than a few minutes when she heard the shot.”
+
+“The candle shows that,” said Holmes.
+
+“Exactly. The candle, which was a new one, is not burned more than half aninch. He must have placed it on the table before he was attacked;otherwise, of course, it would have fallen when he fell. This shows thathe was not attacked the instant that he entered the room. When Mr. Barkerarrived the candle was lit and the lamp was out.”
+
+“That's all clear enough.”
+
+“Well, now, we can reconstruct things on those lines. Mr. Douglas entersthe room. He puts down the candle. A man appears from behind the curtain.He is armed with this gun. He demands the wedding ring—Heaven onlyknows why, but so it must have been. Mr. Douglas gave it up. Then eitherin cold blood or in the course of a struggle—Douglas may havegripped the hammer that was found upon the mat—he shot Douglas inthis horrible way. He dropped his gun and also it would seem this queercard—V.V. 341, whatever that may mean—and he made his escapethrough the window and across the moat at the very moment when CecilBarker was discovering the crime. How's that, Mr. Holmes?”
+
+“Very interesting, but just a little unconvincing.”
+
+“Man, it would be absolute nonsense if it wasn't that anything else iseven worse!” cried MacDonald. “Somebody killed the man, and whoever it wasI could clearly prove to you that he should have done it some other way.What does he mean by allowing his retreat to be cut off like that? Whatdoes he mean by using a shotgun when silence was his one chance of escape?Come, Mr. Holmes, it's up to you to give us a lead, since you say Mr.White Mason's theory is unconvincing.”
+
+Holmes had sat intently observant during this long discussion, missing noword that was said, with his keen eyes darting to right and to left, andhis forehead wrinkled with speculation.
+
+“I should like a few more facts before I get so far as a theory, Mr. Mac,”said he, kneeling down beside the body. “Dear me! these injuries arereally appalling. Can we have the butler in for a moment?... Ames, Iunderstand that you have often seen this very unusual mark—a brandedtriangle inside a circle—upon Mr. Douglas's forearm?”
+
+“Frequently, sir.”
+
+“You never heard any speculation as to what it meant?”
+
+“No, sir.”
+
+“It must have caused great pain when it was inflicted. It is undoubtedly aburn. Now, I observe, Ames, that there is a small piece of plaster at theangle of Mr. Douglas's jaw. Did you observe that in life?”
+
+“Yes, sir, he cut himself in shaving yesterday morning.”
+
+“Did you ever know him to cut himself in shaving before?”
+
+“Not for a very long time, sir.”
+
+“Suggestive!” said Holmes. “It may, of course, be a mere coincidence, orit may point to some nervousness which would indicate that he had reasonto apprehend danger. Had you noticed anything unusual in his conduct,yesterday, Ames?”
+
+“It struck me that he was a little restless and excited, sir.”
+
+“Ha! The attack may not have been entirely unexpected. We do seem to makea little progress, do we not? Perhaps you would rather do the questioning,Mr. Mac?”
+
+“No, Mr. Holmes, it's in better hands than mine.”
+
+“Well, then, we will pass to this card—V.V. 341. It is roughcardboard. Have you any of the sort in the house?”
+
+“I don't think so.”
+
+Holmes walked across to the desk and dabbed a little ink from each bottleon to the blotting paper. “It was not printed in this room,” he said;“this is black ink and the other purplish. It was done by a thick pen, andthese are fine. No, it was done elsewhere, I should say. Can you makeanything of the inscription, Ames?”
+
+“No, sir, nothing.”
+
+“What do you think, Mr. Mac?”
+
+“It gives me the impression of a secret society of some sort; the samewith his badge upon the forearm.”
+
+“That's my idea, too,” said White Mason.
+
+“Well, we can adopt it as a working hypothesis and then see how far ourdifficulties disappear. An agent from such a society makes his way intothe house, waits for Mr. Douglas, blows his head nearly off with thisweapon, and escapes by wading the moat, after leaving a card beside thedead man, which will, when mentioned in the papers, tell other members ofthe society that vengeance has been done. That all hangs together. But whythis gun, of all weapons?”
+
+“Exactly.”
+
+“And why the missing ring?”
+
+“Quite so.”
+
+“And why no arrest? It's past two now. I take it for granted that sincedawn every constable within forty miles has been looking out for a wetstranger?”
+
+“That is so, Mr. Holmes.”
+
+“Well, unless he has a burrow close by or a change of clothes ready, theycan hardly miss him. And yet they HAVE missed him up to now!” Holmes hadgone to the window and was examining with his lens the blood mark on thesill. “It is clearly the tread of a shoe. It is remarkably broad; asplay-foot, one would say. Curious, because, so far as one can trace anyfootmark in this mud-stained corner, one would say it was a more shapelysole. However, they are certainly very indistinct. What's this under theside table?”
+
+“Mr. Douglas's dumb-bells,” said Ames.
+
+“Dumb-bell—there's only one. Where's the other?”
+
+“I don't know, Mr. Holmes. There may have been only one. I have notnoticed them for months.”
+
+“One dumb-bell—” Holmes said seriously; but his remarks wereinterrupted by a sharp knock at the door.
+
+A tall, sunburned, capable-looking, clean-shaved man looked in at us. Ihad no difficulty in guessing that it was the Cecil Barker of whom I hadheard. His masterful eyes travelled quickly with a questioning glance fromface to face.
+
+“Sorry to interrupt your consultation,” said he, “but you should hear thelatest news.”
