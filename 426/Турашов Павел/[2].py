@@ -18,7 +18,7 @@ arr_1 = [random.randint(0, 999999) for i in range(999999)]
 
 
 # генерирую вещественные числа из [-1,1]
-arr_2 = [random.uniform(-1, 1) for _ in range(9999)]
+arr_2 = [random.uniform(-1, 1) for _ in range(99999)]
 # print(arr_2)
 
 
