@@ -34,7 +34,7 @@ for i in range(num_points):
     #  Преобразуем полярные координаты в декартовы координаты
     x = radius * mt.cos(angle)
     y = radius * mt.sin(angle)
-    arr_3.append(complex(x, y))
+    arr_3.append([x, y])
 # print(arr_3)
 
 # считываю текст из файла
