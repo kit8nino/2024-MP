@@ -2,7 +2,7 @@ import random
 import math as mt
 import string
 
-import functions_2.py
+import functions_2
 
 # НАДО РАСКОММЕНТИТЬ ПРИНТЫ ЧТОБЫ ПОЛУЧАТЬ РЕЗУЛЬТАТ РАБОТЫ ПРОГРАММЫ 
 # ДЛЯ КАЖДОГО АЛГОРИТМА !!!!!!!!
@@ -13,12 +13,12 @@ import functions_2.py
 
 
 #  Генерируем случайный список целых чисел от 0 до 999999
-arr_1 = [random.randint(0, 999999) for i in range(100000)]
+arr_1 = [random.randint(0, 999999) for i in range(999999)]
 # print(arr_1)
 
 
 # генерирую вещественные числа из [-1,1]
-arr_2 = [random.uniform(-1, 1) for _ in range(99999)]
+arr_2 = [random.uniform(-1, 1) for _ in range(9999)]
 # print(arr_2)
 
 
@@ -28,12 +28,12 @@ num_points = 42000
 arr_3 = []
 for i in range(num_points):
     #  Генерируем случайный угол в диапазоне [0, 2*pi)
-    angle = random.uniform(0, 2*math.pi)
+    angle = random.uniform(0, 2*mt.pi)
     #  Генерируем случайное расстояние от центра до точки в диапазоне [0, r)
-    radius = math.sqrt(random.uniform(0, r**2))
+    radius = mt.sqrt(random.uniform(0, r**2))
     #  Преобразуем полярные координаты в декартовы координаты
-    x = radius * math.cos(angle)
-    y = radius * math.sin(angle)
+    x = radius * mt.cos(angle)
+    y = radius * mt.sin(angle)
     arr_3.append(complex(x, y))
 # print(arr_3)
 
@@ -50,19 +50,19 @@ for line in file:
 # print(len(arr_4))
 # print(arr_4)
 
-radix_sort(arr_1)
+functions_2.radix_sort(arr_1)
 print("Сортировка 1 закончена")
 print('\n')
 
 
-sorted_arr_2 = gnome_sort(arr_2)
+sorted_arr_2 = functions_2.gnome_sort(arr_2)
 print("Сортировка 2 закончена")
 print('\n')
 
-insertion_sort(arr_3)
+functions_2.insertion_sort(arr_3)
 print("Сортировка 3 закончена")
 print('\n')
 
-heap_sort(arr_4)
+functions_2.heap_sort(arr_4)
 print("Сортировка 4 закончена")
 print('\n')

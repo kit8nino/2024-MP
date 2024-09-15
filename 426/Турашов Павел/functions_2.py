@@ -1,3 +1,5 @@
+import math
+
 # 14 - Radix sort
 
 def counting_sort(arr, exp):
@@ -36,7 +38,8 @@ def radix_sort(arr):
 
 def gnome_sort(arr):
     index = 0
-    while index < len(arr):
+    LENARR = len(arr)
+    while index < LENARR:
         if index == 0:
             index += 1
         if arr[index] >= arr[index - 1]:
@@ -49,11 +52,14 @@ def gnome_sort(arr):
 
 # 4 - Insertion sort
 
+def module(vector2):
+    return math.sqrt(vector2[0]**2 + vector2[1]**2)
+
 def insertion_sort(arr):
     for i in range(1, len(arr)):
         key = arr[i]
         j = i - 1
-        while j >= 0 and key < arr[j]:
+        while j >= 0 and module(key) < module(arr[j]):
             arr[j + 1] = arr[j]
             j -= 1
         arr[j + 1] = key
