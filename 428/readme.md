@@ -4,19 +4,19 @@
   
 | **№**	| **Фамилия**  	| **Лаба 1** 	| **Лаба 2** 	| **Лаба 3** 	| **Лаба 4** 	|
 |------:	|:--------------|:----------:	|:----------:	|:----------:	|:----------:	|
-|     1 	|  Aleksey_Odinokov   |      1     	|        1   	|      1      	|      1      	|  
-|    2 	|  GubinVladimir  	| 2 | 2 |       2    	|       1.8     	| 1 | 
-|    3 	|  Kotsuba_Matvey  	| 2 | 2 |          1  	|        1    	|
-|  4 	|  Kroshkin	| 1 |          1  	|       1     	|      1      	| 1 |  
-|   5 	| Labutin_Ilya | 2 |         1   	|       1     	|         1   	|
-|   6 	| Makarov Sergei |       1    	|      1      	|            	|        1    	|
-|   7 	| Vahulin_Alex |     1      	|         1   	|          1  	|          1  	|
-|   8 	| YashinIlya | 1| 1 |        1    	|     1       	|
-|   9 	|  AbrosimovAlex |      1     	|         1   	|    1        	|       1     	|
-|   10	| Kirill_Sharov  |       1    	|        1    	|     1       	|       1     	|
-|   11|  Кузнецова |       1    	|        1    	|     1       	|       1     	|
-|   12	| VyushkinaElizaveta |          	|        1    	|     1       	|       1     	|
-|   13| Shulepin Matvey  |       1    	|        1    	|     1       	|       1     	|
-|   14	| Bazaew_Nikita |       1    	|        1    	|     1       	|       1     	|
-|   15	| HaruzinAnd  |       1    	|            	|     1       	|           	|
+|     ok  	|  Aleksey_Odinokov   |      2     	|        1.5 (без классов надо)   	|      2      	|      1.5 (смешение парадигм)      	|  
+|    ok 	|  GubinVladimir  	| 2 | 2 |       2    	|       1.8     	| 1 | 
+|    ok 	|  Kotsuba_Matvey  	| 2 | 2 |          2  	|        2    	|
+|  ok 	|  Kroshkin	| 2 |          2  	|       2 	|      2     	|   
+|   ok 	| Labutin_Ilya | 2 |        2   	|       1.8     	|         1.8   	|
+|   ok 	| Makarov Sergei |      2    	|      2      	|       0.5     	|        1.5 (смешение парадигм)    	|
+|  ok 	| Vahulin_Alex |     2      	|        2   	|          2	|         2 	|
+|  ok 	| YashinIlya | 2| 2 |        2    	|     2       	|
+|   ok 	|  AbrosimovAlex |      2     	|        2   	|    2      	|       1.8     	|
+|   ok | Kirill_Sharov  |      2    	|       2    	|     1 (тестовый вместо большого)      	|       2     	|
+|  ok |  Кузнецова |       2    	|       2    	|     2      	|       1.8     	|
+|   ok | VyushkinaElizaveta |          	|      2    	|    2      	|       2 (<3)     	|
+|   ok | Shulepin Matvey  |       2    	|        2    	|     2       	|       1.8 ([;:])     	|
+|  ok | Bazaew_Nikita |       2    	|        2   	|     2      	|       2     	|
+|   ok | HaruzinAnd  |       2    	|       2    	|     1.8   ([;:])     	|      1.5 (radar?)    	|
 </div>
