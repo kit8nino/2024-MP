@@ -1,0 +1,126 @@
+V "GNAT Lib v7"
+M P W=b
+P SS ZX
+
+RN
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_RECURSION
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U hybrid_sort%b		hybrid_sort.adb		384da23f NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.discrete_random%s
+W ada.numerics.float_random%s  a-nuflra.adb	a-nuflra.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W interfaces%s		interfac.ads		interfac.ali
+Z system%s		system.ads		system.ali
+Z system.random_numbers%s  s-rannum.adb		s-rannum.ali
+
+D ada.ads		20170109082349 76789da1 ada%s
+D a-except.ads		20161214142939 291912d5 ada.exceptions%s
+D a-inteio.ads		20161214142948 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20161214142948 e4a01f64 ada.io_exceptions%s
+D a-numeri.ads		20161214142926 bb51c45a ada.numerics%s
+D a-nudira.ads		20161214142926 71e55def ada.numerics.discrete_random%s
+D a-nudira.adb		20161214142926 72908cdb ada.numerics.discrete_random%b
+D a-nuflra.ads		20161214142926 4056ab7a ada.numerics.float_random%s
+D a-stream.ads		20161214142926 119b8fb3 ada.streams%s
+D a-tags.ads		20161214142926 01f5e3ef ada.tags%s
+D a-textio.ads		20161214142926 386df5d4 ada.text_io%s
+D a-tiinio.ads		20161214142926 aa04e5d6 ada.text_io.integer_io%s
+D a-unccon.ads		20170109082349 31484697 ada.unchecked_conversion%s
+D hybrid_sort.adb	20240510050526 c7d828da hybrid_sort%b
+D interfac.ads		20161214142939 5ab55268 interfaces%s
+D i-cstrea.ads		20161214142926 e53d8b8e interfaces.c_streams%s
+D system.ads		20170512081901 4635ec04 system%s
+D s-crtl.ads		20161214142926 0ebbdb71 system.crtl%s
+D s-exctab.ads		20161214142948 54135002 system.exception_table%s
+D s-ficobl.ads		20161214142948 078245e4 system.file_control_block%s
+D s-imguns.ads		20161214142939 9ff43cf7 system.img_uns%s
+D s-parame.ads		20161214142939 7e2a0d7f system.parameters%s
+D s-rannum.ads		20161214142939 99ade2f2 system.random_numbers%s
+D s-rannum.adb		20161214142939 20ba1217 system.random_numbers%b
+D s-ransee.ads		20161214142939 01a57b33 system.random_seed%s
+D s-secsta.ads		20170113082808 9751b57e system.secondary_stack%s
+D s-soflin.ads		20161214142939 14e1eb6c system.soft_links%s
+D s-stache.ads		20161214142939 a37c21ec system.stack_checking%s
+D s-stalib.ads		20161214142948 09bd3940 system.standard_library%s
+D s-stoele.ads		20161214142939 2dc34a04 system.storage_elements%s
+D s-traent.ads		20161214142939 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20161214142939 34867c83 system.unsigned_types%s
+D s-valuns.ads		20161214142926 10a8ed3b system.val_uns%s
+D s-wchcon.ads		20161214142939 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 20e8 14|1r6 1r23 2r6 2r31 3r6 3r37 4r6 78r41
+X 3 a-inteio.ads
+18K13*Integer_Text_IO[12|46] 14|2w10 2r35
+X 5 a-numeri.ads
+16K13*Numerics 32e17 14|3r10 3r41 4r10 78r45
+X 6 a-nudira.ads
+44k22*Discrete_Random 75e33 14|4w19 78r54
+50R9 Generator<23|63R9> 14|80r32[78]
+52V13 Random{14|77I22} 14|84s40[78]
+55U14 Reset<23|100p14> 14|82s9[78]
+X 7 a-nudira.adb
+53V16 Random[23|83]{14|77I22} 24|392b13[14|78]
+X 8 a-nuflra.ads
+41K22*Float_Random 74e30 14|3w19 3r50
+X 11 a-textio.ads
+49K13*Text_IO 471e16 14|1w10 1r27
+166U14*New_Line 14|95s9
+242U14*Put 14|93s13
+263U14*Put_Line 14|102s5 105s5 108s5
+X 12 a-tiinio.ads
+66U14*Put 14|92s13[3|18]
+X 14 hybrid_sort.adb
+6U11*Hybrid_Sort 6b11 110l5 110t16
+7A10 Int_Array(integer)<integer> 9r46 11r45 28r41 61r49 76r47 89r33 99r11
+9U15 Hybrid_Sort_Array 9b15 9=33 73l9 73t26 106s5
+9a33 Arr{7A10} 72m28 72r33 72r44
+11U19 Insertion_Sort 11b19 11=34 11>56 11>63 24l21 24t35 65s17
+11a34 A{7A10} 16r41 18r63 19m41 19r57 22m33
+11i56 First{positive} 15r34 18r48
+11i63 Last{positive} 15r47
+12i17 Temp{integer} 16m33 18r74 22r49
+13i17 Index{positive} 17m33 18r39 18r65 19r43 19r59 20m41 20r50 22r35
+15i29 I{integer} 16r43 17r42
+28U19 Quick_Sort 28b19 28=30 28>52 28>59 52s21 55s21 58l13 58t23 67s17
+28a30 A{7A10} 33r26 37r27 40r27 44r33 45m25 45r36 46m25 52m32 55m32
+28i52 First{positive} 32r23 33r29 34r25 51r20 52r35
+28i59 Last{positive} 32r16 33r37 35r26 54r27 55r41
+29i13 Pivot{integer} 33m17 37r37 40r38
+29i20 Temp{integer} 44m25 46r37
+30i13 Left{positive} 34m17 36r23 37r29 38m25 38r33 43r24 44r35 45r27 47m25
+. 47r33 54r20 55r35
+30i19 Right{positive} 35m17 36r31 40r29 41m25 41r34 43r32 45r38 46r27 48m25
+. 48r34 51r28 52r42
+61U19 Hybrid_Sort_Helper 61b19 61=38 61>60 61>67 69l13 69t31 72s9
+61a38 A{7A10} 65m32 67m28
+61i60 First{positive} 64r23 65r35 67r31
+61i67 Last{positive} 64r16 65r42 67r38
+62i13 Threshold{positive} 64r31
+76U15 Generate_Random_Array 76b15 76<37 86l9 86t30 101s5
+76a37 Arr{7A10} 83r18 84m13
+77I22 randRangeInt<integer> 78r70
+78K25 Rand_Int[6|44] 79r21 80r23
+80r17 Gen{6|50R9[78]} 82r15 84r47
+83i13 I{integer} 84r17
+89U15 Print_Array 89b15 89>27 96l9 96t20 103s5 109s5
+89a27 Arr{7A10} 91r18 92r17
+91i13 I{integer} 92r21
+99a5 Arr{7A10} 101m27 103r17 106m23 106r23 109r17
+X 15 interfac.ads
+74M9*Unsigned_32
+77M9*Unsigned_64
+X 23 s-rannum.ads
+75V13*Random{15|74M9} 24|221i21
+76V13*Random{15|77M9} 24|221i21
+
