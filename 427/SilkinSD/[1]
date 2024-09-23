@@ -62,6 +62,16 @@ current_date = datetime.now()
 
 days_since_birth = (current_date - birth_date).days
 
+#1.7
+materials_queue = queue.Queue()
+
+print("Введите названия (для завершения) 'стоп'):")
+while True:
+    material = input()
+    if material.lower() == 'стоп':
+        break
+    materials_queue.put(material)
+
 
 
 
@@ -82,3 +92,8 @@ print(t1_5(tamandua_name))
 
 #Res 1.6
 print(f"Количество дней от даты рождения актера {actor[0]} {actor[1]} до текущей даты: {days_since_birth} дней")
+
+#Res 1.7
+print("Все стройматериалы:")
+while not materials_queue.empty():
+    print(materials_queue.get())
