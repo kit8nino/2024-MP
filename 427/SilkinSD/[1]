@@ -113,4 +113,20 @@ for i in range(len(towns)):
     dict_towns[towns[i]] = i
 dict_towns = dict(sorted(dict_towns.items(), key=lambda x:x[1]))
 column_print(dict_towns)   
-        
+
+print("\nВведите название города, который хотите удалить:")
+town = str(input())
+print("После удаления:")
+dict_towns.pop(town)
+column_print(dict_towns)
+    
+print("\nВведите номер места, куда хотите добавить слово \"Конец\":")
+index = int(input())
+word = "Конец"
+    
+items = list(dict_towns.items())
+items.insert(index, (word, index))
+dict_towns = dict(items)
+print("Список после добавления:")
+column_print(dict_towns)
+
