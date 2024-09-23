@@ -19,14 +19,13 @@ class SphericalCoordinate:
         return f"(r={self.r:.2f}, theta={self.theta:.2f}°, phi={self.phi:.2f}°)"
 
 class FlyingObject:
-    def __init__(self, id, cartesian_coordinate, velocity):
-        self.id = id
-        self.cartesian_coordinate = cartesian_coordinate
-        self.velocity = velocity
-        self.spherical_coordinate = None
+    def __init__(self,coords,velocity_components):
+        self.x, self.y , self.z = coords
+        self.vx,self.vy,self.vz = velocity_components
+    def fly(self,time):
+        self.x += self.vx * time
+        self.y += self.vy * time
 
-    def __str__(self):
-        return f"ID: {self.id}, Cartesian: {self.cartesian_coordinate}, Velocity: {self.velocity}, Spherical: {self.spherical_coordinate}"
 
 class Radar:
     __instance = None
