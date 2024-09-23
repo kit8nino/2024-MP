@@ -39,4 +39,17 @@ max_speed = 15
 flying_obj = [FlyingObject([uniform(min_coord,max_coord),uniform(min_coord,max_coord),uniform(min_coord,max_coord)],[uniform(-max_speed,max_speed),uniform(-max_speed,max_speed),
                uniform(-max_speed,max_speed)])for i in range(number_of_flying_ovjects)]
 
+print("Сферические координаты объектов относительно радара в начальный момент времени: ")
+for obj in flying_obj:
+    rad, tetta, phi = radar.transformaton_to_spherical_coords(obj)
+    print(f"Объект номер {flying_obj.index(obj)} имеет сферические координаты: rad = {rad}, tetta ={tetta}, phi =  {phi}")
+
+time = float(input("Введите время в секундах: "))
+
+print(f"Сферические координаты объектов через {time} секунд относительно радара: ")
+for obj in flying_obj:
+    obj.fly(time)
+    rad, tetta, phi = radar.transformaton_to_spherical_coords(obj)
+    print(f"Объект номер {flying_obj.index(obj)} имеет сферические координаты: rad = {rad}, tetta ={tetta}, phi =  {phi}")
+
 
