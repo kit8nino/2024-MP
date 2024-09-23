@@ -1,1 +1,12 @@
+from random import randint
+
+def read_maze(file_name):
+	with open(file_name, 'r') as r_file:
+		maze = [list(line.strip()) for line in r_file]
+		return maze
+
+def save_maze(maze, file_name):
+    with open(file_name, 'w') as file:
+        for row in maze:
+            file.write(''.join(row) + '\n')
 
