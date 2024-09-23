@@ -1,0 +1,149 @@
+import random
+import numpy as np
+
+
+def filling_list_1():
+    list_1=[]
+    list_1=np.arange(0,1000000,1)
+    random.shuffle(list_1)
+    return list_1
+
+
+
+def filling_list_2():
+    list_2=[]
+    for i in range(99999):
+        list_2.append(random.randint(-100, 100))
+    for i in range(99999):
+        list_2[i]=list_2[i]/100
+    return list_2
+
+
+
+def filling_list_3():
+    list_3=[]
+    re_list_3=[]
+    ym_list_3=[]
+    for i in range(42000):
+        re_list_3.append(random.randint(-100, 100))
+        ym_list_3.append(random.randint(-100, 100))
+    for i in range(42000):
+        re_list_3[i]=re_list_3[i]/100
+        ym_list_3[i]=ym_list_3[i]/100
+    for i in range(42000):
+        list_3.append(np.linalg.norm(complex(re_list_3[i],ym_list_3[i])))
+    return list_3
+
+
+
+def filling_list_4():
+    list_4=[]
+    def clean_words(text):
+        words = text.split()
+        words = [word.strip(".,!?;:'\"()[]") for word in words]  
+        words = [word.lower() for word in words if word.isalpha()]  
+        return words
+    with open('text.txt', 'r', encoding='utf-8') as file:
+        text = file.read()
+    list_4 = clean_words(text)
+    list_4 = list_4[:10000]
+    return list_4
+
+
+
+
+
+def selection_sort(A):
+    n=len(A)
+    min=0
+    for i in range(n-1):
+        min=i
+        for j in range(i+1,n):
+            if A[j]<A[min]:
+                min=j
+        t=A[min]
+        A[min]=A[i]
+        A[i]=t
+        
+    return A
+            
+def bubble_sort(A):
+    n=len(A)
+    for i in range(0,n):
+        for j in range(0,n-1-i):
+            if A[j+1]<A[j]:
+                t=A[j]
+                A[j]=A[j+1]
+                A[j+1]=t
+    return A
+
+
+def merge_sort(A):
+    if len(A) == 1 or len(A) == 0:
+       return A
+    B=merge_sort(A[:len(A) // 2])
+    C= merge_sort(A[len(A) // 2:])
+    X=[]
+    p=len(B)
+    q=len(C)
+    i=0
+    j=0
+    while i<p and j<q  :
+        if B[i] <= C[j]:
+            X.append(B[i])
+            i+=1
+        else:
+            X.append(C[j])
+            j+=1
+    if i == p:
+        for n in range(j,q):
+            X.append(C[n])
+    if j == q:
+        for n in range(i,p):
+            X.append(B[n])
+    return X
+
+
+
+
+
+
+
+#l=0
+#r=len(A)-1
+def quick_sort(A,l,r):
+    if l<r:
+        s=partition(A,l,r)
+        quick_sort(A, l, s-1)
+        quick_sort(A,s+1,r)
+    return A
+def partition(A,l,r):
+    p=A[l]
+    i=l+1
+    j=r
+    while True:
+        while i<=j and A[j]>=p:
+            j-=1
+        while i<=j and A[i]<=p:
+            i+=1
+        if i<=j:
+            A[i], A[j] = A[j], A[i]
+        else:
+            break
+    A[l], A[j] = A[j], A[l]
+    return j
+
+
+
+#Заполнение массивов
+
+list_1=filling_list_1()
+list_2=filling_list_2()
+list_3=filling_list_3()
+list_4=filling_list_4()
+
+#Вызов конретной функции для конкретного массива
+print(merge_sort(list_1))
+print(selection_sort(list_2))
+print(quick_sort(list_3,0,len(list_3)-1))
+print(bubble_sort(list_4))
