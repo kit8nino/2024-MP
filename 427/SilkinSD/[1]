@@ -38,6 +38,14 @@ def t1_2(a: list) -> list:
         if value[len(value) - 1] != 'в':
             result.append(value)
     return list(set(result))
+
+#1.3
+certificate_list = list(certificate)
+Res3 = 0
+for i in range(len(certificate_list)):
+    for j in range(len(certificate_list[i])):
+        Res3 += 1
+
 #1.5
 def t1_5(name: str) -> bin:
     for c in name:
@@ -50,6 +58,9 @@ print(t1_1(certificate))
 
 # Res 1.2
 print(*t1_2(data))
+
+# Res 1.3
+print("Общая длина всех названных предметов: ",Res3 - 1,"\n")
 
 #Res 1.5
 print(t1_5(tamandua_name))
