@@ -55,6 +55,15 @@ def t1_5(name: str) -> bin:
         name = name.replace(c, bin(ord(c)), 1)
     return name
 
+#1.6
+actor = ('James',' Stewart', '20.05.1908')
+birth_date = datetime.strptime(actor[2], '%d.%m.%Y')
+current_date = datetime.now()
+
+days_since_birth = (current_date - birth_date).days
+
+
+
 
 # Res 1.1
 print(t1_1(certificate))
@@ -72,3 +81,4 @@ print("Уникальные буквы в названиях предметов:
 print(t1_5(tamandua_name))
 
 #Res 1.6
+print(f"Количество дней от даты рождения актера {actor[0]} {actor[1]} до текущей даты: {days_since_birth} дней")
