@@ -38,11 +38,39 @@ def t1_2(a: list) -> list:
         if value[len(value) - 1] != 'в':
             result.append(value)
     return list(set(result))
+
+#1.3
+certificate_list = list(certificate)
+Res3 = 0
+for i in range(len(certificate_list)):
+    for j in range(len(certificate_list[i])):
+        Res3 += 1
+
+#1.4
+unique_letters = set(''.join(certificate.keys()))
+
 #1.5
 def t1_5(name: str) -> bin:
     for c in name:
         name = name.replace(c, bin(ord(c)), 1)
     return name
+
+#1.6
+actor = ('James',' Stewart', '20.05.1908')
+birth_date = datetime.strptime(actor[2], '%d.%m.%Y')
+current_date = datetime.now()
+
+days_since_birth = (current_date - birth_date).days
+
+#1.7
+materials_queue = queue.Queue()
+
+print("Введите названия (для завершения) 'стоп'):")
+while True:
+    material = input()
+    if material.lower() == 'стоп':
+        break
+    materials_queue.put(material)
 
 
 # Res 1.1
@@ -51,5 +79,54 @@ print(t1_1(certificate))
 # Res 1.2
 print(*t1_2(data))
 
+# Res 1.3
+print("Общая длина всех названных предметов: ",Res3 - 1,"\n")
+
+#Res 1.4
+print("Уникальные буквы в названиях предметов:", unique_letters)
+
 #Res 1.5
 print(t1_5(tamandua_name))
+
+#Res 1.6
+print(f"Количество дней от даты рождения актера {actor[0]} {actor[1]} до текущей даты: {days_since_birth} дней")
+
+#Res 1.7
+print("Все стройматериалы:")
+while not materials_queue.empty():
+    print(materials_queue.get())
+
+###############################################
+
+#1.8
+towns = ["Блювиничи", "Хреновое", "Свинорье", "Факфак", "Жабино","Большое Бухалово", "Большие Пупсы", "Дураково", "Иннах", "Синие Лепяги",
+         "Тухлянка", "Засосная", "Лохово", "Крутая", "Большое Струйкино", "Косяковка", "Козявкино", "Цаца", "Дешевки", "Муходоево", "Да-да", "Новопозорново", "Болотная Рогавка","Старые Черви", "Верхнее Зачатье",  "Большой Куяш","Ломки", "Овнище", "Такое", "Крутые Хутора", "Манды", "Новые Алгаши" "Большая Пысса", "Дно", "Трусово", "Баклань", "Куриловка", "Ширяево"]
+         
+def column_print(dict_towns):
+        print(">>")
+        for x in dict_towns:
+            print(x)
+        print("<<")
+        
+dict_towns = {}
+for i in range(len(towns)):
+    dict_towns[towns[i]] = i
+dict_towns = dict(sorted(dict_towns.items(), key=lambda x:x[1]))
+column_print(dict_towns)   
+
+print("\nВведите название города, который хотите удалить:")
+town = str(input())
+print("После удаления:")
+dict_towns.pop(town)
+column_print(dict_towns)
+    
+print("\nВведите номер места, куда хотите добавить слово \"Конец\":")
+index = int(input())
+word = "Конец"
+    
+items = list(dict_towns.items())
+items.insert(index, (word, index))
+dict_towns = dict(items)
+print("Список после добавления:")
+column_print(dict_towns)
+
