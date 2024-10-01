@@ -179,7 +179,7 @@ def get_data (Spicok):
  
 # ПОЛУЧЕНИЕ НАЧАЛЬНЫХ ДАННЫХ
 
-Spicok,width,height = converting_to_an_array( 'maze-for-u.txt' )
+Spicok,width,height = converting_to_an_array( '[3]maze-for-u.txt' )
 
 Data = get_data(Spicok)
 start = Data[0]
@@ -219,4 +219,4 @@ print("Колличество шагов от старта до выхода : "
 
 # путь от ключа до выхода алгоритмом  A*
 Spicok_show = Draw_Spicok (Spicok_show, path_to_the_end, "," )
-writing_to_a_file (Spicok_show, 'maze-for-me-done.txt')
+writing_to_a_file (Spicok_show, '[3]maze-for-me-done.txt')
