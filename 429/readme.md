@@ -19,4 +19,7 @@
 |   ok | Tatarov Egor |       1.2 (без ООП, я предупреждал)   	|    2      	|   2 (структура ок)     	|   2         	|
 |   ok | Yana Rubina |      2     	|       2     	|       1.5 (смешение парадигм)   	|       1.8   	|
 |   ok| Zvyagin Matvey|     2     	|       2    	|          1.8  	|       1.8    	|
+|   ok| Orlov Nikita |     2     	|       2    	|          1.7  	|       1.8    	|
+|   ok|     Pelikhov Vasili |     2     	|       2    	|          1.8  	|       1.5    	|
+|   ok| Safronov Daniil |     2     	|       2    	|          2  	|       0    	|
 </div>
