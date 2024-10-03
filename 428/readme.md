@@ -19,4 +19,5 @@
 |   ok | Shulepin Matvey  |       2    	|        2    	|     2       	|       1.8 ([;:])     	|
 |  ok | Bazaew_Nikita |       2    	|        2   	|     2      	|       2     	|
 |   ok | HaruzinAnd  |       2    	|       2    	|     1.8   ([;:])     	|      1.5 (radar?)    	|
+|   ok | sergey_nikonov  |       2   	|       1.8    	|     1.8   ([;:])     	|      1.8 ([;:])    	|
 </div>
