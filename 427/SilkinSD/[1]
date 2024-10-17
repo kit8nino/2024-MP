@@ -1,5 +1,6 @@
 from random import choice
 from datetime import date, datetime
+from queue import Queue
 
 certificate = {'Всеобщая история': 4,
                'Английский язык': 5,
@@ -19,7 +20,7 @@ certificate = {'Всеобщая история': 4,
 actor = ('Clint ', 'Eastwood', '31.05.1930')
 
 data = [choice([ 'Андрей','Сергей','Максим', 'Кузнецов','Волков', 'Попов',
-                'Петров', 'Сергеев','Иван', 'Васильев','Александр', 'Дмитрий', 'Алексей']) for _ in range30)]
+                'Петров', 'Сергеев','Иван', 'Васильев','Александр', 'Дмитрий', 'Алексей'])]
 
 tamandua_name = 'Темный лорд'
 
