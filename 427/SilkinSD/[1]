@@ -64,14 +64,18 @@ current_date = datetime.now()
 days_since_birth = (current_date - birth_date).days
 
 #1.7
-materials_queue = queue.Queue()
-
-print("Введите названия (для завершения) 'стоп'):")
-while True:
-    material = input()
-    if material.lower() == 'стоп':
-        break
-    materials_queue.put(material)
+materials_line = Queue()
+keyboard_text = ""
+print("Введите название материала (для завершения end): ", end='')
+keyboard_text = input()
+while (keyboard_text != "end"):
+    print("Введите название материала (для завершения end): ", end='')
+    materials_line.put(keyboard_text)
+    keyboard_text = input()
+while (materials_line.empty() == False):
+    print(materials_line.get() + ", ", end='')
+print(' ')
+print('----------------------')
 
 
 # Res 1.1
@@ -94,8 +98,8 @@ print(f"Количество дней от даты рождения актер�
 
 #Res 1.7
 print("Все стройматериалы:")
-while not materials_queue.empty():
-    print(materials_queue.get())
+while not materials_line.empty():
+    print(materials_line.get())
 
 ###############################################
 
