@@ -22,4 +22,5 @@
 |   ok| Orlov Nikita |     2     	|       2    	|          1.7  	|       1.8    	|
 |   ok|     Pelikhov Vasili |     2     	|       2    	|          1.8  	|       1.5    	|
 |   ok| Safronov Daniil |     2     	|       2    	|          2  	|       0    	|
+|   ok| Kabanov Alexandr |     2     	|       2    	|          2  	|      2    	|
 </div>
