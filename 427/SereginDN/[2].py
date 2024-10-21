@@ -1,42 +1,27 @@
-# import random
-#
-# print(random.sample(range(1, 18), 4))
-
-# Result: [2, 7, 11, 10]
-
-# Modules
 import numpy as np
-import random
 
+list_1 = []
+for i in range(100000):
+    list_1.append(i)
+list_1.reverse()
 
-# Data
-# List of integer numbers in interval (0; 999999)
-list_1 = [num for num in range(999999)]
-random.shuffle(list_1)
+list_2 = []
+for i in range(100000):
+    list_2.append(np.random.uniform(-1, 1))
 
-# List of float numbers in interval (-1, 1)
-list_2 = list(np.arange(-1, 1, 99999))
+list_3 = []
+def get_complex():
+    r = 25 / 2
+    x = np.random.uniform(-r, r)
+    y = np.random.uniform(-r, r)
+    while x ** 2 + y ** 2 >= r ** 2:
+        x = np.random.uniform(-r, r)
+        y = np.random.uniform(-r, r)
+    return complex(x, y)
+for _ in range(42000):
+    list_3.append(get_complex())
 
-
-# List of complex numbers
-def get_list_3():
-    def get_point():
-        r = 27 / 2
-        while True:
-            x = random.random() * r - r
-            y = random.random() * r - r
-            if x ** 2 + y ** 2 < r:
-                return complex(x, y)
-
-    return [get_point() for _ in range(42000)]
-
-
-list_3 = get_list_3()
-
-
-# Excerpt from the book
-def get_lest_4():
-    text = ("Однажды весною, в час небывало жаркого заката, в Москве, на Патриарших прудах, появились два гражданина. "
+text = ("Однажды весною, в час небывало жаркого заката, в Москве, на Патриарших прудах, появились два гражданина. "
             "Первый из них, одетый в летнюю серенькую пару, был маленького рос- та, упитан, лыс, свою приличную шляпу "
             "пирожком нес в руке, а на хорошо выбритом лице его помещались сверхъестествен- ных размеров очки в "
             "черной роговой оправе. Второй – плечи- стый, рыжеватый, вихрастый молодой человек в заломленной на "
@@ -1329,89 +1314,69 @@ def get_lest_4():
             "что хотите, но я не встану». Не то что встать, – ему казалось, что он не может открыть глаз, потому что, "
             "если он только это сделает, сверкнет молния и голову его тут же разнесет на куски. В этой голове гудел "
             "тяже- лый колокол, между глазными яблоками и закрытыми веками проплывали коричневые пятна с")
+list_4 = text.split()
+def get_ascii_code(word):
+    return ord(word[0])
+def get_words_len(word):
+    return len(word)
+def get_module(complex_list):
+    modules = []
+    for c in complex_list:
+        modules.append(abs(c))
+    return modules
 
-    return text.split()[:20000]
-
-
-list_4 = get_lest_4()
-
-
-# Buble(2)
-def buble(arr):
-    result = arr
-
-    for j in range(len(result)):
-        swapped = False
-        for i in range(len(result) - 1):
-            if result[i] > result[i + 1]:
-                result[i], result[i + 1] = result[i + 1], result[i]
-                swapped = True
-        if not swapped:
-            return result
-
-
-# Gnome(7)
-def gnome(arr):
-    result = arr
+#Сортировки
+def counting_sort(list):
+    min_val = min(list)
+    max_val = max(list)
+    count_arr = [0] * (max_val - min_val + 1)
+    for num in list:
+        count_arr[num - min_val] += 1
+    sorted_arr = []
+    for i in range(len(count_arr)):
+        sorted_arr.extend([i + min_val] * count_arr[i])
+    return sorted_arr
+print(counting_sort(list_1))
+def shaker_sort(list):
     i = 0
-
-    while i < len(result):
-        if i == 0 or result[i] >= result[i - 1]:
+    while i != len(list):
+        if list[i] < list[i-1]:
+            temp1 = list[i]
+            list[i] = list[i - 1]
+            list[i - 1] = temp1
+        i +=1
+        j = len(list) - 1
+        while j >= i:
+            if list[j] < list[j-1]:
+                temp2 = list[j]
+                list[j] = list[j - 1]
+                list[j - 1] = temp2
+            j -= 1
+    return list
+print(shaker_sort(list_2))
+def select_sort(list):
+    for i in range(len(list)):
+        min = i
+        for j in range(i, len(list)):
+            if list[min] > list[j]:
+                min = j
+        temp = list[i]
+        list[i] = list[min]
+        list[min] = temp
+    return list
+print(select_sort(get_module(list_3)))
+def gnom_sort(list, func):
+    i = 1
+    while i != len(list):
+        if i == 0 or func(list[i]) >= func(list[i-1]):
             i += 1
         else:
-            result[i], result[i - 1] = result[i - 1], result[i]
+            temp = list[i]
+            list[i] = list[i-1]
+            list[i-1] = temp
             i -= 1
-    return result
-
-
-
-# Quic(10)
-def quick(arr):
-    result = arr
-    if len(result) <= 1:
-        return result
-    else:
-        q = random.choice(result)
-        left_nums = []
-        right_nums = []
-        equal_nums = []
-        for number in result:
-            if number < q:
-                left_nums.append(number)
-            elif number > q:
-                right_nums.append(number)
-            else:
-                equal_nums.append(number)
-        return quick_sort(left_nums) + equal_nums + quick_sort(right_nums)
-
-
-# Merge(11)
-def merge(arr):
-    def merge(left_list, right_list):
-        result = []
-        left_index = right_index = 0
-
-        left_length, right_length = len(left_list), len(right_list)
-
-        for _ in range(left_length + right_length):
-            if left_index < left_length and right_index < right_length:
-                if left_list[left_index] <= right_list[right_index]:
-                    result.append(left_list[left_index])
-                    left_index += 1
-                else:
-                    result.append(right_list[right_index])
-                    right_index += 1
-
-            elif left_index == left_length:
-                result.append(right_list[right_index])
-                right_index += 1
-
-            elif right_index == right_length:
-                result.append(left_list[left_index])
-                left_index += 1
-
-
-print(buble(list_3))
-print(gnome(list_4))
-print(quick(list_1))
-print(merge(list_2))
+    return list
+sort_by_ascii_code = gnom_sort(list_4[:], get_ascii_code)
+sort_by_words_len = gnom_sort(list_4[:], get_words_len)
+print(sort_by_words_len)
+print(sort_by_ascii_code) 
