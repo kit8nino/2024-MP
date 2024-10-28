@@ -14,9 +14,12 @@
 |  ok 	| YashinIlya | 2| 2 |        2    	|     2       	|
 |   ok 	|  AbrosimovAlex |      2     	|        2   	|    2      	|       1.8     	|
 |   ok | Kirill_Sharov  |      2    	|       2    	|     1 (тестовый вместо большого)      	|       2     	|
-|  ok |  Кузнецова |       2    	|       2    	|     2      	|       1.8     	|
+|  ok  |  Кузнецова |       2    	|       2    	|     2      	|       1.8     	|
 |   ok | VyushkinaElizaveta |          	|      2    	|    2      	|       2 (<3)     	|
 |   ok | Shulepin Matvey  |       2    	|        2    	|     2       	|       1.8 ([;:])     	|
-|  ok | Bazaew_Nikita |       2    	|        2   	|     2      	|       2     	|
+|  ok  | Bazaew_Nikita |       2    	|        2   	|     2      	|       2     	|
 |   ok | HaruzinAnd  |       2    	|       2    	|     1.8   ([;:])     	|      1.5 (radar?)    	|
+|   ok | sergey_nikonov  |       2   	|       1.8    	|     1.8   ([;:])     	|      1.8 ([;:])    	|
+|   ok | KhmelevNA  |       2    	|       2    	|     1.8    	|      1.8 (сервисные действия -- в методы)    	|
+|   ok | Startsev Arsenij  |       2    	|       2    	|     1.6 (группы действий - в функции)  	|      1.8	|
 </div>
